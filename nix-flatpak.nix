@@ -23,13 +23,14 @@
     ];
     overrides = {
       global = { # Permissions are set to be quite restrictive by default. I prefer to customize them on a per app basis
+                 # Refer to `man flatpak-override` for options
         Context = {
           sockets = [ "wayland" "!x11" "!fallback-x11" "!pulseaudio" "!session-bus" "!system-bus" "!pcsc" "!cups" "!ssh-auth" "!gpg-agent" ]; 
           shared = [ "!ipc" ];
           devices = [ "dri" "!shm" "!all" ];
 	  features = [ "!devel" "!multiarch" "!bluetooth" "!canbus" "!per-app-dev-shm" ];
-	  filesystems = [ "!host" "!host-os" "!host-etc" "!home" "!/tmp" "!xdg-run/gvfs" "!xdg-config/kdeglobals" "!xdg-download" "!xdg-desktop" "!xdg-documents" "!xdg-publicshare" "!xdg-pictures" "!xdg-videos" "!xdg-music" "!xdg-templates" "!xdg-run/gnupg" "!/run/.heim_org.h5l.kcm-socket" "!~/.gnupg" "!xdg-run/speech-dispatcher" ];
-        };
+	  filesystems = [ "!host:reset" ];
+        }; # TODO: Deny all session and system talks
 	Environment = {
           GTK_THEME = "Adwaita:dark";
 	  QT_QPA_PLATFORM = "wayland";
