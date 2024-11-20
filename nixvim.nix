@@ -17,6 +17,7 @@
       nvim-autopairs.enable = true;
 #      neorg.enable = true;
       web-devicons.enable = true;
+      neogit.enable = true;
       comment.enable = true;
       telescope = {
 	enable = true;
