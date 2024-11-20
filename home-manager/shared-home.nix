@@ -33,7 +33,10 @@
   programs.home-manager.enable = true;
   programs.xplr.enable = true;
   programs.imv.enable = true;
-  programs.mpv.enable = true;
+  programs.mpv = {
+    enable = true;
+    scripts = [ pkgs.mpvScripts.mpris ];
+  };
   programs.yt-dlp.enable = true;
   programs.zathura = {
     enable = true;
