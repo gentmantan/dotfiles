@@ -20,6 +20,8 @@
       "com.github.iwalton3.jellyfin-media-player"
       "dev.vencord.Vesktop"
       "com.stremio.Stremio"
+      "org.audacityteam.Audacity"
+      "us.zoom.Zoom"
     ];
     overrides = {
       global = { # Permissions are set to be quite restrictive by default. I prefer to customize them on a per app basis
@@ -52,10 +54,8 @@
         shared = [ "!network" ];
         filesystems = [ "~/KPass" ];
       };
-      "org.getmonero.Monero" = {
-        Context = {
-          filesystems = [ "~/.bitmonero:create" "~/Monero:create" ];
-        };
+      "org.getmonero.Monero".Context = {
+        filesystems = [ "~/.bitmonero:create" "~/Monero:create" ];
       };
       "org.gimp.GIMP".Context = {
         sockets = [ "x11" ];
@@ -83,6 +83,17 @@
       "dev.vencord.Vesktop".Context = {
         sockets = [ "pulseaudio" ];
 	filesystems = [ "!~/.steam" ];
+      };
+      "org.audacityteam.Audacity".Context = {
+        sockets = [ "pulseaudio" ];
+      };
+      "us.zoom.Zoom" = {
+        Context = {
+          sockets = [ "pulseaudio" ];
+	};
+        "Session Bus Policy" = {
+          "org.kde.*" = "none";
+        };
       };
     };
     uninstallUnmanaged = true;
