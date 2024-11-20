@@ -8,6 +8,7 @@
       ./hyprlock.nix
       ./kitty.nix
       ./waybar.nix
+      ./zsh.nix
     ];
 
   home.stateVersion = "24.11";
