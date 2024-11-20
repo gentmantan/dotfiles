@@ -32,12 +32,16 @@
           devices = [ "dri" "!shm" "!all" ];
 	  features = [ "!devel" "!multiarch" "!bluetooth" "!canbus" "!per-app-dev-shm" ];
 	  filesystems = [ "!host:reset" ];
-        }; # TODO: Deny all session and system talks
+        };
 	Environment = {
           GTK_THEME = "Adwaita:dark";
 	  QT_QPA_PLATFORM = "wayland";
 	  ELECTRON_OZONE_PLATFORM_HINT = "auto";
 	};
+        "Session Bus Policy" = { # Deny some known sandbox escape permissions
+          "org.freedesktop.Flatpak" = "none";
+          "org.freedesktop.impl.portal.PermissionStore" = "none";
+        };
       };
       "io.gitlab.librewolf-community".Context = {
         sockets = [ "pulseaudio" ];
