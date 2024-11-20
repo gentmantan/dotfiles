@@ -15,6 +15,8 @@
   nix.optimise.automatic = true;
   nixpkgs.config.allowUnfree = true;
 
+  services.fwupd.enable = true;
+
   networking.hostName = "junk";
   networking.networkmanager.enable = true;  
 

@@ -14,6 +14,8 @@
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = false;
 
+  services.fwupd.enable = true;
+
   # Enabling nix flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
