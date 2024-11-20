@@ -10,6 +10,7 @@
         modules-left = [ "hyprland/workspaces" "hyprland/submap" ];
         modules-center = [ "mpris" ];
         modules-right = [ "backlight" "privacy" "wireplumber" "network" "disk" "load" "memory" "battery" "tray" "clock" ];
+	fixed-center = false;
   
         "hyprland/workspaces" = {
           all-outputs = true;
