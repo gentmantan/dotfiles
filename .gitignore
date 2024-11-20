@@ -1,2 +1,4 @@
 hardware-configuration.nix
 copy-config.sh
+containers-*.nix
+ssh/
