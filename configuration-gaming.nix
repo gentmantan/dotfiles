@@ -17,7 +17,7 @@
 
   services.fwupd.enable = true;
 
-  networking.hostName = "junk";
+  networking.hostName = "coracle";
   networking.networkmanager.enable = true;  
 
   time.timeZone = "America/New_York";

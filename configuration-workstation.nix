@@ -19,7 +19,7 @@
   # Enabling nix flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  networking.hostName = "coracle"; # FIXME: Choose your hostname
+  networking.hostName = "clipper"; # FIXME: Choose your hostname
   networking.networkmanager.enable = true;
 
   time.timeZone = "America/New_York";
