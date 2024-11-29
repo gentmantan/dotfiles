@@ -29,7 +29,7 @@
         Context = {
           sockets = [ "wayland" "!x11" "!fallback-x11" "!pulseaudio" "!session-bus" "!system-bus" "!pcsc" "!cups" "!ssh-auth" "!gpg-agent" ]; 
           shared = [ "!ipc" ];
-          devices = [ "dri" "!shm" "!all" ];
+          devices = [ "dri" "!shm" "!kvm" "!all" ];
 	  features = [ "!devel" "!multiarch" "!bluetooth" "!canbus" "!per-app-dev-shm" ];
 	  filesystems = [ "!host:reset" ];
         };
@@ -99,6 +99,10 @@
         "Session Bus Policy" = {
           "org.kde.*" = "none";
         };
+      };
+      "org.gnome.Boxes".Context = {
+        sockets = [ "pulseaudio" ];
+        devices = [ "kvm" ];
       };
     };
     uninstallUnmanaged = true;
