@@ -10,7 +10,15 @@
     nix-flatpak.url = "github:gmodena/nix-flatpak";
   };
 
-  outputs = inputs@{ nix-flatpak, nixpkgs, home-manager, nixvim, ...}: {
+  outputs = { nix-flatpak, nixpkgs, home-manager, nixvim, ... }: {
+    nixosConfigurations = {
+      exampleIso = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+	  ./configuration-livecd.nix
+        ];
+      };
+    };
     nixosConfigurations.gaming = nixpkgs.lib.nixosSystem {
       modules = [
         ./configuration-gaming.nix
