@@ -23,6 +23,7 @@
     pkgs.nvtopPackages.amd
     pkgs.p7zip
     pkgs.rclone
+    pkgs.nmap
   ];
 
   xdg.userDirs = {
