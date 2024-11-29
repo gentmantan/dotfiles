@@ -64,14 +64,14 @@
 
   users.defaultUserShell = pkgs.zsh;
   users.users.root = {
-    openssh.authorizedKeys.keyFiles = [ ./ssh/tangy.pub ];
+    openssh.authorizedKeys.keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIRaiMuL8Fr7CmLNg6l0Jsanz47xYKCsehWbBN69v0mn tangy@clipper" ];
   };
   users.users.game = {
     isNormalUser = true;
     createHome = true;
     packages = [ pkgs.koboldcpp pkgs.vesktop pkgs.librewolf pkgs.alvr pkgs.mpv pkgs.rclone ];
     extraGroups = [ "wheel" "networkmanager" "adbusers" ];
-    openssh.authorizedKeys.keyFiles = [ ./ssh/tangy.pub ];
+    openssh.authorizedKeys.keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIRaiMuL8Fr7CmLNg6l0Jsanz47xYKCsehWbBN69v0mn tangy@clipper" ];
   };
   systemd.user.services = {
     gamesftp = {
