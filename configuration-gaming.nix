@@ -67,8 +67,8 @@
   users.users.game = {
     isNormalUser = true;
     createHome = true;
-    extraGroups = [ "wheel" "networkmanager" ];
     packages = [ pkgs.koboldcpp pkgs.vesktop pkgs.librewolf pkgs.alvr pkgs.mpv pkgs.rclone ];
+    extraGroups = [ "wheel" "networkmanager" "adbusers" ];
   systemd.user.services = {
     gamesftp = {
       enable = true;
@@ -89,6 +89,8 @@
   };
 
   environment.systemPackages = [ pkgs.nvtopPackages.full ];
+
+  programs.adb.enable = true;
 
   programs.zsh = {
     enable = true;
