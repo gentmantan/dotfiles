@@ -67,8 +67,25 @@
   users.users.game = {
     isNormalUser = true;
     createHome = true;
-    packages = [ pkgs.koboldcpp pkgs.vesktop pkgs.librewolf pkgs.alvr pkgs.mpv ];
     extraGroups = [ "wheel" "networkmanager" ];
+    packages = [ pkgs.koboldcpp pkgs.vesktop pkgs.librewolf pkgs.alvr pkgs.mpv pkgs.rclone ];
+  systemd.user.services = {
+    gamesftp = {
+      enable = true;
+      wantedBy = [ "multi-user.target" ];
+      after = [ "network.target" ];
+      description = "Mount gamesftp";
+      serviceConfig = {
+        ExecStartPre = "/run/current-system/sw/bin/mkdir -p /home/game/gamesftp";
+        ExecStart = "${pkgs.rclone}/bin/rclone mount gamesftp: /home/game/gamesftp --vfs-cache-mode writes --vfs-cache-max-size 50G --vfs-cache-max-age 10s --umask 227";
+	ExecStop = "/run/wrappers/bin/fusermount -u /home/game/gamesftp";
+	Restart = "on-failure";
+	RestartSec = "10s";
+	Environment = [ "PATH=/run/wrappers/bin/:$PATH" ];
+      };
+      startLimitBurst = 10;
+      startLimitIntervalSec = 10;
+    };
   };
 
   environment.systemPackages = [ pkgs.nvtopPackages.full ];
