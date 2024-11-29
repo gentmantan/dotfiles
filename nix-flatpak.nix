@@ -71,6 +71,7 @@
         filesystems = [ "xdg-download/torbrowser:create" ];
       };
       "com.valvesoftware.Steam".Context = {
+        sockets = [ "pulseaudio" ];
         filesystems = [ "~/games" ];
       };
       "com.prusa3d.PrusaSlicer".Context = {
