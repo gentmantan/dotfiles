@@ -6,6 +6,8 @@
   networking.wireless.enable = false;
   networking.networkmanager.enable = true;
 
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
   services.openssh.enable = true;
   users.users.root.openssh.authorizedKeys.keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIRaiMuL8Fr7CmLNg6l0Jsanz47xYKCsehWbBN69v0mn tangy@clipper" ];
 
