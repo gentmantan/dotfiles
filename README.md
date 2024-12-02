@@ -1,6 +1,9 @@
 ### NixOS Dotfiles
 *'It aint much but it's mine!' edition*
 
+# Screenshots
+![Screenshot of workstation desktop](./screenshot.png)
+
 ## Overview
 This repository contains my NixOS configuration files. It includes separate flake references for a [#workstation](configuration-workstation.nix) or a [#gaming](configuration-gaming.nix) system. The workstation system in particular is of particular interest due to its use of [flatpak sandboxing](nix-flatpak.nix) to isolate user applications. The gaming system has gamescope enabled as a compositor, allowing you to choose it in KDM for a Steam Deck-like experience. You can also reconfigure it to auto login to gamescope, making it truly deck-like.
 
