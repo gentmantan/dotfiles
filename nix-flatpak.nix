@@ -38,6 +38,10 @@
 	  QT_QPA_PLATFORM = "wayland";
 	  ELECTRON_OZONE_PLATFORM_HINT = "auto";
 	};
+	"System Bus Policy" ={
+          "org.freedesktop.UPower" = "none";
+          "org.freedesktop.UDisks2" = "none";
+	};
         "Session Bus Policy" = { # Deny some known sandbox escape permissions
           "org.freedesktop.Flatpak" = "none";
           "org.freedesktop.impl.portal.PermissionStore" = "none";
@@ -71,8 +75,9 @@
         filesystems = [ "xdg-download/torbrowser:create" ];
       };
       "com.valvesoftware.Steam".Context = {
-        sockets = [ "pulseaudio" ];
+        sockets = [ "x11" "pulseaudio" ];
         filesystems = [ "~/games" ];
+	features = [ "multiarch" "per-app-dev-shm" ];
       };
       "com.prusa3d.PrusaSlicer".Context = {
         sockets = [ "x11" ];

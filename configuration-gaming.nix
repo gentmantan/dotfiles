@@ -29,7 +29,7 @@
     liberation_ttf
     fira-code
     fira-code-symbols
-    nerdfonts
+    nerd-fonts.symbols-only
   ];
 
   security.rtkit.enable = true;
