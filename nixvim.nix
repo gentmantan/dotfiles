@@ -38,11 +38,15 @@
 	};
       };
       indent-blankline.enable = true;
-      cmp.enable = true;
+      luasnip.enable = true;
+      wrapping.enable = true;
       lsp = {
 	enable = true;
 	servers = {
+	  bashls.enable = true;
+	  marksman.enable = true;
 	  nixd.enable = true;
+	  pylsp.enable = true;
 	};
       };
     };
