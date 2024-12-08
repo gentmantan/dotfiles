@@ -28,24 +28,24 @@
       };
       animations = {
         bezier = "myBezier, 0.05, 0.9, 0.1, 1.05";
-	animation = [
+        animation = [
           "windows, 1, 7, myBezier"
           "windowsOut, 1, 7, default, popin 80%"
           "border, 1, 10, default"
           "borderangle, 1, 8, default"
           "fade, 1, 7, default"
           "workspaces, 1, 6, default"
-	];
-	enabled = true;
+        ];
+        enabled = true;
       };
       decoration = {
         rounding = 10;
         active_opacity=1.0;
         inactive_opacity=1.0;
-	shadow = {
+        shadow = {
           range=4;
           render_power=3;
-	};
+        };
         blur = {
           enabled="true";
           passes="1";
@@ -101,7 +101,7 @@
         "$mainMod SHIFT, D, exec, $menu"
         "$mainMod, F, fullscreen, 1"
         "$mainMod, E, togglegroup"
-	"$mainMod, S, changegroupactive"
+        "$mainMod, S, changegroupactive"
         "$mainMod SHIFT, minus, movetoworkspacesilent, special"
         "$mainMod, minus, togglespecialworkspace, special"
         "$mainMod, h, movefocus, l"

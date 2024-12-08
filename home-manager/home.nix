@@ -22,15 +22,15 @@
     nest0sftp = {
       Unit = {
         Description = "Mount nest0";
-	After = "network.target";
+        After = "network.target";
       };
       Service = {
         ExecStart = "${pkgs.rclone}/bin/rclone mount nest0:/nest0 /home/tangy/nest0 --vfs-cache-mode writes --vfs-cache-max-size 50G --vfs-cache-max-age 10s --umask 227";
-	ExecStop = "/run/wrappers/bin/umount /home/tangy/nest0";
-	Restart = "on-failure";
-	RestartSec = "5s";
-	StartLimitBurst = 10;
-	StartLimitInterval = "10s";
+        ExecStop = "/run/wrappers/bin/umount /home/tangy/nest0";
+        Restart = "on-failure";
+        RestartSec = "5s";
+        StartLimitBurst = 10;
+        StartLimitInterval = "10s";
       };
       Install = {
         WantedBy = [ "default.target" ];

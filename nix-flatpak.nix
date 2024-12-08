@@ -31,18 +31,18 @@
           sockets = [ "wayland" "!x11" "!fallback-x11" "!pulseaudio" "!session-bus" "!system-bus" "!pcsc" "!cups" "!ssh-auth" "!gpg-agent" ]; 
           shared = [ "!ipc" ];
           devices = [ "dri" "!shm" "!kvm" "!all" ];
-	  features = [ "!devel" "!multiarch" "!bluetooth" "!canbus" "!per-app-dev-shm" ];
-	  filesystems = [ "!host:reset" ];
+          features = [ "!devel" "!multiarch" "!bluetooth" "!canbus" "!per-app-dev-shm" ];
+          filesystems = [ "!host:reset" ];
         };
-	Environment = {
+        Environment = {
           GTK_THEME = "Adwaita:dark";
-	  QT_QPA_PLATFORM = "wayland";
-	  ELECTRON_OZONE_PLATFORM_HINT = "auto";
-	};
-	"System Bus Policy" ={
+          QT_QPA_PLATFORM = "wayland";
+          ELECTRON_OZONE_PLATFORM_HINT = "auto";
+        };
+        "System Bus Policy" ={
           "org.freedesktop.UPower" = "none";
           "org.freedesktop.UDisks2" = "none";
-	};
+        };
         "Session Bus Policy" = { # Deny some known sandbox escape permissions
           "org.freedesktop.Flatpak" = "none";
           "org.freedesktop.impl.portal.PermissionStore" = "none";
@@ -78,7 +78,7 @@
       "com.valvesoftware.Steam".Context = {
         sockets = [ "x11" "pulseaudio" ];
         filesystems = [ "~/games" ];
-	features = [ "multiarch" "per-app-dev-shm" ];
+        features = [ "multiarch" "per-app-dev-shm" ];
       };
       "com.prusa3d.PrusaSlicer".Context = {
         sockets = [ "x11" ];

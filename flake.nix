@@ -15,7 +15,7 @@
       exampleIso = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-	  ./configuration-livecd.nix
+        ./configuration-livecd.nix
         ];
       };
     };
@@ -33,10 +33,10 @@
           home-manager.useUserPackages = true;
           home-manager.users.tangy = import ./home-manager/home.nix;
         }
-	nix-flatpak.nixosModules.nix-flatpak
-	./nix-flatpak.nix
+        nix-flatpak.nixosModules.nix-flatpak
+        ./nix-flatpak.nix
         nixvim.nixosModules.nixvim
-	./nixvim.nix
+        ./nixvim.nix
       ];
     };
   };

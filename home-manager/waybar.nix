@@ -10,26 +10,26 @@
         modules-left = [ "hyprland/workspaces" "hyprland/submap" ];
         modules-center = [ "mpris" ];
         modules-right = [ "backlight" "privacy" "wireplumber" "network" "disk" "load" "memory" "battery" "tray" "clock" ];
-	fixed-center = false;
-  
+        fixed-center = false;
+
         "hyprland/workspaces" = {
           all-outputs = true;
           on-click = "activate";
-	  on-scroll-up = "hyprctl dispatch workspace e+1";
-	  on-scroll-down = "hyprctl dispatch workspace e-1";
+          on-scroll-up = "hyprctl dispatch workspace e+1";
+          on-scroll-down = "hyprctl dispatch workspace e-1";
         };
-	"wireplumber" = {
+        "wireplumber" = {
           "format" = "{icon} {volume}%";
           "format-muted" = "󰝟";
           "on-click" = "set-mute @DEFAULT_SINK@ toggle";
           "max-volume" = 150;
           "scroll-step" = 0.2;
-	  format-icons = [ "󰕿" "󰖀" "󰕾" ];
+          format-icons = [ "󰕿" "󰖀" "󰕾" ];
         };
-	disk = {
+        disk = {
           format = " {specific_free:0.0f}GB";
-	  unit = "GB";
-	};
+          unit = "GB";
+        };
         "mpris" = {
           "format" = "{player_icon} {title}";
           "format-paused" = "{status_icon} <i>{title}</i>";
