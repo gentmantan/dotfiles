@@ -74,6 +74,21 @@
         "BEMENU_BACKEND,wayland"
       ];
 
+      bindl = [ # Bindings work even when locked
+        ", XF86AudioPlay, exec, playerctl play-pause"
+        ", XF86AudioNext, exec, playerctl next"
+        ", XF86AudioPrev, exec, playerctl previous"
+        ", XF86Tools, exec, playerctl play-pause"
+        ", XF86Favorites, exec, playerctl next"
+        ", XF86Bluetooth, exec, playerctl previous"
+        ", XF86MonBrightnessUp, exec, brightnessctl set +10%"
+        ", XF86MonBrightnessDown, exec, brightnessctl set --min-value=1 10%-"
+        ", XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.5 @DEFAULT_SINK@ 5%+ && wpctl set-mute @DEFAULT_SINK@ off"
+        ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_SINK@ 5%- &&  wpctl set-mute @DEFAULT_SINK@ off"
+        ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_SINK@ toggle"
+        ", XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_SOURCE@ toggle"
+      ];
+
       bind = [ 
         "$mainMod, Return, exec, $terminal"
         "$mainMod, W, exec, $privatebrowser"
@@ -129,18 +144,6 @@
         "$mainMod SHIFT, l, movewindoworgroup, r"
         "$mainMod, mouse_down, workspace, e+1"
         "$mainMod, mouse_up, workspace, e-1"
-        ", XF86AudioPlay, exec, playerctl play-pause"
-        ", XF86AudioNext, exec, playerctl next"
-        ", XF86AudioPrev, exec, playerctl previous"
-        ", XF86Tools, exec, playerctl play-pause"
-        ", XF86Favorites, exec, playerctl next"
-        ", XF86Bluetooth, exec, playerctl previous"
-        ", XF86MonBrightnessUp, exec, brightnessctl set +10%"
-        ", XF86MonBrightnessDown, exec, brightnessctl set --min-value=1 10%-"
-        ", XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.5 @DEFAULT_SINK@ 5%+ && wpctl set-mute @DEFAULT_SINK@ off"
-        ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_SINK@ 5%- &&  wpctl set-mute @DEFAULT_SINK@ off"
-        ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_SINK@ toggle"
-        ", XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_SOURCE@ toggle"
         "$mainMod&Alt_L, k, exec, hyprctl keyword monitor ,preferred,auto,1,vrr,1,transform,0"
         "$mainMod&Alt_L, k, exec, hyprctl keyword input:touchdevice:transform 0"
         "$mainMod&Alt_L, k, exec, hyprctl keyword input:tablet:transform 0"
