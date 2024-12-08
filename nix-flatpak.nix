@@ -46,6 +46,7 @@
         "Session Bus Policy" = { # Deny some known sandbox escape permissions
           "org.freedesktop.Flatpak" = "none";
           "org.freedesktop.impl.portal.PermissionStore" = "none";
+          "org.freedesktop.secrets" = "none";
         };
       };
       "io.gitlab.librewolf-community".Context = {
@@ -68,9 +69,11 @@
       };
       "org.gimp.GIMP".Context = {
         sockets = [ "x11" ];
+        filesystems = [ "xdg-pictures" ];
       };
       "chat.simplex.simplex".Context = {
         sockets = [ "x11" "pulseaudio" ];
+        filesystems = [ "xdg-download/simplex:create" ];
       };
       "org.torproject.torbrowser-launcher".Context = {
         filesystems = [ "xdg-download/torbrowser:create" ];
@@ -93,15 +96,15 @@
       };
       "dev.vencord.Vesktop".Context = {
         sockets = [ "pulseaudio" ];
-	filesystems = [ "!~/.steam" ];
       };
       "org.audacityteam.Audacity".Context = {
         sockets = [ "pulseaudio" ];
       };
       "us.zoom.Zoom" = {
         Context = {
-          sockets = [ "pulseaudio" ];
-	};
+          sockets = [ "x11" "pulseaudio" ];
+          devices = [ "all" ];
+        };
         "Session Bus Policy" = {
           "org.kde.*" = "none";
         };
