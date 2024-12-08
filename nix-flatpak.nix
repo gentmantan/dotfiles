@@ -22,6 +22,7 @@
       "com.stremio.Stremio"
       "org.audacityteam.Audacity"
       "us.zoom.Zoom"
+      "com.google.AndroidStudio"
     ];
     overrides = {
       global = { # Permissions are set to be quite restrictive by default. I prefer to customize them on a per app basis
@@ -108,6 +109,14 @@
       "org.gnome.Boxes".Context = {
         sockets = [ "pulseaudio" ];
         devices = [ "kvm" ];
+      };
+      "com.google.AndroidStudio".Context = {
+        sockets = [ "x11" ];
+        shared = [ "ipc" ];
+        devices = [ "kvm" ];
+        features = [ "multiarch" ];
+        persistent = [ "Android" ".android" ".gradle" ".java" ];
+        filesystems = [ "~/projects" ];
       };
     };
     uninstallUnmanaged = true;
