@@ -39,14 +39,23 @@
       };
       indent-blankline.enable = true;
       luasnip.enable = true;
-      wrapping.enable = true;
+      vimtex.enable = true;
+      wrapping = {
+        enable = true;
+	settings = {
+	  auto_set_mode_heuristically = true;
+	};
+      };
       lsp = {
 	enable = true;
 	servers = {
 	  bashls.enable = true;
 	  marksman.enable = true;
 	  nixd.enable = true;
-	  pylsp.enable = true;
+	  pylsp = {
+	    enable = true;
+	    settings.plugins.jedi_completion.enabled = true;
+	  };
 	};
       };
     };
