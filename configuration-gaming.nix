@@ -76,7 +76,7 @@
   systemd.user.services = {
     gamesftp = {
       enable = true;
-      wantedBy = [ "graphical.target" ];
+      wantedBy = [ "default.target" ];
       after = [ "network.target" ];
       description = "Mount gamesftp";
       serviceConfig = {
