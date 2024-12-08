@@ -113,6 +113,9 @@
         sockets = [ "pulseaudio" ];
         devices = [ "kvm" ];
       };
+      "com.github.johnfactotum.Foliate".Environment = {
+        GTK_THEME = "";
+      };
       "com.google.AndroidStudio".Context = {
         sockets = [ "x11" ];
         shared = [ "ipc" ];
