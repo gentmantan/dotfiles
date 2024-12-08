@@ -131,10 +131,12 @@
       gamescopeSession.enable = true;
     };
   };
+  programs.virt-manager.enable = true;
 
   virtualisation = {
     containers.enable = true;
     podman.enable = true;
+    libvirtd.enable = true;
   };
 
   networking.firewall.enable = false;
