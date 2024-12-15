@@ -48,6 +48,7 @@
           auto_set_mode_heuristically = true;
         };
       };
+      plantuml-syntax.enable = true;
       lsp = {
         enable = true;
         servers = {

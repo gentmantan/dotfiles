@@ -24,6 +24,7 @@
     pkgs.p7zip
     pkgs.rclone
     pkgs.nmap
+    pkgs.plantuml-c4
   ];
 
   xdg.userDirs = {
