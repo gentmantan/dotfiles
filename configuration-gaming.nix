@@ -129,6 +129,7 @@
     steam = {
       enable = true;
       gamescopeSession.enable = true;
+      protontricks.enable = true;
     };
   };
   programs.virt-manager.enable = true;
