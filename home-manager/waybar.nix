@@ -40,7 +40,6 @@
           "status-icons" = {
             "paused" = "";
           };
-          max-length = 50;
           "ignored-players" = [ "firefox" ];
         };
         "clock" = {
