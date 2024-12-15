@@ -23,6 +23,8 @@
       "org.audacityteam.Audacity"
       "us.zoom.Zoom"
       "com.google.AndroidStudio"
+      "com.github.xournalpp.xournalpp"
+      "io.github.ungoogled_software.ungoogled_chromium"
     ];
     overrides = {
       global = { # Permissions are set to be quite restrictive by default. I prefer to customize them on a per app basis
@@ -123,6 +125,9 @@
         features = [ "multiarch" ];
         persistent = [ "Android" ".android" ".gradle" ".java" ];
         filesystems = [ "~/projects" ];
+      };
+      "com.github.xournalpp.xournalpp".Context = {
+        filesystems = [ "xdg-documents" ];
       };
     };
     uninstallUnmanaged = true;
