@@ -90,7 +90,6 @@
         filesystems = [ "~/projects/3d" ];
       };
       "org.freecad.FreeCAD".Context = {
-        sockets = [ "x11" ];
         filesystems = [ "~/projects/3d" ];
       };
       "com.github.iwalton3.jellyfin-media-player".Context = {
@@ -114,6 +113,7 @@
       "org.gnome.Boxes".Context = {
         sockets = [ "pulseaudio" ];
         devices = [ "kvm" ];
+        filesystems = [ "~/isos:create" ];
       };
       "com.github.johnfactotum.Foliate".Environment = {
         GTK_THEME = "";
