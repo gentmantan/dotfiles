@@ -15,28 +15,28 @@
       exampleIso = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-        ./configuration-livecd.nix
+        ./hosts/livecd/configuration-livecd.nix
         ];
       };
     };
     nixosConfigurations.gaming = nixpkgs.lib.nixosSystem {
       modules = [
-        ./configuration-gaming.nix
+        ./hosts/gaming/configuration-gaming.nix
       ];
     };
     nixosConfigurations.workstation = nixpkgs.lib.nixosSystem {
       modules = [
-        ./configuration-workstation.nix
+        ./hosts/workstation/configuration-workstation.nix
         home-manager.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.tangy = import ./home-manager/home.nix;
+          home-manager.users.tangy = import ./modules/home-manager/home.nix;
         }
         nix-flatpak.nixosModules.nix-flatpak
-        ./nix-flatpak.nix
+        ./modules/nix-flatpak.nix
         nixvim.nixosModules.nixvim
-        ./nixvim.nix
+        ./modules/nixvim.nix
       ];
     };
   };
