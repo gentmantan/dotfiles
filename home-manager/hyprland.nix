@@ -104,6 +104,7 @@
         "$mainMod, S, changegroupactive"
         "$mainMod SHIFT, minus, movetoworkspacesilent, special"
         "$mainMod, minus, togglespecialworkspace, special"
+        ", Print, exec, slurp | grim -g - - | wl-copy"
         "$mainMod, h, movefocus, l"
         "$mainMod, l, movefocus, r"
         "$mainMod, k, movefocus, u"
