@@ -121,9 +121,6 @@
       };
       "com.google.AndroidStudio".Context = {
         sockets = [ "x11" ];
-        shared = [ "ipc" ];
-        devices = [ "kvm" ];
-        features = [ "multiarch" ];
         persistent = [ "Android" ".android" ".gradle" ".java" ];
         filesystems = [ "~/projects" ];
       };
