@@ -9,7 +9,7 @@
         position = "top";
         modules-left = [ "hyprland/workspaces" "hyprland/submap" ];
         modules-center = [ "mpris" ];
-        modules-right = [ "backlight" "privacy" "wireplumber" "network" "disk" "load" "memory" "battery" "tray" "clock" ];
+        modules-right = [ "backlight" "privacy" "bluetooth" "wireplumber" "network" "disk" "load" "memory" "battery" "tray" "clock" ];
         fixed-center = false;
 
         "hyprland/workspaces" = {
@@ -41,6 +41,13 @@
             "paused" = "";
           };
           "ignored-players" = [ "firefox" ];
+        };
+
+        bluetooth = {
+          "format" = "󰂯";
+          "format-disabled" = "󰂲";
+          "format-connected" = "󰂱 {device_battery_percentage}";
+          "on-click" = "if bluetoothctl show | grep -q 'Powered: no'; then bluetoothctl power on; else; bluetoothctl power off; fi";
         };
         "clock" = {
           "tooltip-format" = "<tt><small>{calendar}</small></tt>";
@@ -158,6 +165,7 @@
       }
       
       #custom-music,
+      #bluetooth,
       #backlight,
       #privacy,
       #network,
@@ -179,10 +187,6 @@
         margin-right: 1rem;
       }
       
-      #battery {
-        color: @green;
-      }
-      
       #battery.charging {
         color: @green;
       }
@@ -195,6 +199,14 @@
         color: @yellow;
         margin-left: 1rem;
         border-radius: 1rem 0px 0px 1rem;
+      }
+
+      #bluetooth.off {
+        color: @red;
+      }
+
+      #bluetooth.connected {
+        color: @green;
       }
       
       #wireplumber {
