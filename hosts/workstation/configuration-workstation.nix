@@ -107,17 +107,6 @@
     dates = "weekly";
     options = "--delete-older-than 30d";
   };
-  system.autoUpgrade = { # Automatically upgrade the system
-    enable = true;
-    flake = "/etc/nixos#workstation";
-    flags = [
-      "--update-input"
-      "nixpkgs"
-      "-L"
-      ];
-      dates  = "02:00";
-      randomizedDelaySec = "45min";
-  };
 
   system.stateVersion = "24.11"; 
 
