@@ -14,6 +14,8 @@
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = false;
 
+  # TODO: Programs, services etc. should be in separate nix files for better composability
+
   services.fwupd.enable = true;
 
   # Enabling nix flakes
@@ -88,7 +90,7 @@
   programs.hyprland.enable = true;
   programs.tmux = {
     enable = true;
-    extraConfig = import ./tmux.conf;
+    extraConfig = import ../../modules/tmux.conf; 
   };
   programs.firejail.enable = true;
 

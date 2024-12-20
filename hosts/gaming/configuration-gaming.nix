@@ -15,6 +15,8 @@
   nix.optimise.automatic = true;
   nixpkgs.config.allowUnfree = true;
 
+  # TODO: Programs, services etc. should be in separate nix files for better composability
+
   services.fwupd.enable = true;
 
   networking.hostName = "coracle";
@@ -119,7 +121,7 @@
   };
   programs.tmux = {
     enable = true;
-    extraConfig = import ./tmux.conf;
+    extraConfig = import ../../modules/tmux.conf; 
   };
   programs = {
     gamescope = {
