@@ -122,7 +122,7 @@
       "com.google.AndroidStudio".Context = {
         sockets = [ "x11" ];
         persistent = [ "Android" ".android" ".gradle" ".java" ];
-        filesystems = [ "~/projects" ];
+        filesystems = [ "~/projects/android" ];
       };
       "com.github.xournalpp.xournalpp".Context = {
         filesystems = [ "xdg-documents" ];
