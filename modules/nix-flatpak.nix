@@ -53,7 +53,7 @@
         };
       };
       "io.gitlab.librewolf-community".Context = {
-        sockets = [ "pulseaudio" ];
+        sockets = [ "pulseaudio" "cups" ];
         filesystems = [ "xdg-download/librewolf:create" ];
       };
       "io.freetubeapp.FreeTube".Context = {
@@ -126,6 +126,9 @@
       };
       "com.github.xournalpp.xournalpp".Context = {
         filesystems = [ "xdg-documents" ];
+      };
+      "org.mozilla.Thunderbird".Context = {
+        sockets = [ "cups" ];
       };
     };
     uninstallUnmanaged = true;
