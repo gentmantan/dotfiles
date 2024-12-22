@@ -1,37 +1,17 @@
-{ pkgs, modulesPath, ... }:
-
 {
-  imports = [
-    (modulesPath + "/virtualisation/proxmox-lxc.nix")
-  ];
+  imports = [ ./hardware-configuration.nix ];
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  nixpkgs.config.allowUnfree = false;
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+
+  networking.hostName = "barquentine";
+  networking.hostId = "8afd8e00";
+  networking.networkmanager.enable = true;  
+  networking.firewall.enable = false;
+
   time.timeZone = "America/New_York";
 
   services.fwupd.enable = true;
-
-  users.users."root".openssh.authorizedKeys.keyFiles = [
-    /etc/nixos/ssh/authorized_keys
-  ];
-
-  programs.tmux = {
-    enable = true;
-    extraConfig = import ./tmux.conf;
-  };
-
-  virtualization = {
-    containers = {
-      enable = true;
-      registries.search = [ "docker.io" "ghcr.io" ];
-    };
-    podman = {
-      enable = true;
-      autoPrune.enable = true;
-    };
-    oci-containers.backend = "podman";
-  };
-
   services.openssh = {
     enable = true;
     ports = [ 22 ];
@@ -41,7 +21,27 @@
     };
   };
 
-  networking.firewall.enable = false;
+  users.users.root = {
+    openssh.authorizedKeys.keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIRaiMuL8Fr7CmLNg6l0Jsanz47xYKCsehWbBN69v0mn tangy@clipper" ];
+  };
+  users.users.user = {
+    isNormalUser = true;
+    createHome = true;
+    openssh.authorizedKeys.keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIRaiMuL8Fr7CmLNg6l0Jsanz47xYKCsehWbBN69v0mn tangy@clipper" ];
+  };
+
+  programs.tmux = {
+    enable = true;
+    extraConfig = import ../../modules/tmux.conf;
+  };
+  programs.git = {
+    enable = true;
+    lfs.enable = true;
+  };
+  # microvm.autostart = [
+  #   "baobab"
+  #   "mangrove"
+  # ];
 
   nix.optimise.automatic = true; # Automatically run nix-store --optimise to reduce nix store size
   nix.gc = { # Automatically delete old generations
@@ -49,15 +49,5 @@
     dates = "weekly";
     options = "--delete-older-than 30d";
   };
-  system.autoUpgrade = { # Automatically upgrade the system
-    enable = true;
-    flake = "/etc/nixos#server";
-    flags = [
-      "--update-input"
-      "nixpkgs"
-      "-L"
-      ];
-      dates  = "02:00";
-      randomizedDelaySec = "45min";
-  };
+  system.stateVersion = "25.05";
 }

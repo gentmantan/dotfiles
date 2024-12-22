@@ -8,9 +8,11 @@
     nixvim.url = "github:nix-community/nixvim";
     nixvim.inputs.nixpkgs.follows = "nixpkgs";
     nix-flatpak.url = "github:gmodena/nix-flatpak";
+    microvm.url = "github:astro/microvm.nix";
+    microvm.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { nix-flatpak, nixpkgs, home-manager, nixvim, ... }: {
+  outputs = { nix-flatpak, nixpkgs, home-manager, nixvim, microvm, ... }: {
     nixosConfigurations = {
       exampleIso = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -37,6 +39,14 @@
         ./modules/nix-flatpak.nix
         nixvim.nixosModules.nixvim
         ./modules/nixvim.nix
+      ];
+    };
+    nixosConfigurations.server = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      modules = [
+        microvm.nixosModules.host
+        ./hosts/server/configuration-server.nix
+        ./modules/microvm/baobab.nix
       ];
     };
   };
