@@ -1,6 +1,6 @@
 { pkgs, lib, modulesPath, ... }:
 {
-  imports = [ (modulesPath + "/installer/cd-dvd/installation-cd-minimal-new-kernel-no-zfs.nix") ];
+  imports = [ (modulesPath + "/installer/cd-dvd/installation-cd-minimal-new-kernel.nix") ];
   boot.supportedFilesystems = [ "bcachefs" ];
   boot.kernelPackages = lib.mkOverride 0 pkgs.linuxPackages_latest;
   networking.wireless.enable = false;

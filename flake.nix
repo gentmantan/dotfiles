@@ -14,7 +14,7 @@
 
   outputs = { nix-flatpak, nixpkgs, home-manager, nixvim, microvm, ... }: {
     nixosConfigurations = {
-      exampleIso = nixpkgs.lib.nixosSystem {
+      my-iso = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
         ./hosts/livecd/configuration-livecd.nix
