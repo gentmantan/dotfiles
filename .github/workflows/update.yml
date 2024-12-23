@@ -16,6 +16,8 @@ jobs:
           nix_path: nixpkgs=channel:nixos-unstable
       - name: "Update flake"
         run: nix flake update
+      - name: "Check flake"
+        run: nix flake check --all-systems
       - name: "Commit changes"
         run: |
           git config --global user.name "github-actions[bot]"
