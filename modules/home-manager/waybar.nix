@@ -9,7 +9,7 @@
         position = "top";
         modules-left = [ "hyprland/workspaces" "hyprland/submap" ];
         modules-center = [ "mpris" ];
-        modules-right = [ "backlight" "privacy" "bluetooth" "wireplumber" "network" "disk" "load" "memory" "battery" "tray" "clock" ];
+        modules-right = [ "backlight" "privacy" "bluetooth" "wireplumber" "network" "disk" "load" "memory" "battery" "temperature" "tray" "clock" ];
         fixed-center = false;
 
         "hyprland/workspaces" = {
@@ -35,7 +35,9 @@
           "format-paused" = "{status_icon} <i>{title}</i>";
           "player-icons" = {
             "default" = "";
-            "mpv" = "";
+            "mpv" = "";
+            "freetube" = "";
+            "firefox" = "󰈹";
           };
           "status-icons" = {
             "paused" = "";
@@ -46,6 +48,7 @@
         bluetooth = {
           "format" = "󰂯";
           "format-disabled" = "󰂲";
+          "format-off" = "󰂲";
           "format-connected" = "󰂱 {device_battery_percentage}";
           "on-click" = "if bluetoothctl show | grep -q 'Powered: no'; then bluetoothctl power on; else; bluetoothctl power off; fi";
         };
@@ -91,14 +94,19 @@
         };
         "network" = {
           "format" = "{ifname}";
-          "format-wifi" = "󰖩 {signalStrength}%";
-          "format-ethernet" = "󰈀 {ipaddr}";
-          "format-disconnected" = "";
+          "format-wifi" = "{icon} {signalStrength}%";
+          "format-ethernet" = "󰈀";
+          "format-icons" = [ "󰤟" "󰤢" "󰤥" "󰤨" ];
           "tooltip-format" = "󰈀 {ifname} via {gwaddr}";
           "tooltip-format-wifi" = " {essid} {ipaddr}/{cidr} {signalStrength}% {frequency} {bandwidthUpBits} {bandwidthDownBits}";
           "tooltip-format-ethernet" = "󰈀 {ifname} {ipaddr}/{cidr} via {gwaddr}";
           "tooltip-format-disconnected" = "Disconnected";
           "max-length" = 50;
+        };
+        "temperature" = {
+          "critical-threshold" = 80;
+          "format" = "";
+          "format-critical" = " {temperatureC}󰔄";
         };
       };
     };
@@ -175,6 +183,7 @@
       #memory,
       #battery,
       #tray,
+      #temperature,
       #clock {
         background-color: @surface0;
         padding: 0.5rem 1rem;
@@ -230,6 +239,10 @@
       }
       #tray {
           border-radius: 0px 0px 0px 0px
+      }
+
+      #temperature.critical {
+        color: @red;
       }
     '';
   };
