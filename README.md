@@ -1,6 +1,9 @@
 # ❄️ My NixOS Dotfiles ❄️
 *'Yeah, I have a CI/CD workflow for my dotfiles. 😎' edition*
 
+[![Flake check](https://github.com/gentmantan/dotfiles/actions/workflows/test.yml/badge.svg)](https://github.com/gentmantan/dotfiles/actions/workflows/test.yml)
+[![Flake update](https://github.com/gentmantan/dotfiles/actions/workflows/update.yml/badge.svg)](https://github.com/gentmantan/dotfiles/actions/workflows/update.yml)
+
 ## Screenshots
 ![Screenshot of workstation desktop](screenshot.png)
 
