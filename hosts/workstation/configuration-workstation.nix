@@ -108,6 +108,14 @@
     options = "--delete-older-than 30d";
   };
 
+  system.autoUpgrade = {
+    enable = true;
+    flake = "github:gentmantan/dotfiles#workstation";
+    flags = [ "-L" ];
+    dates = "02:00";
+    randomizedDelaySec = "45min";
+  };
+
   system.stateVersion = "24.11"; 
 
 }

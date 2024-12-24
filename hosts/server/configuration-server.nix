@@ -49,5 +49,14 @@
     dates = "weekly";
     options = "--delete-older-than 30d";
   };
+
+  system.autoUpgrade = {
+    enable = true;
+    flake = "github:gentmantan/dotfiles#server";
+    flags = [ "-L" ];
+    dates = "02:00";
+    randomizedDelaySec = "45min";
+  };
+
   system.stateVersion = "25.05";
 }

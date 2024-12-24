@@ -143,8 +143,15 @@
   };
 
   networking.firewall.enable = false;
+
+  system.autoUpgrade = {
+    enable = true;
+    flake = "github:gentmantan/dotfiles#gaming";
+    flags = [ "-L" ];
+    dates = "02:00";
+    randomizedDelaySec = "45min";
+  };
   
   system.stateVersion = "24.11"; 
-
 }
 
