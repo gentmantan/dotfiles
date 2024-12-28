@@ -1,4 +1,3 @@
-{ config, lib, pkgs, ... }:
 {
   services.flatpak = { # FIXME: Edit this list with your favorite apps!
     packages = [
