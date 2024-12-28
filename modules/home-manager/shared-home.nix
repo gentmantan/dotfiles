@@ -20,7 +20,6 @@
     pkgs.brightnessctl
     pkgs.wl-clipboard
     pkgs.qrencode
-    pkgs.nvtopPackages.amd
     pkgs.p7zip
     pkgs.rclone
     pkgs.nmap
