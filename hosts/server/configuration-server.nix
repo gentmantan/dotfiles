@@ -6,8 +6,9 @@
 
   networking.hostName = "barquentine";
   networking.hostId = "8afd8e00";
-  networking.networkmanager.enable = true;  
   networking.firewall.enable = false;
+
+  systemd.network.enable = true;
 
   time.timeZone = "America/New_York";
 
@@ -38,11 +39,7 @@
     enable = true;
     lfs.enable = true;
   };
-  # microvm.autostart = [
-  #   "baobab"
-  #   "mangrove"
-  # ];
-
+  
   nix.optimise.automatic = true; # Automatically run nix-store --optimise to reduce nix store size
   nix.gc = { # Automatically delete old generations
     automatic = true;

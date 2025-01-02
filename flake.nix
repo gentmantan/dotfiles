@@ -46,7 +46,7 @@
       modules = [
         microvm.nixosModules.host
         ./hosts/server/configuration-server.nix
-        ./modules/microvm/baobab.nix
+        ./modules/microvm/default.nix
       ];
     };
   };
