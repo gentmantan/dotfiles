@@ -35,3 +35,7 @@ I go into more detail in an upcoming blog post as to how I came about planning a
 - [ ] Put package and service definitions in separate nix files
 - [ ] Set up agenix for secrets management
 - [ ] Set up nixos-anywhere for automatic deployment
+- [ ] Configure server
+  - [x] Add microvms
+  - [ ] Add podman containers
+  - [ ] Setup VPN connection
