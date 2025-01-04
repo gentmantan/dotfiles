@@ -4,6 +4,8 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
   networking.hostName = "barquentine";
   networking.hostId = "8afd8e00";
   networking.firewall.enable = false;
