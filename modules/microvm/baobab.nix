@@ -10,6 +10,12 @@
           proto = "virtiofs";
         }
         {
+          source = "/config/baobab";
+          mountPoint = "/config";
+          tag = "baobab-config";
+          proto = "virtiofs";
+        }
+        {
           source = "/nest0";
           mountPoint = "/nest0";
           tag = "nest0";
@@ -29,6 +35,8 @@
         };
 
         # Begin container related config
+        imports = [ ../containers/default-baobab.nix ];
+
         systemd.network.enable = true;
         systemd.network.networks."20-lan" = {
           matchConfig.Type = "veth*";
@@ -57,21 +65,6 @@
           password = "";
         };
 
-        virtualisation = {
-          containers.enable = true;
-          podman.enable = true;
-          oci-containers.backend = "podman";
-          oci-containers.containers = {
-            iperf3 = {
-              image = "docker.io/networkstatic/iperf3";
-              autoStart = true;
-              ports = [ "15555:5201" ];
-              pull = "newer";
-              extraOptions = [ "-it" "--restart=on-failure" ];
-              cmd = [ "-s" ];
-            };
-          };
-        };
         system.stateVersion = "25.05";
       };
     };
