@@ -37,6 +37,7 @@
           };
           linkConfig = {
             Unmanaged = true;
+            RequiredForOnline = "routable";
           };
         };
         networking.firewall.enable = false;
@@ -66,7 +67,7 @@
               autoStart = true;
               ports = [ "15555:5201" ];
               pull = "newer";
-              extraOptions = [ "-it" ];
+              extraOptions = [ "-it" "--restart=on-failure" ];
               cmd = [ "-s" ];
             };
           };
