@@ -1,7 +1,12 @@
 { pkgs, ... }:
 
 {
-  imports = [ ./hardware-configuration.nix ];
+  imports = [ 
+    ../../modules/fonts.nix
+    ../../modules/nix-maintenance.nix
+    ../../modules/tmux.nix
+    ./hardware-configuration.nix 
+  ];
 
   # Hardware and bootloader
   boot.loader.systemd-boot.enable = true;
@@ -86,10 +91,6 @@
     syntaxHighlighting.enable = true;
   };
   programs.hyprland.enable = true;
-  programs.tmux = {
-    enable = true;
-    extraConfig = import ../../modules/tmux.conf; 
-  };
   programs.firejail.enable = true;
 
   virtualisation = {
@@ -99,21 +100,10 @@
 
   networking.firewall.enable = false; # FIXME: Choose if you want a firewall
 
-  nix.optimise.automatic = true; # Automatically run nix-store --optimise to reduce nix store size
-  nix.gc = { # Automatically delete old generations
-    automatic = true;
-    dates = "weekly";
-    options = "--delete-older-than 30d";
-  };
-
-  system.autoUpgrade = {
+  customNixMaintenance = {
     enable = true;
-    flake = "github:gentmantan/dotfiles#workstation";
-    flags = [ "-L" ];
-    dates = "02:00";
-    randomizedDelaySec = "45min";
+    hostName = "workstation";
   };
 
   system.stateVersion = "24.11"; 
-
 }

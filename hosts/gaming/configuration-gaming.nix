@@ -2,7 +2,13 @@
 
 {
   imports =
-    [ ./hardware-configuration.nix ];
+    [ 
+      ../../modules/fonts.nix
+      ../../modules/nix-maintenance.nix
+      ../../modules/ssh-server.nix
+      ../../modules/tmux.nix
+      ./hardware-configuration.nix 
+    ];
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -23,16 +29,6 @@
   networking.networkmanager.enable = true;  
 
   time.timeZone = "America/New_York";
-
-  fonts.packages = with pkgs; [
-    noto-fonts
-    noto-fonts-cjk-sans
-    noto-fonts-emoji
-    liberation_ttf
-    fira-code
-    fira-code-symbols
-    nerd-fonts.symbols-only
-  ];
 
   security.rtkit.enable = true;
 
@@ -55,25 +51,16 @@
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
 
-  services.openssh = {
-    enable = true;
-    ports = [ 22 ];
-    settings = {
-      PasswordAuthentication = false;
-      PermitRootLogin = "prohibit-password";
-    };
-  };
-
   users.defaultUserShell = pkgs.zsh;
   users.users.root = {
-    openssh.authorizedKeys.keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIRaiMuL8Fr7CmLNg6l0Jsanz47xYKCsehWbBN69v0mn tangy@clipper" ];
+    openssh.authorizedKeys.keyFiles = [ ../../.ssh/clipper.pub ];
   };
   users.users.game = {
     isNormalUser = true;
     createHome = true;
     packages = [ pkgs.koboldcpp pkgs.vesktop pkgs.librewolf pkgs.alvr pkgs.mpv pkgs.rclone ];
     extraGroups = [ "wheel" "networkmanager" "adbusers" ];
-    openssh.authorizedKeys.keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIRaiMuL8Fr7CmLNg6l0Jsanz47xYKCsehWbBN69v0mn tangy@clipper" ];
+    openssh.authorizedKeys.keyFiles = [ ../../.ssh/clipper.pub ];
   };
   systemd.user.services = {
     gamesftp = {
@@ -119,10 +106,6 @@
     enable = true;
     lfs.enable = true;
   };
-  programs.tmux = {
-    enable = true;
-    extraConfig = import ../../modules/tmux.conf; 
-  };
   programs = {
     gamescope = {
       enable = true;
@@ -144,14 +127,11 @@
 
   networking.firewall.enable = false;
 
-  system.autoUpgrade = {
+  customNixMaintenance = {
     enable = true;
-    flake = "github:gentmantan/dotfiles#gaming";
-    flags = [ "-L" ];
-    dates = "02:00";
-    randomizedDelaySec = "45min";
+    hostName = "gaming";
   };
-  
+
   system.stateVersion = "24.11"; 
 }
 
