@@ -8,6 +8,7 @@
       imports = [ 
         ../../modules/tmux.nix
         ../../modules/ssh-server.nix
+        ../../modules/oci-containers/default-baobab.nix
       ];
 
       networking.firewall.enable = false;
