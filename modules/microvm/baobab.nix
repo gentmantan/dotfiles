@@ -35,7 +35,11 @@
         };
 
         # Begin container related config
-        imports = [ ../containers/default-baobab.nix ];
+        imports = [ 
+        ../../modules/tmux.nix
+        ../../modules/ssh-server.nix
+        ../containers/default-baobab.nix 
+        ];
 
         systemd.network.enable = true;
         systemd.network.networks."20-lan" = {
@@ -51,14 +55,6 @@
         networking.firewall.enable = false;
         networking.hostName = "baobab";
 
-        services.openssh = {
-          enable = true;
-          ports = [ 22 ];
-          settings = {
-            PasswordAuthentication = false;
-            PermitRootLogin = "prohibit-password";
-          };
-        };
 
         users.users.root = {
           openssh.authorizedKeys.keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIRaiMuL8Fr7CmLNg6l0Jsanz47xYKCsehWbBN69v0mn tangy@clipper" ];
