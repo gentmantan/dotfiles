@@ -38,7 +38,7 @@
         imports = [ 
         ../../modules/tmux.nix
         ../../modules/ssh-server.nix
-        ../containers/default-baobab.nix 
+        ../oci-containers/default-baobab.nix 
         ];
 
         systemd.network.enable = true;
