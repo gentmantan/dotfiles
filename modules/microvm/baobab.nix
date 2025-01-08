@@ -42,15 +42,19 @@
         ];
 
         systemd.network.enable = true;
-        systemd.network.networks."20-lan" = {
+        systemd.network.networks."10-docker" = {
           matchConfig.Type = "veth*";
-          networkConfig = {
-            DHCP = "yes";
-          };
           linkConfig = {
             Unmanaged = true;
-            RequiredForOnline = "routable";
           };
+        };
+        systemd.network.networks."20-lan" = {
+          matchConfig.Type = "enp*";
+          networkConfig = {
+            DHCP = "ipv4";
+            IPv6AcceptRA = true;
+          };
+          linkConfig.RequiredForOnline = "routable";
         };
         networking.firewall.enable = false;
         networking.hostName = "baobab";
