@@ -55,6 +55,9 @@
         networking.firewall.enable = false;
         networking.hostName = "baobab";
 
+        services.openssh.hostKeys = [
+          { path = /config/ssh/baobab_ssh_host_ed25519_key; type = "ed25519"; }
+        ];
 
         users.users.root = {
           openssh.authorizedKeys.keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIRaiMuL8Fr7CmLNg6l0Jsanz47xYKCsehWbBN69v0mn tangy@clipper" ];
