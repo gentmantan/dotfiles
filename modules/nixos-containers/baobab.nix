@@ -1,9 +1,9 @@
+{ lib, ... }:
 {
   containers.baobab = {
     autoStart = true;
     privateNetwork = true;
     hostBridge = "br0";
-    localAddress = "192.168.0.7/24";
     config = {
       imports = [ 
         ../../modules/tmux.nix
@@ -13,6 +13,8 @@
 
       networking.firewall.enable = false;
       networking.hostName = "baobab";
+      networking.useDHCP = lib.mkForce true;
+      services.resolved.enable = true;
 
       users.users.root = {
         openssh.authorizedKeys.keyFiles = [ ../../.ssh/clipper.pub ];
