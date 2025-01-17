@@ -5,6 +5,7 @@
     ../../modules/fonts.nix
     ../../modules/nix-maintenance.nix
     ../../modules/tmux.nix
+    ../../modules/virt-manager.nix
     ./hardware-configuration.nix 
   ];
 
