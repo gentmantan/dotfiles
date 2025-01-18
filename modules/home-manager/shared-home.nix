@@ -25,6 +25,7 @@
     pkgs.nmap
     pkgs.plantuml-c4
     pkgs.hyprsunset
+    pkgs.quickemu
   ];
 
   xdg.userDirs = {

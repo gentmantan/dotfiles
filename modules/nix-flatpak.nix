@@ -4,7 +4,6 @@
       "io.gitlab.librewolf-community"
       "io.freetubeapp.FreeTube"
       "org.mozilla.firefox"
-      "org.gnome.Boxes"
       "org.keepassxc.KeePassXC"
       "org.localsend.localsend_app"
       "org.getmonero.Monero"
@@ -110,11 +109,6 @@
         "Session Bus Policy" = {
           "org.kde.*" = "none";
         };
-      };
-      "org.gnome.Boxes".Context = {
-        sockets = [ "pulseaudio" ];
-        devices = [ "kvm" ];
-        filesystems = [ "~/isos:create" ];
       };
       "com.github.johnfactotum.Foliate".Environment = {
         GTK_THEME = "";

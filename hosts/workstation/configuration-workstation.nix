@@ -5,7 +5,6 @@
     ../../modules/fonts.nix
     ../../modules/nix-maintenance.nix
     ../../modules/tmux.nix
-    ../../modules/virt-manager.nix
     ./hardware-configuration.nix 
   ];
 
@@ -97,6 +96,7 @@
   virtualisation = {
     containers.enable = true;
     podman.enable = true;
+    spiceUSBRedirection.enable = true;
   };
 
   networking.firewall.enable = false; # FIXME: Choose if you want a firewall
