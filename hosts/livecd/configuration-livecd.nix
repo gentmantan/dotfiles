@@ -1,15 +1,19 @@
 { pkgs, lib, modulesPath, ... }:
+with pkgs;
 {
-  imports = [ (modulesPath + "/installer/cd-dvd/installation-cd-minimal-new-kernel.nix") ];
+  imports = [ 
+    (modulesPath + "/installer/cd-dvd/installation-cd-minimal-new-kernel.nix") 
+    ../../modules/tmux.nix
+  ];
   boot.supportedFilesystems = [ "bcachefs" ];
-  boot.kernelPackages = lib.mkOverride 0 pkgs.linuxPackages_latest;
+  boot.kernelPackages = lib.mkOverride 0 linuxPackages_latest;
   networking.wireless.enable = false;
   networking.networkmanager.enable = true;
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   services.openssh.enable = true;
-  users.users.root.openssh.authorizedKeys.keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIRaiMuL8Fr7CmLNg6l0Jsanz47xYKCsehWbBN69v0mn tangy@clipper" ];
+  users.users.root.openssh.authorizedKeys.keyFiles = [ ../../.ssh/clipper.pub ];
 
   programs.neovim = {
     enable = true;
@@ -26,5 +30,17 @@
     viAlias = true;
   };
 
-  environment.systemPackages = [ pkgs.parted pkgs.nmap pkgs.testdisk pkgs.partclone pkgs.ddrescue pkgs.rsync pkgs.smartmontools ];
+  environment.systemPackages = [ 
+    chntpw
+    clamav
+    ddrescue
+    dmidecode
+    lshw
+    nmap
+    partclone
+    parted
+    rsync
+    smartmontools
+    testdisk
+  ];
 }
