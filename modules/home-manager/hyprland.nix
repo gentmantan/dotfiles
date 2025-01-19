@@ -78,7 +78,7 @@
         ", XF86AudioPrev, exec, playerctl previous"
         ", XF86Tools, exec, playerctl play-pause"
         ", XF86Favorites, exec, playerctl next"
-        ", XF86Bluetooth, exec, playerctl previous"
+        ", XF86Keyboard, exec, playerctl previous"
         ", XF86MonBrightnessUp, exec, brightnessctl set +10%"
         ", XF86MonBrightnessDown, exec, brightnessctl set --min-value=1 10%-"
         ", XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.5 @DEFAULT_SINK@ 5%+ && wpctl set-mute @DEFAULT_SINK@ off"
