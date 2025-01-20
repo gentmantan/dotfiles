@@ -48,7 +48,7 @@
           "format-disabled" = "󰂲";
           "format-off" = "󰂲";
           "format-connected" = "󰂱 {device_battery_percentage}";
-          "on-click" = "if bluetoothctl show | grep -q 'Powered: no'; then bluetoothctl power on; else; bluetoothctl power off; fi";
+          "on-click" = "bluetoothctl show | grep -q 'Powered: yes' && bluetoothctl power off || bluetoothctl power on";
         };
         "clock" = {
           "tooltip-format" = "<tt><small>{calendar}</small></tt>";
