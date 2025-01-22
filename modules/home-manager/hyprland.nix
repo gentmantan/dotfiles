@@ -103,6 +103,8 @@
         "$mainMod SHIFT, minus, movetoworkspacesilent, special"
         "$mainMod, minus, togglespecialworkspace, special"
         ", Print, exec, slurp | grim -g - - | wl-copy"
+        "$mainMod, [, exec, curr=$(hyprctl getoption general:gaps_out | grep -o '[-][0-9]+|[0-9]+' | head -n 1) && hyprctl keyword general:gaps_out $(($curr <= 20 ? 20 : $curr - 50))"
+        "$mainMod, ], exec, curr=$(hyprctl getoption general:gaps_out | grep -o '[-][0-9]+|[0-9]+' | head -n 1) && hyprctl keyword general:gaps_out $(($curr >= 220 ? 220 : $curr + 50))"
         "$mainMod, h, movefocus, l"
         "$mainMod, l, movefocus, r"
         "$mainMod, k, movefocus, u"
