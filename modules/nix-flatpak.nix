@@ -25,6 +25,7 @@
       "io.github.ungoogled_software.ungoogled_chromium"
       "org.onlyoffice.desktopeditors"
       "net.ankiweb.Anki"
+      "com.obsproject.Studio"
     ];
     overrides = {
       global = { # Permissions are set to be quite restrictive by default. I prefer to customize them on a per app basis
@@ -123,6 +124,9 @@
       };
       "org.mozilla.Thunderbird".Context = {
         sockets = [ "cups" ];
+      };
+      "com.obsproject.Studio".Context = {
+        sockets = [ "pulseaudio" ];
       };
     };
     uninstallUnmanaged = true;
