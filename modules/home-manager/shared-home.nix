@@ -7,6 +7,7 @@
       ./hyprland.nix 
       ./hyprlock.nix
       ./kitty.nix
+      ./mako.nix
       ./waybar.nix
       ./zsh.nix
     ];
