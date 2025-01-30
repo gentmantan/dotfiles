@@ -15,18 +15,19 @@
   home.stateVersion = "25.05";
 
   home.packages = [
-    pkgs.grim
-    pkgs.slurp
-    pkgs.playerctl
     pkgs.brightnessctl
-    pkgs.wl-clipboard
-    pkgs.qrencode
-    pkgs.p7zip
-    pkgs.rclone
-    pkgs.nmap
-    pkgs.plantuml-c4
+    pkgs.grim
     pkgs.hyprsunset
+    pkgs.nmap
+    pkgs.p7zip
+    pkgs.plantuml-c4
+    pkgs.playerctl
+    pkgs.qrencode
     pkgs.quickemu
+    pkgs.rclone
+    pkgs.slurp
+    pkgs.wl-clipboard
+    pkgs.wl-screenrec
   ];
 
   xdg.userDirs = {
