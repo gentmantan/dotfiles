@@ -91,6 +91,7 @@
         "$mainMod, Return, exec, $terminal"
         "$mainMod, W, exec, $privatebrowser"
         "$mainMod SHIFT, W, exec, $normalbrowser"
+        "$mainMod CTRL, W, exec, $torbrowser"
         "$mainMod SHIFT, T, exec, $email"
         "$mainMod SHIFT, P, exec, $pass"
         "$mainMod, Q, killactive"
