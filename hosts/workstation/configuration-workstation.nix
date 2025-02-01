@@ -69,6 +69,8 @@
     extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
 
+  services.pcscd.enable = true;
+
   users.users.tangy = { # FIXME: Change the username. Choose wisely!
     isNormalUser = true;
     createHome = true;
