@@ -184,6 +184,11 @@
       bind = , s, exec, systemctl poweroff
       bind = , escape, submap, reset
       submap = reset
+
+      bind = $mainMod,Escape,submap,passthru
+      submap = passthru
+      bind = $mainMod,Escape,submap,reset
+      submap = reset
     '';
   }; # Using extraConfig because submap is not able to be defined multiple times
 }
