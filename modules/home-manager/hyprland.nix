@@ -88,7 +88,7 @@
       ];
 
       bind = [ 
-        "$mainMod, Return, exec, $terminal"
+        "$mainMod, Return&T, exec, $terminal"
         "$mainMod, W, exec, $privatebrowser"
         "$mainMod SHIFT, W, exec, $normalbrowser"
         "$mainMod CTRL, W, exec, $torbrowser"
