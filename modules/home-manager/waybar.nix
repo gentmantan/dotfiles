@@ -99,7 +99,7 @@
           "tooltip-format-wifi" = " {essid} {ipaddr}/{cidr} {signalStrength}% {frequency} {bandwidthUpBits} {bandwidthDownBits}";
           "tooltip-format-ethernet" = "󰈀 {ifname} {ipaddr}/{cidr} via {gwaddr}";
           "tooltip-format-disconnected" = "Disconnected";
-          "max-length" = 50;
+          "max-length" = 25;
         };
         "temperature" = {
           "critical-threshold" = 80;
