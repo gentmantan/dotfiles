@@ -199,6 +199,10 @@
       }
       
       #battery.warning:not(.charging) {
+        color: @yellow;
+      }
+
+      #battery.critical:not(.charging) {
         color: @red;
       }
       
@@ -216,7 +220,7 @@
         color: @green;
       }
       
-      #wireplumber {
+      #wireplumber.muted {
         color: @maroon;
       }
       
