@@ -26,6 +26,7 @@
       "org.onlyoffice.desktopeditors"
       "net.ankiweb.Anki"
       "com.obsproject.Studio"
+      "org.kde.kdenlive"
     ];
     overrides = {
       global = { # Permissions are set to be quite restrictive by default. I prefer to customize them on a per app basis
@@ -127,6 +128,10 @@
       };
       "com.obsproject.Studio".Context = {
         sockets = [ "pulseaudio" ];
+      };
+      "org.kde.kdenlive".Context = {
+        sockets = [ "pulseaudio" ];
+        filesystems = [ "xdg-videos" ];
       };
     };
     uninstallUnmanaged = true;
