@@ -9,6 +9,7 @@
       ./kitty.nix
       ./mako.nix
       ./waybar.nix
+      ./xdg-portal.nix
       ./zsh.nix
     ];
 
