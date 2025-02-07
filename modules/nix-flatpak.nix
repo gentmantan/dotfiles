@@ -34,7 +34,7 @@
         Context = {
           sockets = [ "wayland" "!x11" "!fallback-x11" "!pulseaudio" "!session-bus" "!system-bus" "!pcsc" "!cups" "!ssh-auth" "!gpg-agent" ]; 
           shared = [ "!ipc" ];
-          devices = [ "dri" "!shm" "!kvm" "!all" ];
+          devices = [ "dri" "!shm" "!kvm" "!all" "!usb" "!input" ];
           features = [ "!devel" "!multiarch" "!bluetooth" "!canbus" "!per-app-dev-shm" ];
           filesystems = [ "!host:reset" ];
         };
@@ -53,9 +53,14 @@
           "org.freedesktop.secrets" = "none";
         };
       };
-      "io.gitlab.librewolf-community".Context = {
-        sockets = [ "pulseaudio" "cups" ];
-        filesystems = [ "xdg-download/librewolf:create" ];
+      "io.gitlab.librewolf-community" = {
+        Context = {
+          sockets = [ "pulseaudio" "cups" ];
+          filesystems = [ "xdg-download/librewolf:create" ];
+        };
+        "USB Devices" = { # Passthrough Yubikey 
+          "enumerable-devices" = [ "vnd:1050+dev:0407" ];
+        };
       };
       "io.freetubeapp.FreeTube".Context = {
         sockets = [ "pulseaudio" ];
@@ -106,10 +111,12 @@
       "us.zoom.Zoom" = {
         Context = {
           sockets = [ "x11" "pulseaudio" ];
-          devices = [ "all" ];
         };
         "Session Bus Policy" = {
           "org.kde.*" = "none";
+        };
+        "USB Devices" = { # Passthrough USB webcams
+          "enumerable-devices" = [ "vnd:04ca+dev:7070" "vnd:2ca3+dev:0021" ];
         };
       };
       "com.github.johnfactotum.Foliate".Environment = {
