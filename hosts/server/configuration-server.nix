@@ -11,6 +11,9 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  boot.zfs.extraPools = [ "flock0" ];
+  services.zfs.autoScrub.enable = true;
+
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   networking.hostName = "barquentine";
