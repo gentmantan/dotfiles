@@ -3,23 +3,12 @@
     ../../modules/nix-maintenance.nix
     ../../modules/ssh-server.nix
     ../../modules/tmux.nix
+    ../../modules/containers/default.nix
     ./hardware-configuration.nix 
   ];
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.initrd = {
-    availableKernelModules = [ "igc" ];
-    network = {
-      enable = true;
-      ssh = {
-        enable = true;
-        port = 2222;
-        hostKeys = [ /config/ssh/remote_unlock_ssh_host_ed25519_key ];
-        authorizedKeyFiles = [ ../../.ssh/clipper.pub ];
-      };
-    };
-  };
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
@@ -27,18 +16,11 @@
   networking.hostId = "8afd8e00";
   networking.firewall.enable = false;
 
-  systemd.network.enable = true;
-
   time.timeZone = "America/New_York";
 
   services.fwupd.enable = true;
 
   users.users.root = {
-    openssh.authorizedKeys.keyFiles = [ ../../.ssh/clipper.pub ];
-  };
-  users.users.user = {
-    isNormalUser = true;
-    createHome = true;
     openssh.authorizedKeys.keyFiles = [ ../../.ssh/clipper.pub ];
   };
 
