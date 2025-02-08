@@ -4,6 +4,7 @@
     ./iperf.nix 
     ./jdownloader.nix
     ./immich.nix
+    ./qbittorrent.nix
   ];
   virtualisation = {
     containers.enable = true;
