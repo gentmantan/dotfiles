@@ -20,6 +20,7 @@
       };
     };
   };
+  boot.zfs.extraPools = [ "flock0" ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
