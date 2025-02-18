@@ -1,5 +1,6 @@
 {
   services.flatpak = { # FIXME: Edit this list with your favorite apps!
+                       # Note that the first installation may take long with too many apps  
     packages = [
       "io.gitlab.librewolf-community"
       "io.freetubeapp.FreeTube"
@@ -28,6 +29,10 @@
       "com.obsproject.Studio"
       "org.kde.kdenlive"
       "com.rustdesk.RustDesk"
+      "net.werwolv.ImHex"
+      "org.openscad.OpenSCAD"
+      "org.prismlauncher.PrismLauncher"
+      "at.vintagestory.VintageStory"
     ];
     overrides = {
       global = { # Permissions are set to be quite restrictive by default. I prefer to customize them on a per app basis
@@ -140,6 +145,12 @@
       "org.kde.kdenlive".Context = {
         sockets = [ "pulseaudio" ];
         filesystems = [ "xdg-videos" ];
+      };
+      "org.prismlauncher.PrismLauncher" = {
+        sockets = [ "pulseaudio" ];
+      };
+      "at.vintagestory.VintageStory" = {
+        sockets = [ "pulseaudio" ];
       };
     };
     uninstallUnmanaged = true;
