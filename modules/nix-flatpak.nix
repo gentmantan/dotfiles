@@ -146,10 +146,10 @@
         sockets = [ "pulseaudio" ];
         filesystems = [ "xdg-videos" ];
       };
-      "org.prismlauncher.PrismLauncher" = {
+      "org.prismlauncher.PrismLauncher".Context = {
         sockets = [ "pulseaudio" ];
       };
-      "at.vintagestory.VintageStory" = {
+      "at.vintagestory.VintageStory".Context = {
         sockets = [ "pulseaudio" ];
       };
     };
