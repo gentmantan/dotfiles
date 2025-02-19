@@ -41,6 +41,7 @@
             "paused" = "";
           };
           "ignored-players" = [ "firefox" ];
+          "title-len" = 75;
         };
 
         bluetooth = {
