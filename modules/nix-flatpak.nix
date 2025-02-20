@@ -80,7 +80,7 @@
         filesystems = [ "~/KPass" ];
       };
       "org.getmonero.Monero".Context = {
-        filesystems = [ "~/.bitmonero:create" "~/Monero:create" ];
+        filesystems = [ "~/Monero:create" ];
       };
       "org.gimp.GIMP".Context = {
         sockets = [ "x11" ];
