@@ -152,6 +152,9 @@
       "at.vintagestory.VintageStory".Context = {
         sockets = [ "pulseaudio" ];
       };
+      "org.localsend.localsend_app".Context = {
+        filesystems = [ "xdg-download/localsend:create" ];
+      };
     };
     uninstallUnmanaged = true;
     update.auto.enable = true;
