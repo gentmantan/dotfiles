@@ -157,6 +157,10 @@
       };
     };
     uninstallUnmanaged = true;
-    update.auto.enable = true;
+    uninstallUnused = true;
+    update.auto = {
+      enable = true;
+      onCalendar = "daily";
+    };
   };
 }
