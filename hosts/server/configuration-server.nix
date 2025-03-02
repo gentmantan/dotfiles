@@ -24,7 +24,7 @@
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  networking.hostName = "barquentine";
+  networking.hostName = "panamax";
   networking.hostId = "8afd8e00";
   networking.firewall.enable = false;
 
