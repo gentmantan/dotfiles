@@ -37,11 +37,6 @@
   users.users.root = {
     openssh.authorizedKeys.keyFiles = [ ../../.ssh/clipper.pub ];
   };
-  users.users.user = {
-    isNormalUser = true;
-    createHome = true;
-    openssh.authorizedKeys.keyFiles = [ ../../.ssh/clipper.pub ];
-  };
 
   programs.git = {
     enable = true;
