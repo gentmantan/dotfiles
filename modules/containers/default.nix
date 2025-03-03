@@ -5,6 +5,7 @@
     ./caddy.nix
     ./immich.nix
     ./jdownloader.nix
+    ./jellyfin.nix
     ./librespeed.nix
     ./privatebin.nix
   ];
