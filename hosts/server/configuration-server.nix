@@ -3,6 +3,7 @@
     ../../modules/nix-maintenance.nix
     ../../modules/ssh-server.nix
     ../../modules/tmux.nix
+    ../../modules/containers/default.nix
     ./hardware-configuration.nix 
   ];
 
