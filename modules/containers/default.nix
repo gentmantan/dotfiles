@@ -1,10 +1,10 @@
 {
   # Choose which containers are present in which systems
   imports = [ 
-    ./caddy.nix
     ./bookstack.nix
-    ./iperf.nix 
+    ./caddy.nix
     ./jdownloader.nix
+    ./librespeed.nix
   ];
   virtualisation = {
     containers.enable = true;
