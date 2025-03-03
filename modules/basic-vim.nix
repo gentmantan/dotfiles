@@ -4,10 +4,7 @@
     configure = {
       customRC = ''
         set number relativenumber
-	filetype plugin indent on
-	tabstop=2
-        shiftwidth=2
-	expandtab
+        filetype plugin indent on
       '';
     };
     vimAlias = true;
