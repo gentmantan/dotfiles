@@ -3,6 +3,7 @@
   imports = [ 
     ./bookstack.nix
     ./caddy.nix
+    ./immich.nix
     ./jdownloader.nix
     ./librespeed.nix
     ./privatebin.nix
