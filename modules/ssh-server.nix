@@ -5,6 +5,7 @@
     settings = {
       PasswordAuthentication = false;
       PermitRootLogin = "prohibit-password";
+      KbdInteractiveAuthentication = false;
     };
   };
 }
