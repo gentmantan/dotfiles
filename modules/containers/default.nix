@@ -8,6 +8,7 @@
     ./jellyfin.nix
     ./librespeed.nix
     ./privatebin.nix
+    ./syncthing.nix
   ];
   virtualisation = {
     containers.enable = true;
