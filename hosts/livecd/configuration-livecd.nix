@@ -4,6 +4,7 @@ with pkgs;
   imports = [ 
     (modulesPath + "/installer/cd-dvd/installation-cd-minimal-new-kernel.nix") 
     ../../modules/tmux.nix
+    ../../modules/basic-vim.nix
   ];
   boot.supportedFilesystems = [ "bcachefs" ];
   boot.kernelPackages = lib.mkOverride 0 linuxPackages_latest;
@@ -14,21 +15,6 @@ with pkgs;
 
   services.openssh.enable = true;
   users.users.root.openssh.authorizedKeys.keyFiles = [ ../../.ssh/clipper.pub ];
-
-  programs.neovim = {
-    enable = true;
-    configure = {
-      customRC = ''
-        set number relativenumber
-	filetype plugin indent on
-	tabstop=2
-        shiftwidth=2
-	expandtab
-      '';
-    };
-    vimAlias = true;
-    viAlias = true;
-  };
 
   environment.systemPackages = [ 
     chntpw

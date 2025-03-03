@@ -4,6 +4,7 @@
     ../../modules/ssh-server.nix
     ../../modules/tmux.nix
     ../../modules/containers/default.nix
+    ../../modules/basic-vim.nix
     ./hardware-configuration.nix 
   ];
 

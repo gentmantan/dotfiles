@@ -7,6 +7,7 @@
       ../../modules/nix-maintenance.nix
       ../../modules/ssh-server.nix
       ../../modules/tmux.nix
+      ../../modules/basic-vim.nix
       ./hardware-configuration.nix 
     ];
 
@@ -89,17 +90,6 @@
     enable = true;
     autosuggestions.enable = true;
     syntaxHighlighting.enable = true;
-  };
-  programs.neovim = {
-    enable = true;
-    configure = {
-      customRC = ''
-        set number relativenumber
-        filetype plugin indent on
-      '';
-    };
-    viAlias = true;
-    vimAlias = true;
   };
 
   programs.git = {
