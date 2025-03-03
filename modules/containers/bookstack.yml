@@ -1,0 +1,20 @@
+name: bookstack
+services:
+  bookstack:
+    image: lscr.io/linuxserver/bookstack:latest
+    container_name: bookstack
+    volumes:
+      - /config/bookstack/config:/config
+    ports:
+      - 8120:80
+    depends_on:
+      - bookstack-db
+    restart: unless-stopped
+    env_file: /config/env/bookstack.env
+  bookstack-db:
+    image: docker.io/mariadb:latest
+    container_name: bookstack-db
+    volumes:
+      - /config/bookstack/db:/var/lib/mysql
+    env_file: /config/env/bookstack.env
+
