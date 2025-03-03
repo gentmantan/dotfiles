@@ -5,6 +5,7 @@
     ./caddy.nix
     ./jdownloader.nix
     ./librespeed.nix
+    ./privatebin.nix
   ];
   virtualisation = {
     containers.enable = true;
