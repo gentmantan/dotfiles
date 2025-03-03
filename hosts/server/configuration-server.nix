@@ -10,14 +10,15 @@
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.kernelParams = [ "ip=dhcp" ];
   boot.initrd = {
     availableKernelModules = [ "igc" ];
     network = {
       enable = true;
       ssh = {
         enable = true;
-        port = 2222;
-        hostKeys = [ /config/ssh/remote_unlock_ssh_host_ed25519_key ];
+        port = 26572;
+        hostKeys = [ "/config/ssh/remote_unlock_ssh_host_ed25519_key" ];
         authorizedKeyFiles = [ ../../.ssh/clipper.pub ];
       };
     };
