@@ -23,7 +23,7 @@
       ];
       pull = "newer";
       extraOptions = [ 
-        "--restart=unless-stopped"
+        "--restart=on-failure"
         "--network=host" # Required for IPv6 networking
       ];
     };
