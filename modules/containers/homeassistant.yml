@@ -1,0 +1,23 @@
+name: homeassistant
+services:
+  homeassistant:
+    image: ghcr.io/home-assistant/home-assistant:stable
+    container_name: homeassistant
+    volumes:
+      - /config/homeassistant:/config
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - 127.0.0.1:26920:8123
+    depends_on:
+      - zwave-js
+    devices:
+      - /dev/serial/by-id/usb-Silicon_Labs_HubZ_Smart_Home_Controller_C1300971-if01-port0
+  zwave-js:
+    image: docker.io/zwavejs/zwave-js-ui:latest
+    container_name: zwave_js
+    volumes:
+      - /config/zwave-js:/usr/src/app/store
+    ports:
+      - 127.0.0.1:14509:8091
+    devices:
+      - /dev/serial/by-id/usb-Silicon_Labs_HubZ_Smart_Home_Controller_C1300971-if00-port0

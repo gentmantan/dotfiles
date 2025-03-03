@@ -3,6 +3,7 @@
   imports = [ 
     ./bookstack.nix
     ./caddy.nix
+    ./homeassistant.nix
     ./immich.nix
     ./jdownloader.nix
     ./jellyfin.nix
