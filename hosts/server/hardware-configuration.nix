@@ -18,23 +18,8 @@
       fsType = "zfs";
     };
 
-  fileSystems."/nix" =
-    { device = "rpool/nix";
-      fsType = "zfs";
-    };
-
-  fileSystems."/var" =
-    { device = "rpool/var";
-      fsType = "zfs";
-    };
-
-  fileSystems."/home" =
-    { device = "rpool/home";
-      fsType = "zfs";
-    };
-
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/72F0-8913";
+    { device = "/dev/disk/by-uuid/4B97-2F8E";
       fsType = "vfat";
       options = [ "fmask=0077" "dmask=0077" ];
     };
@@ -47,8 +32,6 @@
   # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
   networking.useDHCP = lib.mkDefault true;
   # networking.interfaces.enp5s0.useDHCP = lib.mkDefault true;
-  # networking.interfaces.enp7s0f0np0.useDHCP = lib.mkDefault true;
-  # networking.interfaces.enp7s0f1np1.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
