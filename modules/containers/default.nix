@@ -7,6 +7,7 @@
     ./immich.nix
     ./jdownloader.nix
     ./jellyfin.nix
+    ./komga.nix
     ./lanraragi.nix
     ./librespeed.nix
     ./privatebin.nix
