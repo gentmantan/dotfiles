@@ -58,6 +58,9 @@
   };
   virtualisation.oci-containers.containers."zwave_js" = {
     image = "docker.io/zwavejs/zwave-js-ui:latest";
+    environment = {
+      TRUST_PROXY = "true";
+    };
     volumes = [
       "/config/zwave-js:/usr/src/app/store:rw"
     ];
