@@ -11,6 +11,7 @@
     ./lanraragi.nix
     ./librespeed.nix
     ./privatebin.nix
+    ./sillytavern.nix
     ./syncthing.nix
   ];
   virtualisation = {
