@@ -5,6 +5,7 @@
     ./caddy.nix
     ./homeassistant.nix
     ./immich.nix
+    ./iperf.nix
     ./jdownloader.nix
     ./jellyfin.nix
     ./komga.nix

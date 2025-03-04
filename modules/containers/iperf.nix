@@ -5,8 +5,8 @@
       autoStart = true;
       ports = [ "15555:5201" ];
       pull = "newer";
-      extraOptions = [ "-it" "--restart=on-failure" ];
       cmd = [ "-s" ];
+      extraOptions = [ "-it" ];
     };
   };
 }
