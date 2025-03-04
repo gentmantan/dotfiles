@@ -120,7 +120,7 @@
       "/nest0/immich/import:/mnt/media/import:ro"
     ];
     ports = [
-      "8117:2283/tcp"
+      "127.0.0.1:17770:2283/tcp"
     ];
     dependsOn = [
       "immich_postgres"
