@@ -8,6 +8,9 @@
         "/config/jdownloader:/config"
         "/nest0/jdownloads:/output"
       ];
+      labels = {
+        "io.containers.autoupdate" = "registry";
+      };
       pull = "newer";
       extraOptions = [ "--restart=on-failure" ];
       environmentFiles = [

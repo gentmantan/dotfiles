@@ -9,6 +9,9 @@
         "/nest0/lanraragih/thumb:/home/koyomi/lanraragi/thumb"
         "/config/lanraragih:/home/koyomi/lanraragi/database"
       ];
+      labels = {
+        "io.containers.autoupdate" = "registry";
+      };
       pull = "newer";
       environment = {
         LRR_UID="0";

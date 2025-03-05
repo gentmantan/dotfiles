@@ -10,6 +10,9 @@
         "/nest0/sharedfolders/scans:/samba/scans"
         "/nest0/sharedfolders/takoputergames:/samba/takoputer/takoputergames:ro"
       ];
+      labels = {
+        "io.containers.autoupdate" = "registry";
+      };
       pull = "newer";
       environment = {
         TZ="US/Eastern";

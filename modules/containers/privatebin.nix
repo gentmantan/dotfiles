@@ -10,6 +10,9 @@
         "/config/privatebin/nginx.conf:/etc/nginx/nginx.conf:ro"
         "/nest0/privatebin:/srv/data"
       ];
+      labels = {
+        "io.containers.autoupdate" = "registry";
+      };
       pull = "newer";
       extraOptions = [ "--read-only" ];
     };

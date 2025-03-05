@@ -26,6 +26,9 @@
       "/config/homeassistant:/config:rw"
       "/etc/localtime:/etc/localtime:ro"
     ];
+    labels = {
+      "io.containers.autoupdate" = "registry";
+    };
     ports = [
       "127.0.0.1:26920:8123/tcp"
     ];
@@ -64,6 +67,9 @@
     volumes = [
       "/config/zwave-js:/usr/src/app/store:rw"
     ];
+    labels = {
+      "io.containers.autoupdate" = "registry";
+    };
     ports = [
       "127.0.0.1:14509:8091/tcp"
     ];

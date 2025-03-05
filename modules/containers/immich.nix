@@ -26,6 +26,9 @@
     volumes = [
       "immich_model-cache:/cache:rw"
     ];
+    labels = {
+      "io.containers.autoupdate" = "registry";
+    };
     log-driver = "journald";
     extraOptions = [
       "--network-alias=immich-machine-learning"
@@ -119,6 +122,9 @@
       "/nest0/immich/upload:/usr/src/app/upload:rw"
       "/nest0/immich/import:/mnt/media/import:ro"
     ];
+    labels = {
+      "io.containers.autoupdate" = "registry";
+    };
     ports = [
       "127.0.0.1:17770:2283/tcp"
     ];

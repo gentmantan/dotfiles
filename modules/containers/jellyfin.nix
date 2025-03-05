@@ -9,6 +9,9 @@
         "/config/jellyfin/cache:/cache"
         "/nest0/jellyfin:/media:ro"
       ];
+      labels = {
+        "io.containers.autoupdate" = "registry";
+      };
       pull = "newer";
       extraOptions = [ 
         "--device=/dev/dri/renderD128:/dev/dri/renderD128:rwm"

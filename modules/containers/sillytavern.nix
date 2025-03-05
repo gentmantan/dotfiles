@@ -9,6 +9,9 @@
         "/config/sillytavern/plugins:/home/node/app/plugins"
         "/config/sillytavern/data:/home/node/app/data"
       ];
+      labels = {
+        "io.containers.autoupdate" = "registry";
+      };
       pull = "newer";
       environment = {
         TZ = "America/New_York";

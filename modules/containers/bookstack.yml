@@ -5,6 +5,8 @@ services:
     container_name: bookstack
     volumes:
       - /config/bookstack/config:/config
+    labels:
+      - "io.containers.autoupdate=registry"
     ports:
       - 8120:80
     depends_on:

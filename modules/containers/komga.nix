@@ -8,6 +8,9 @@
         "/config/komga:/config"
         "/nest0/komga:/data"
       ];
+      labels = {
+        "io.containers.autoupdate" = "registry";
+      };
       pull = "newer";
       environmentFiles = [
         /config/env/komga.env

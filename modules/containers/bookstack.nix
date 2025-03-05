@@ -25,6 +25,9 @@
     volumes = [
       "/config/bookstack/config:/config:rw"
     ];
+    labels = {
+      "io.containers.autoupdate" = "registry";
+    };
     ports = [
       "127.0.0.1:8120:80/tcp"
     ];
@@ -62,6 +65,9 @@
     volumes = [
       "/config/bookstack/db:/var/lib/mysql:rw"
     ];
+    labels = {
+      "io.containers.autoupdate" = "registry";
+    };
     log-driver = "journald";
     extraOptions = [
       "--network-alias=bookstack-db"

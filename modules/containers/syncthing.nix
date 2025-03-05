@@ -7,6 +7,9 @@
       volumes = [ 
         "/nest0/syncthing:/var/syncthing"
       ];
+      labels = {
+        "io.containers.autoupdate" = "registry";
+      };
       pull = "newer";
       environment = {
         PUID="0";

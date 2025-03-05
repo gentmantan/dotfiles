@@ -21,6 +21,9 @@
         "/config/games/necesse:/technophile/necesse:ro"
         "/config/games/palworld/Pal/Saved/SaveGames:/technophile/palworld:ro"
       ];
+      labels = {
+        "io.containers.autoupdate" = "registry";
+      };
       pull = "newer";
       extraOptions = [ 
         "--restart=on-failure"
