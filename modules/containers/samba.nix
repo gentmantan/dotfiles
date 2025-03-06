@@ -16,7 +16,6 @@
       pull = "newer";
       environment = {
         TZ="US/Eastern";
-        SAMBA_HOSTS_ALLOW="0.0.0.0/0";
         SAMBA_FOLLOW_SYMLINKS="no";
         SAMBA_WIDE_LINKS="no";
       };
