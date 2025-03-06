@@ -16,6 +16,7 @@
       environment = {
         LRR_UID="0";
         LRR_GID="0";
+        LRR_AUTOFIX_PERMISSIONS="0";
       };
     };
   };
