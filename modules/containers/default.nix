@@ -6,12 +6,12 @@
     ./homeassistant.nix
     ./immich.nix
     ./iperf.nix
-    ./jdownloader.nix
     ./jellyfin.nix
     ./komga.nix
     ./lanraragi.nix
     ./librespeed.nix
     ./privatebin.nix
+    ./pyload.nix
     ./samba.nix
     ./sillytavern.nix
     ./syncthing.nix
