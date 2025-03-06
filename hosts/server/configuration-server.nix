@@ -24,6 +24,8 @@
   };
   boot.zfs.extraPools = [ "flock0" ];
 
+  zramSwap.enable = true;
+
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   networking.hostName = "panamax";
