@@ -1,5 +1,5 @@
 # ❄️ My NixOS Dotfiles ❄️
-*'Yeah, I have a CI/CD workflow for my dotfiles. 😎' edition*
+*'The cloud is just someone else's computer... except when it's your computer ☁️' edition*
 
 [![Flake check](https://github.com/gentmantan/dotfiles/actions/workflows/test.yml/badge.svg)](https://github.com/gentmantan/dotfiles/actions/workflows/test.yml)
 [![Flake update](https://github.com/gentmantan/dotfiles/actions/workflows/update.yml/badge.svg)](https://github.com/gentmantan/dotfiles/actions/workflows/update.yml)
@@ -9,8 +9,8 @@
 
 ## Overview
 This repository contains my NixOS configuration files. It includes separate flake references for several systems:
- - 💻 The [#workstation](./hosts/workstation/configuration-workstation.nix) configuration in particular is of interest due to its use of [flatpak sandboxing](./modules/nix-flatpak.nix) to isolate user applications, as well as waybar and hyprland for window managment. 
- - ☁️ The [#server](./hosts/server/configuration-server.nix) configuration is set up with the host acting as a type 2 hypervisor, utilizing [microvm.nix](https://github.com/astro/microvm.nix) virtual machines that themselves host services using [podman](https://github.com/containers/podman).
+ - 💻 The [#workstation](./hosts/workstation/configuration-workstation.nix) configuration is interesting because it uses [flatpak sandboxing](./modules/nix-flatpak.nix) to isolate user applications, as well as [hyprland](https://github.com/hyprwm/Hyprland) for window managment and [nixvim](https://github.com/nix-community/nixvim) for text editing. 
+ - ☁️ The [#server](./hosts/server/configuration-server.nix) configuration sets up a host that serves a bunch of containers using [podman](https://github.com/containers/podman) with support for remote unlocking and automatic OS/container upgrades.
  - 🎮 The [#gaming](./hosts/gaming/configuration-gaming.nix) configuration has both KDE and gamescope enabled as compositors, allowing you to choose either in KDM (the login screen). [With a few lines](https://search.nixos.org/options?channel=unstable&query=displayManager.autoLogin) you can also reconfigure it to auto-login to gamescope, making it truly deck-like.
  - 💿 The [#livecd](./hosts/server/configuration-server.nix) configuration is able to create a custom ISO with some of my favorite recovery tools, as well as an OpenSSH server. Build it by running `nix build .#nixosConfigurations.my-iso.config.system.build.isoImage`.
 
@@ -25,17 +25,17 @@ I go into more detail in an upcoming blog post as to how I came about planning a
    - 💡 Pro tip: You can search for these by running `grep --color=auto -rni "FIXME" <repo path>`
 4. Replace the `hardware-configuration.nix` in `./hosts/<name of host>/` with that of which pertains to your own computer's.
    - 💡 Pro tip: The `hardware-configuration.nix` file should be located in `/etc/nixos`. If you don't see it, you can run `nixos-generate-config --dir <empty dir>` to generate it.
-5. Run `nixos-rebuild switch --flake <path to your flake root>#<attribute>`, where `<attribute>` is either 'gaming' or 'workstation'.
+5. Run `nixos-rebuild switch --flake <path to your flake root>#<attribute>`, where `<attribute>` is either 'workstation', 'server' or 'gaming'.
    - If you have pushed changes to your own repo you can also build your system straight off of github using `nixos-rebuild switch github:<github username>/<reponame>#<attribute>`
 6. Enjoy reproducable Linux!
    
 ## To-do
 - [x] Refractor the repo to look more like a proper flake directory
 - [x] Make a github action to automate upgrading the flake
-- [ ] Put package and service definitions in separate nix files
-- [ ] Set up agenix for secrets management
+- [x] Put package and service definitions in separate nix files
+- [x] Configure server
+  - [x] Add remote unlocking
+  - [x] Add podman containers
+  - [x] Setup [podman auto update](https://docs.podman.io/en/latest/markdown/podman-auto-update.1.html) daemon
+  - [ ] Setup wireguard networking for containers 
 - [ ] Set up nixos-anywhere for automatic deployment
-- [ ] Configure server
-  - [x] Add microvms
-  - [ ] Add podman containers
-  - [ ] Setup VPN connection
