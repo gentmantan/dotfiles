@@ -13,9 +13,9 @@
         "io.containers.autoupdate" = "registry";
       };
       pull = "newer";
-      extraOptions = [ 
-        "--device=/dev/dri/renderD128:/dev/dri/renderD128:rwm"
-      ];
+      #extraOptions = [ 
+      #  "--device=/dev/dri/renderD128:/dev/dri/renderD128:rwm"
+      #];
     };
   };
 }
