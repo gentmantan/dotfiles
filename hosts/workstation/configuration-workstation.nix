@@ -18,6 +18,8 @@
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = false;
 
+  zramSwap.enable = true;
+
   # TODO: Programs, services etc. should be in separate nix files for better composability
 
   services.fwupd.enable = true;
