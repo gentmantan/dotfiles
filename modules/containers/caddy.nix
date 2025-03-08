@@ -6,6 +6,7 @@
       volumes = [
         "/config/caddy/Caddyfile:/etc/caddy/Caddyfile:ro"
         "/config/caddy/site:/srv"
+        "/config/caddy/certs:/certs:ro"
         "caddy_data:/data"
         "caddy_config:/config"
         "/config/games/terraria2/world/The_Buahsterlands.wld:/technophile/terraria/The_Buahsterlands.wld:ro"
