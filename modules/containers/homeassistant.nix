@@ -44,7 +44,7 @@
   };
   systemd.services."podman-homeassistant" = {
     serviceConfig = {
-      Restart = lib.mkOverride 90 "no";
+      Restart = lib.mkOverride 90 "always";
     };
     after = [
       "podman-network-homeassistant_default.service"
@@ -82,7 +82,7 @@
   };
   systemd.services."podman-zwave_js" = {
     serviceConfig = {
-      Restart = lib.mkOverride 90 "no";
+      Restart = lib.mkOverride 90 "always";
     };
     after = [
       "podman-network-homeassistant_default.service"

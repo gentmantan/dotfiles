@@ -2,6 +2,7 @@ name: homeassistant
 services:
   homeassistant:
     image: ghcr.io/home-assistant/home-assistant:stable
+    restart: always 
     container_name: homeassistant
     volumes:
       - /config/homeassistant:/config
@@ -16,6 +17,7 @@ services:
       - /dev/serial/by-id/usb-Silicon_Labs_HubZ_Smart_Home_Controller_C1300971-if01-port0
   zwave-js:
     image: docker.io/zwavejs/zwave-js-ui:latest
+    restart: always 
     container_name: zwave_js
     volumes:
       - /config/zwave-js:/usr/src/app/store
