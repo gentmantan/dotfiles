@@ -5,7 +5,6 @@
     ../../modules/fonts.nix
     ../../modules/nix-maintenance.nix
     ../../modules/tmux.nix
-    ../../modules/intel-gpu.nix
     ./hardware-configuration.nix 
   ];
 

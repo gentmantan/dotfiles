@@ -11,7 +11,7 @@
       "$terminal" = "kitty";
       "$pass" = "flatpak run org.keepassxc.KeePassXC";
 
-      monitor=",preferred,auto,1,vrr,1";
+      monitor=",preferred,auto,1.333,vrr,1";
       exec-once="waybar";
 
       general = {
@@ -151,18 +151,10 @@
         "$mainMod SHIFT, l, movewindoworgroup, r"
         "$mainMod, mouse_down, workspace, e+1"
         "$mainMod, mouse_up, workspace, e-1"
-        "$mainMod&Alt_L, k, exec, hyprctl keyword monitor ,preferred,auto,1,vrr,1,transform,0"
-        "$mainMod&Alt_L, k, exec, hyprctl keyword input:touchdevice:transform 0"
-        "$mainMod&Alt_L, k, exec, hyprctl keyword input:tablet:transform 0"
-        "$mainMod&Alt_L, h, exec, hyprctl keyword monitor ,preferred,auto,1,vrr,1,transform,1"
-        "$mainMod&Alt_L, h, exec, hyprctl keyword input:touchdevice:transform 1"
-        "$mainMod&Alt_L, h, exec, hyprctl keyword input:tablet:transform 1"
-        "$mainMod&Alt_L, j, exec, hyprctl keyword monitor ,preferred,auto,1,vrr,1,transform,2"
-        "$mainMod&Alt_L, j, exec, hyprctl keyword input:touchdevice:transform 2"
-        "$mainMod&Alt_L, j, exec, hyprctl keyword input:tablet:transform 2"
-        "$mainMod&Alt_L, l, exec, hyprctl keyword monitor ,preferred,auto,1,vrr,1,transform,3"
-        "$mainMod&Alt_L, l, exec, hyprctl keyword input:touchdevice:transform 3"
-        "$mainMod&Alt_L, l, exec, hyprctl keyword input:tablet:transform 3"
+        "$mainMod&Alt_L, k, exec, hyprctl keyword monitor ,preferred,auto,1.333,vrr,1,transform,0"
+        "$mainMod&Alt_L, h, exec, hyprctl keyword monitor ,preferred,auto,1.333,vrr,1,transform,1"
+        "$mainMod&Alt_L, j, exec, hyprctl keyword monitor ,preferred,auto,1.333,vrr,1,transform,2"
+        "$mainMod&Alt_L, l, exec, hyprctl keyword monitor ,preferred,auto,1.333,vrr,1,transform,3"
       ];
       bindm = [ 
         "$mainMod, mouse:272, movewindow"
