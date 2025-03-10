@@ -66,6 +66,10 @@
         kb_options="ctrl:nocaps";
         sensitivity=0;
       };
+      gestures = {
+        workspace_swipe = true;
+        workspace_swipe_forever = true;
+      };
       env = [
         "XCURSOR_SIZE,38"
         "HYPRCURSOR_SIZE,38"
