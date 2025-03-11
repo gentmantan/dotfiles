@@ -79,7 +79,6 @@
     syntaxHighlighting.enable = true;
   };
   programs.hyprland.enable = true;
-  programs.firejail.enable = true;
 
   virtualisation = {
     containers.enable = true;
