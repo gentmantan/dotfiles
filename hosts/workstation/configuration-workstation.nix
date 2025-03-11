@@ -19,8 +19,6 @@
 
   zramSwap.enable = true;
 
-  # TODO: Programs, services etc. should be in separate nix files for better composability
-
   services.fwupd.enable = true;
 
   # Enabling nix flakes
@@ -69,7 +67,7 @@
   nixpkgs.config.allowUnfree = false; # FIXME: Choose whether or not to allow non-foss
                                       # nixpkgs packages. Does not apply to flatpaks
 
-  # Shell (can also be configured in ./home-manager)
+  # Shell (configured in /modules/home-manager/zsh.nix)
   users.defaultUserShell = pkgs.zsh; 
 
   # Programs
