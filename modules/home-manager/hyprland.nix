@@ -11,7 +11,10 @@
       "$terminal" = "kitty";
       "$pass" = "flatpak run org.keepassxc.KeePassXC";
 
-      monitor=",preferred,auto,1.333,vrr,1";
+      monitor = [
+        "eDP-1,preferred,auto,1.333,vrr,1"
+        "model:Gigabyte M32U,3840x2160@144,auto,1,vrr,1"
+      ];
       exec-once="waybar";
 
       general = {
@@ -71,8 +74,7 @@
         workspace_swipe_forever = true;
       };
       env = [
-        "XCURSOR_SIZE,38"
-        "HYPRCURSOR_SIZE,38"
+        "HYPRCURSOR_SIZE=32"
         "BEMENU_BACKEND,wayland"
       ];
 
@@ -151,10 +153,10 @@
         "$mainMod SHIFT, l, movewindoworgroup, r"
         "$mainMod, mouse_down, workspace, e+1"
         "$mainMod, mouse_up, workspace, e-1"
-        "$mainMod&Alt_L, k, exec, hyprctl keyword monitor ,preferred,auto,1.333,vrr,1,transform,0"
-        "$mainMod&Alt_L, h, exec, hyprctl keyword monitor ,preferred,auto,1.333,vrr,1,transform,1"
-        "$mainMod&Alt_L, j, exec, hyprctl keyword monitor ,preferred,auto,1.333,vrr,1,transform,2"
-        "$mainMod&Alt_L, l, exec, hyprctl keyword monitor ,preferred,auto,1.333,vrr,1,transform,3"
+        "$mainMod&Alt_L, k, exec, hyprctl keyword monitor eDP-1,preferred,auto,1.333,vrr,1,transform,0"
+        "$mainMod&Alt_L, h, exec, hyprctl keyword monitor eDP-1,preferred,auto,1.333,vrr,1,transform,1"
+        "$mainMod&Alt_L, j, exec, hyprctl keyword monitor eDP-1,preferred,auto,1.333,vrr,1,transform,2"
+        "$mainMod&Alt_L, l, exec, hyprctl keyword monitor eDP-1,preferred,auto,1.333,vrr,1,transform,3"
       ];
       bindm = [ 
         "$mainMod, mouse:272, movewindow"
