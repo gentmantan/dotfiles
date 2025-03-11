@@ -31,16 +31,6 @@
 
   time.timeZone = "America/New_York";
 
-  fonts.packages = with pkgs; [
-    noto-fonts
-    noto-fonts-cjk-sans
-    noto-fonts-emoji
-    liberation_ttf
-    fira-code
-    fira-code-symbols
-    nerd-fonts.symbols-only
-  ];
-
   security.rtkit.enable = true; # For pipewire
   security.pam.services.hyprlock = {};
   security.sudo.enable = false; # FIXME: Choose if you want to use sudo.
