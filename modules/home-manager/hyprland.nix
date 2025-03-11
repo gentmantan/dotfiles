@@ -13,7 +13,7 @@
 
       monitor = [
         "eDP-1,preferred,auto,1.333"
-        "model:Gigabyte M32U,3840x2160@144,auto,1"
+        "desc:GIGA-BYTE TECHNOLOGY CO. LTD. Gigabyte M32U,3840x2160@144,auto,1"
       ];
       exec-once="waybar";
 
