@@ -63,6 +63,7 @@
       };
       input = {
         touchpad = {
+          disable_while_typing=false;
           natural_scroll=true;
         };
         follow_mouse=1;
