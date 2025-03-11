@@ -56,6 +56,8 @@
 
   services.pcscd.enable = true;
 
+  services.auto-cpufreq.enable = true;
+
   users.users.tangy = { # FIXME: Change the username. Choose wisely!
     isNormalUser = true;
     createHome = true;
