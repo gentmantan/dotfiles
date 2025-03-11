@@ -41,7 +41,7 @@
   programs.imv.enable = true;
   programs.mpv = {
     enable = true;
-    scripts = [ pkgs.mpvScripts.mpris ];
+    scripts = [ pkgs.mpvScripts.mpris pkgs.mpvScripts.vr-reversal ];
   };
   programs.yt-dlp.enable = true;
   programs.zathura = {
