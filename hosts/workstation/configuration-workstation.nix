@@ -2,7 +2,6 @@
 
 {
   imports = [ 
-    ../../modules/bluetooth.nix
     ../../modules/fonts.nix
     ../../modules/nix-maintenance.nix
     ../../modules/tmux.nix
@@ -14,6 +13,9 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.supportedFilesystems = [ "bcachefs" ];
   boot.kernelPackages = pkgs.linuxPackages_latest;
+
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = false;
 
   zramSwap.enable = true;
 
