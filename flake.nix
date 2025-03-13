@@ -18,32 +18,31 @@
         ./hosts/livecd/configuration-livecd.nix
         ];
       };
-    };
-    nixosConfigurations.gaming = nixpkgs.lib.nixosSystem {
-      modules = [
-        ./hosts/gaming/configuration-gaming.nix
-      ];
-    };
-    nixosConfigurations.workstation = nixpkgs.lib.nixosSystem {
-      modules = [
-        ./hosts/workstation/configuration-workstation.nix
-        home-manager.nixosModules.home-manager
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.tangy = import ./modules/home-manager/home.nix;
-        }
-        nix-flatpak.nixosModules.nix-flatpak
-        ./modules/nix-flatpak.nix
-        nixvim.nixosModules.nixvim
-        ./modules/nixvim.nix
-      ];
-    };
-    nixosConfigurations.server = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      modules = [
-        ./hosts/server/configuration-server.nix
-      ];
+      gaming = nixpkgs.lib.nixosSystem {
+        modules = [
+          ./hosts/gaming/configuration-gaming.nix
+        ];
+      };
+      workstation = nixpkgs.lib.nixosSystem {
+        modules = [
+          ./hosts/workstation/configuration-workstation.nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.tangy = import ./modules/home-manager/home.nix;
+          }
+          nix-flatpak.nixosModules.nix-flatpak
+          ./modules/nix-flatpak.nix
+          nixvim.nixosModules.nixvim
+          ./modules/nixvim.nix
+        ];
+      };
+      server = nixpkgs.lib.nixosSystem {
+        modules = [
+          ./hosts/server/configuration-server.nix
+        ];
+      };
     };
   };
 }
