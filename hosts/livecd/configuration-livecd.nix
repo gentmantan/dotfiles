@@ -2,7 +2,7 @@
 with pkgs;
 {
   imports = [ 
-    (modulesPath + "/installer/cd-dvd/installation-cd-minimal-new-kernel.nix") 
+    (modulesPath + "/installer/cd-dvd/installation-cd-minimal.nix") 
     ../../modules/tmux.nix
     ../../modules/basic-vim.nix
     ../../modules/ssh-server.nix
