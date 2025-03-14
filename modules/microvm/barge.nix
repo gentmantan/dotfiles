@@ -41,6 +41,7 @@
     { from = "host"; host.address = "127.0.0.1"; host.port = 21349; guest.port = 48316; }
     ];
     microvm = {
+      vcpu = 6;
       mem = 8192;
     };
 
