@@ -20,11 +20,14 @@ with pkgs;
     ddrescue
     dmidecode
     lshw
+    memtest86plus
     nmap
     partclone
     parted
     rsync
+    s-tui
     smartmontools
+    stress-ng
     testdisk
   ];
 }
