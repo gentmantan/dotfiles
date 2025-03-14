@@ -1,6 +1,7 @@
 {
-  # Choose which containers are present in which systems
+  # Choose containers for panamax 
   imports = [ 
+    ./podman.nix
     ./bookstack.nix
     ./caddy.nix
     ./homeassistant.nix
@@ -16,10 +17,4 @@
     ./sillytavern.nix
     ./syncthing.nix
   ];
-  virtualisation = {
-    containers.enable = true;
-    podman.enable = true;
-    oci-containers.backend = "podman";
-  };
-  systemd.timers."podman-auto-update".wantedBy = [ "timers.target" ];
 }

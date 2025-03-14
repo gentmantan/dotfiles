@@ -3,7 +3,7 @@
     ../../modules/nix-maintenance.nix
     ../../modules/ssh-server.nix
     ../../modules/tmux.nix
-    ../../modules/containers/default.nix
+    ../../modules/containers/default-panamax.nix
     ../../modules/basic-vim.nix
     ./hardware-configuration.nix 
   ];
