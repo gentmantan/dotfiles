@@ -33,6 +33,7 @@
       "org.openscad.OpenSCAD"
       "org.prismlauncher.PrismLauncher"
       "at.vintagestory.VintageStory"
+      "org.bionus.Grabber"
     ];
     overrides = {
       global = { # Permissions are set to be quite restrictive by default. I prefer to customize them on a per app basis
