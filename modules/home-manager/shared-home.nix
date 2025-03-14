@@ -50,6 +50,7 @@
       set selection-clipboard clipboard
     '';
   };
+  programs.ripgrep.enable = true;
 
   services.playerctld.enable = true;
   # services.hyprpaper = { # FIXME: Set your wallpaper here
