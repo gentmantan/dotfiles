@@ -2,15 +2,17 @@
   description = "My NixOS configurations";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    nixvim.url = "github:nix-community/nixvim";
-    nixvim.inputs.nixpkgs.follows = "nixpkgs";
+    home-manager.url = "github:nix-community/home-manager";
+    microvm.inputs.nixpkgs.follows = "nixpkgs";
+    microvm.url = "github:astro/microvm.nix";
     nix-flatpak.url = "github:gmodena/nix-flatpak";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixvim.inputs.nixpkgs.follows = "nixpkgs";
+    nixvim.url = "github:nix-community/nixvim";
   };
 
-  outputs = { nix-flatpak, nixpkgs, home-manager, nixvim, ... }: {
+  outputs = { nix-flatpak, nixpkgs, home-manager, nixvim, microvm, ... }: {
     nixosConfigurations = {
       my-iso = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -40,6 +42,8 @@
       };
       server = nixpkgs.lib.nixosSystem {
         modules = [
+          microvm.nixosModules.host
+          ./modules/microvm/barge.nix
           ./hosts/server/configuration-server.nix
         ];
       };
