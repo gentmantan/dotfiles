@@ -53,9 +53,6 @@
   services.desktopManager.plasma6.enable = true;
 
   users.defaultUserShell = pkgs.zsh;
-  users.users.root = {
-    openssh.authorizedKeys.keyFiles = [ ../../.ssh/clipper.pub ];
-  };
   users.users.game = {
     isNormalUser = true;
     createHome = true;

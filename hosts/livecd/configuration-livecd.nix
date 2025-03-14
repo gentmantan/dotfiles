@@ -5,6 +5,7 @@ with pkgs;
     (modulesPath + "/installer/cd-dvd/installation-cd-minimal-new-kernel.nix") 
     ../../modules/tmux.nix
     ../../modules/basic-vim.nix
+    ../../modules/ssh-server.nix
   ];
   boot.supportedFilesystems = [ "bcachefs" ];
   boot.kernelPackages = lib.mkOverride 0 linuxPackages_latest;
@@ -12,9 +13,6 @@ with pkgs;
   networking.networkmanager.enable = true;
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-  services.openssh.enable = true;
-  users.users.root.openssh.authorizedKeys.keyFiles = [ ../../.ssh/clipper.pub ];
 
   environment.systemPackages = [ 
     chntpw

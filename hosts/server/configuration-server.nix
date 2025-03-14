@@ -41,10 +41,6 @@
 
   services.fwupd.enable = true;
 
-  users.users.root = {
-    openssh.authorizedKeys.keyFiles = [ ../../.ssh/clipper.pub ];
-  };
-
   programs.git = {
     enable = true;
     lfs.enable = true;

@@ -8,4 +8,7 @@
       KbdInteractiveAuthentication = false;
     };
   };
+  users.users.root = {
+    openssh.authorizedKeys.keyFiles = [ ../.ssh/clipper.pub ];
+  };
 }
