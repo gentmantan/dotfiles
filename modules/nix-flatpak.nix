@@ -156,10 +156,6 @@
       "org.localsend.localsend_app".Context = {
         filesystems = [ "xdg-download/localsend:create" ];
       };
-      "app.zen_browser.zen".Context = {
-        sockets = [ "pulseaudio" ];
-        filesystems = [ "xdg-download/zen:create" ];
-      };
     };
     uninstallUnmanaged = true;
     uninstallUnused = true;
