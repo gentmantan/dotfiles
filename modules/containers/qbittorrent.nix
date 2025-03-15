@@ -16,6 +16,7 @@
         QBT_WEBUI_PORT = "16190";
         PUID = "0";
         PGID = "0";
+        UMASK = "027";
       };
       extraOptions = [ "--network=host" ];
     };
