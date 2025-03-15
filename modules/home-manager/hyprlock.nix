@@ -8,6 +8,12 @@
         hide_cursor = true;
         no_fade_in = false;
       };
+
+      auth = {
+        fingerprint = {
+          enabled = true;
+        };
+      };
     
       background = [
         {

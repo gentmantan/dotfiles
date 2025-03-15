@@ -33,6 +33,8 @@
   security.pam.services.hyprlock = {};
   security.sudo.enable = false; # FIXME: Choose if you want to use sudo.
                                 # Personally, I prefer using regular user accounts
+  services.fprintd.enable = true;
+
   # Printing
   # FIXME: You can declaratively add your printers here. Refer to the NixOS wiki
    services.printing.enable = true;
