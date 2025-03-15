@@ -37,7 +37,7 @@
       size = 32768;
     }];
     microvm.forwardPorts = [
-    { from = "host"; host.address = "127.0.0.1"; host.port = 16190; guest.port = 16190; }
+    { from = "host"; host.port = 16190; guest.port = 16190; }
     { from = "host"; host.address = "127.0.0.1"; host.port = 21349; guest.port = 48316; }
     ];
     microvm = {
@@ -55,7 +55,7 @@
     };
     networking.nameservers = [ "10.128.0.1" ];
     services.resolved.fallbackDns = [];
-    networking.firewall.enable = false;
+    networking.firewall.interfaces."enp0s7".allowedTCPPorts = [ 16190 ];
 
     system.stateVersion = "25.05";
   };
