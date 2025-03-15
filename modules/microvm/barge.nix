@@ -53,6 +53,8 @@
     networking.wg-quick.interfaces.wg0 = {
       configFile = "/config/wireguard/wg0.conf";
     };
+    networking.nameservers = [ "10.128.0.1" ];
+    services.resolved.fallbackDns = [];
 
     system.stateVersion = "25.05";
   };
