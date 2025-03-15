@@ -55,6 +55,7 @@
     };
     networking.nameservers = [ "10.128.0.1" ];
     services.resolved.fallbackDns = [];
+    networking.firewall.enable = false;
 
     system.stateVersion = "25.05";
   };
