@@ -37,5 +37,6 @@ I go into more detail in an upcoming blog post as to how I came about planning a
   - [x] Add remote unlocking
   - [x] Add podman containers
   - [x] Setup [podman auto update](https://docs.podman.io/en/latest/markdown/podman-auto-update.1.html) daemon
-  - [ ] Setup wireguard networking for containers 
-- [ ] Set up nixos-anywhere for automatic deployment
+  - [x] Setup wireguard networking for containers 
+- [ ] Enable secure boot using lanzaboote
+- [ ] Set up disko/nixos-anywhere for unattended deployment
