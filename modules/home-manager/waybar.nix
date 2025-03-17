@@ -19,7 +19,7 @@
         "wireplumber" = {
           "format" = "{icon} {volume}%";
           "format-muted" = "󰝟";
-          "on-click" = "set-mute @DEFAULT_SINK@ toggle";
+          "on-click" = "wpctl set-mute @DEFAULT_SINK@ toggle";
           "max-volume" = 150;
           "scroll-step" = 0.2;
           format-icons = [ "󰕿" "󰖀" "󰕾" ];
