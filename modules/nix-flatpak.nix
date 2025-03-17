@@ -131,7 +131,9 @@
       };
       "com.google.AndroidStudio".Context = {
         sockets = [ "x11" ];
+        devices = [ "kvm" ];
         persistent = [ "Android" ".android" ".gradle" ".java" ];
+        features = [ "multiarch" ];
         filesystems = [ "~/projects/android" ];
       };
       "com.github.xournalpp.xournalpp".Context = {
