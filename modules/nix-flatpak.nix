@@ -84,7 +84,6 @@
         filesystems = [ "~/Monero:create" ];
       };
       "org.gimp.GIMP".Context = {
-        sockets = [ "x11" ];
         filesystems = [ "xdg-pictures" ];
       };
       "chat.simplex.simplex".Context = {
