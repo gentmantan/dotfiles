@@ -18,6 +18,12 @@
       mountPoint = "/config/games";
       tag = "config-games";
       proto = "virtiofs";
+    }
+    {
+      source = "/config/env/games";
+      mountPoint = "/config/env/games";
+      tag = "config-env-games";
+      proto = "virtiofs";
     }];
     microvm.volumes = [{
       mountPoint = "/var";
@@ -25,6 +31,7 @@
       size = 131072;
     }];
     microvm.forwardPorts = [
+    { from = "host"; host.port = 27873; guest.port = 27873; proto = "udp"; } # Palworld
     { from = "host"; host.address = "127.0.0.1"; host.port = 21350; guest.port = 48316; }
     ];
     microvm = {
@@ -34,6 +41,7 @@
 
 # Begin ferry system configuration
     imports = [ 
+      ../containers/default-ferry.nix 
       ../ssh-server.nix
     ];
     networking.firewall.enable = false;
