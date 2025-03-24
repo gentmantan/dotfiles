@@ -44,6 +44,7 @@
         modules = [
           microvm.nixosModules.host
           ./modules/microvm/barge.nix
+          ./modules/microvm/ferry.nix
           ./hosts/server/configuration-server.nix
         ];
       };
