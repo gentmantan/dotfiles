@@ -3,6 +3,7 @@
 {
   imports = [ 
       ./bemenu.nix
+      ./hyprcursor.nix
       ./hypridle.nix
       ./hyprland.nix 
       ./hyprlock.nix
