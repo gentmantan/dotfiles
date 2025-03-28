@@ -42,7 +42,7 @@
     ];
     microvm = {
       vcpu = 6;
-      mem = 8192;
+      mem = 16384;
     };
 
 # Begin ferry system configuration
