@@ -1,7 +1,7 @@
 {
   virtualisation.oci-containers.containers = {
     factorio = {
-      image = "docker.io/factoriotools/factorio";
+      image = "docker.io/factoriotools/factorio:stable";
       autoStart = true;
       ports = [ "27876:27876/udp" ];
       volumes = [ 
