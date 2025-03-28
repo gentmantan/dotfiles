@@ -4,6 +4,7 @@
     packages = [
       "io.gitlab.librewolf-community"
       "io.freetubeapp.FreeTube"
+      "io.itch.itch"
       "org.mozilla.firefox"
       "org.keepassxc.KeePassXC"
       "org.localsend.localsend_app"
@@ -154,6 +155,10 @@
       };
       "org.localsend.localsend_app".Context = {
         filesystems = [ "xdg-download/localsend:create" ];
+      };
+      "io.itch.itch".Context = {
+        sockets = [ "x11" "pulseaudio" ];
+        persistent = [ ".wine" ".wine64" ];
       };
     };
     uninstallUnmanaged = true;
