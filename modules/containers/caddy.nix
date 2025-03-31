@@ -16,7 +16,7 @@
         "/config/games/factorio2/saves:/technophile/factorio2:ro"
         "/config/games/corekeeper:/technophile/core-keeper:ro"
         "/config/games/dst:/technophile/dont-starve-together:ro"
-        "/config/games/valheim-server/data:/technophile/valheim-server:ro"
+        "/config/games/valheim/data:/technophile/valheim-server:ro"
         "/config/games/zomboid/config/Saves:/technophile/zomboid:ro"
         "/config/games/zomboid2/config/Saves:/technophile/zomboid2:ro"
         "/config/games/necesse:/technophile/necesse:ro"
