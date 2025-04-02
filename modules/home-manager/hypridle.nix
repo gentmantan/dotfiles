@@ -8,6 +8,9 @@
         ignore_dbus_inhibit = false;
         lock_cmd = "hyprlock --immediate";
       };
+      listener = [
+        { timeout = 7200; on-timeout = "hyprlock"; }
+      ];
     };
   };
 }
