@@ -34,11 +34,11 @@
     { from = "host"; host.address = "127.0.0.1"; host.port = 21350; guest.port = 48316; }
     { from = "host"; host.port = 27873; guest.port = 27873; proto = "udp"; } # Palworld
     { from = "host"; host.port = 27874; guest.port = 27874; proto = "udp"; } # Core Keeper 
-    { from = "host"; host.port = 27875; guest.port = 27875; proto = "tcp"; } # Terraira-1
+    { from = "host"; host.port = 27875; guest.port = 27875; proto = "tcp"; } # Terraria-1 (Tarraria)
     { from = "host"; host.port = 27876; guest.port = 27876; proto = "udp"; } # Factorio 
     { from = "host"; host.port = 27877; guest.port = 27877; proto = "tcp"; } # Valheim 
-    { from = "host"; host.port = 27878; guest.port = 27878; proto = "tcp"; } # Terraira-2
-    { from = "host"; host.port = 27879; guest.port = 27879; proto = "tcp"; } # Terraira-3
+    { from = "host"; host.port = 27878; guest.port = 27878; proto = "tcp"; } # Terraria-2 (The Buasterlands)
+    { from = "host"; host.port = 27879; guest.port = 27879; proto = "tcp"; } # Terraria-3 (The Buasterlands 2 Modded)
     ];
     microvm = {
       vcpu = 6;
