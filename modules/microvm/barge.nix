@@ -37,8 +37,8 @@
       size = 32768;
     }];
     microvm.forwardPorts = [
-    { from = "host"; host.port = 16190; guest.port = 16190; }
-    { from = "host"; host.address = "127.0.0.1"; host.port = 21349; guest.port = 48316; }
+    { from = "host"; host.address = "127.0.0.1"; host.port = 16190; guest.port = 16190; } # qBittorrent WebUI
+    { from = "host"; host.address = "127.0.0.1"; host.port = 21349; guest.port = 48316; } # SSH
     ];
     microvm = {
       vcpu = 6;
