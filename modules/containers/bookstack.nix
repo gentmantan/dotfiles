@@ -29,7 +29,7 @@
       "io.containers.autoupdate" = "registry";
     };
     ports = [
-      "127.0.0.1:8120:80/tcp"
+      "127.0.0.1:29509:80/tcp"
     ];
     dependsOn = [
       "bookstack-db"
