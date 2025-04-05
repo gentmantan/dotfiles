@@ -39,6 +39,10 @@
     { from = "host"; host.port = 27877; guest.port = 27877; proto = "tcp"; } # Valheim 
     { from = "host"; host.port = 27878; guest.port = 27878; proto = "tcp"; } # Terraria-2 (The Buasterlands)
     { from = "host"; host.port = 27879; guest.port = 27879; proto = "tcp"; } # Terraria-3 (The Buasterlands 2 Modded)
+    { from = "host"; host.port = 27880; guest.port = 27880; proto = "udp"; } # Zomboid-1 Query Port 
+    { from = "host"; host.port = 27881; guest.port = 27881; proto = "udp"; } # Zomboid-1 Direct Connection Port
+    { from = "host"; host.port = 27882; guest.port = 27882; proto = "udp"; } # Zomboid-2 Query Port
+    { from = "host"; host.port = 27883; guest.port = 27883; proto = "udp"; } # Zomboid-2 Direct Connection Port
     ];
     microvm = {
       vcpu = 6;
