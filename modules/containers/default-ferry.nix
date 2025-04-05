@@ -6,5 +6,6 @@
     ./podman.nix
     ./terraria.nix
     ./valheim.nix
+    ./zomboid.nix
   ];
 }

@@ -17,7 +17,7 @@
         "/config/games/corekeeper:/technophile/core-keeper:ro"
         "/config/games/dst:/technophile/dont-starve-together:ro"
         "/config/games/valheim/data:/technophile/valheim-server:ro"
-        "/config/games/zomboid/config/Saves:/technophile/zomboid:ro"
+        "/config/games/zomboid1/config/Saves:/technophile/zomboid1:ro"
         "/config/games/zomboid2/config/Saves:/technophile/zomboid2:ro"
         "/config/games/necesse:/technophile/necesse:ro"
         "/config/games/palworld/Pal/Saved/SaveGames:/technophile/palworld:ro"
