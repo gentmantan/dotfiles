@@ -114,6 +114,7 @@
       };
       "org.audacityteam.Audacity".Context = {
         sockets = [ "pulseaudio" ];
+        filesystems = [ "~/Music" ];
       };
       "us.zoom.Zoom" = {
         Context = {
