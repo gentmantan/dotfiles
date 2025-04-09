@@ -61,6 +61,7 @@
         };
       };
       openscad.enable = true;
+      emmet.enable = true;
     };
     colorschemes.gruvbox.enable = true;
   };
