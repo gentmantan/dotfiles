@@ -5,7 +5,7 @@
       autoStart = true;
       volumes = [
         "/config/caddy/Caddyfile:/etc/caddy/Caddyfile:ro"
-        "/config/caddy/site:/srv"
+        "/config/caddy/site:/srv:ro"
         "/config/caddy/certs:/certs:ro"
         "caddy_data:/data"
         "caddy_config:/config"
