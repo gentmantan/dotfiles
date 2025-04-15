@@ -8,6 +8,7 @@
     ./immich.nix
     ./iperf.nix
     ./jellyfin.nix
+    ./koboldcpp.nix
     ./komga.nix
     ./lanraragi.nix
     ./librespeed.nix
