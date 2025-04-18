@@ -174,6 +174,10 @@
         "$mainMod&Alt_L, h, exec, hyprctl keyword monitor eDP-1,preferred,auto,1.333,transform,1"
         "$mainMod&Alt_L, j, exec, hyprctl keyword monitor eDP-1,preferred,auto,1.333,transform,2"
         "$mainMod&Alt_L, l, exec, hyprctl keyword monitor eDP-1,preferred,auto,1.333,transform,3"
+        "$mainMod&Alt_L, up, exec, hyprctl keyword monitor eDP-1,preferred,auto,1.333,transform,0"
+        "$mainMod&Alt_L, left, exec, hyprctl keyword monitor eDP-1,preferred,auto,1.333,transform,1"
+        "$mainMod&Alt_L, down, exec, hyprctl keyword monitor eDP-1,preferred,auto,1.333,transform,2"
+        "$mainMod&Alt_L, right, exec, hyprctl keyword monitor eDP-1,preferred,auto,1.333,transform,3"
       ];
       bindm = [ 
         "$mainMod, mouse:272, movewindow"
