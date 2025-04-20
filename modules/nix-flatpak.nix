@@ -16,7 +16,7 @@
       "com.valvesoftware.Steam"
       "com.prusa3d.PrusaSlicer"
       "com.github.johnfactotum.Foliate"
-      "org.freecadweb.FreeCAD"
+      "org.freecad.FreeCAD"
       "com.github.iwalton3.jellyfin-media-player"
       "dev.vencord.Vesktop"
       "com.stremio.Stremio"
