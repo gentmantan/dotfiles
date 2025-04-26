@@ -133,6 +133,7 @@
       "com.google.AndroidStudio".Context = {
         sockets = [ "x11" ];
         persistent = [ "Android" ".android" ".gradle" ".java" ];
+        devices = [ "kvm" ];
         filesystems = [ "~/projects/android" ];
       };
       "com.github.xournalpp.xournalpp".Context = {
