@@ -130,11 +130,16 @@
       "com.github.johnfactotum.Foliate".Environment = {
         GTK_THEME = "";
       };
-      "com.google.AndroidStudio".Context = {
-        sockets = [ "x11" ];
-        persistent = [ "Android" ".android" ".gradle" ".java" ];
-        devices = [ "kvm" ];
-        filesystems = [ "~/projects/android" ];
+      "com.google.AndroidStudio" = {
+        Context = {
+          sockets = [ "x11" ];
+          persistent = [ "Android" ".android" ".gradle" ".java" ];
+          devices = [ "kvm" ];
+          filesystems = [ "~/projects/android" ];
+        };
+        Environment = {
+          QT_QPA_PLATFORM="xcb"; # The AVD requires running in X11 for now
+        };
       };
       "com.github.xournalpp.xournalpp".Context = {
         filesystems = [ "xdg-documents" ];
