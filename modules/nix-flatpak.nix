@@ -35,6 +35,7 @@
       "org.prismlauncher.PrismLauncher"
       "at.vintagestory.VintageStory"
       "org.bionus.Grabber"
+      "com.usebottles.bottles"
     ];
     overrides = {
       global = { # Permissions are set to be quite restrictive by default. I prefer to customize them on a per app basis
@@ -166,6 +167,10 @@
       "io.itch.itch".Context = {
         sockets = [ "x11" "pulseaudio" ];
         persistent = [ ".wine" ".wine64" ];
+      };
+      "com.usebottles.bottles".Context = {
+        sockets = [ "x11" "pulseaudio" ];
+        features = [ "multiarch" ];
       };
     };
     uninstallUnmanaged = true;
