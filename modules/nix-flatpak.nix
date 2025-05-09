@@ -134,7 +134,7 @@
       "com.google.AndroidStudio" = {
         Context = {
           sockets = [ "x11" ];
-          persistent = [ "Android" ".android" ".gradle" ".java" ];
+          persistent = [ "Android" ".android" ".gradle" ".java" ".dartServer" ".dart-tool" ".flutter" ".skiko" ".pub-cache" ];
           devices = [ "kvm" ];
           filesystems = [ "~/projects/android" ];
         };
