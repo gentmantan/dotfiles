@@ -1,6 +1,7 @@
 {
   # Choose containers for panamax 
   imports = [ 
+    ./ai.nix
     ./bookstack.nix
     ./caddy.nix
     ./fireshare.nix
@@ -8,7 +9,6 @@
     ./immich.nix
     ./iperf.nix
     ./jellyfin.nix
-    ./koboldcpp.nix
     ./komga.nix
     ./lanraragi.nix
     ./librespeed.nix
@@ -16,7 +16,6 @@
     ./privatebin.nix
     ./pyload.nix
     ./samba.nix
-    ./sillytavern.nix
     ./syncthing.nix
   ];
 }
