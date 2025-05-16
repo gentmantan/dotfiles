@@ -36,6 +36,7 @@
       "at.vintagestory.VintageStory"
       "org.bionus.Grabber"
       "com.usebottles.bottles"
+      "com.github.IsmaelMartinez.teams_for_linux"
     ];
     overrides = {
       global = { # Permissions are set to be quite restrictive by default. I prefer to customize them on a per app basis
@@ -171,6 +172,9 @@
       "com.usebottles.bottles".Context = {
         sockets = [ "x11" "pulseaudio" ];
         features = [ "multiarch" ];
+      };
+      "com.github.IsmaelMartinez.teams_for_linux".Context = {
+        sockets = [ "pulseaudio" ];
       };
     };
     uninstallUnmanaged = true;
