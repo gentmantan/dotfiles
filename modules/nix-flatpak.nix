@@ -144,7 +144,7 @@
         };
       };
       "com.github.xournalpp.xournalpp".Context = {
-        filesystems = [ "xdg-documents" ];
+        filesystems = [ "xdg-documents/xournal" ];
       };
       "org.mozilla.Thunderbird".Context = {
         sockets = [ "cups" ];
