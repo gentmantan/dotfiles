@@ -49,6 +49,7 @@
           microvm.nixosModules.host
           ./modules/microvm/barge.nix
           ./modules/microvm/ferry.nix
+          ./modules/microvm/cryptpad.nix
           ./hosts/server/configuration-server.nix
         ];
       };
