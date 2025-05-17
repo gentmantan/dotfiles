@@ -8,7 +8,6 @@
         "/config/samba/samba-config.yml:/data/config.yml:ro"
         "/nest0/sharedfolders/takoputer:/samba/takoputer"
         "/nest0/sharedfolders/scans:/samba/scans"
-        "/nest0/sharedfolders/takoputergames:/samba/takoputer/takoputergames:ro"
       ];
       labels = {
         "io.containers.autoupdate" = "registry";
