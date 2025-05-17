@@ -17,5 +17,6 @@
     ./pyload.nix
     ./samba.nix
     ./syncthing.nix
+    ./wordpress.nix
   ];
 }
