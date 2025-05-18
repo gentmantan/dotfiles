@@ -103,10 +103,10 @@
       };
       "com.prusa3d.PrusaSlicer".Context = {
         sockets = [ "x11" ];
-        filesystems = [ "~/projects/3d" ];
+        filesystems = [ "~/Documents/3d" ];
       };
       "org.freecad.FreeCAD".Context = {
-        filesystems = [ "~/projects/3d" ];
+        filesystems = [ "~/Documents/3d" ];
       };
       "com.github.iwalton3.jellyfin-media-player".Context = {
         sockets = [ "pulseaudio" ];
@@ -137,7 +137,7 @@
           sockets = [ "x11" ];
           persistent = [ "Android" ".android" ".gradle" ".java" ".dartServer" ".dart-tool" ".flutter" ".skiko" ".pub-cache" ];
           devices = [ "kvm" ];
-          filesystems = [ "~/projects/android" ];
+          filesystems = [ "~/Documents/android" ];
         };
         Environment = {
           QT_QPA_PLATFORM="xcb"; # The AVD requires running in X11 for now
