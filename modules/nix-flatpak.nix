@@ -176,6 +176,10 @@
       "com.github.IsmaelMartinez.teams_for_linux".Context = {
         sockets = [ "pulseaudio" ];
       };
+      "io.github.ungoogled_software.ungoogled_chromium".Context = {
+        sockets = [ "pulseaudio" ];
+        filesystems = [ "xdg-download/chromium" ];
+      };
     };
     uninstallUnmanaged = true;
     uninstallUnused = true;
