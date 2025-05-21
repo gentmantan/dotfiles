@@ -63,14 +63,9 @@
           "org.freedesktop.secrets" = "none";
         };
       };
-      "io.gitlab.librewolf-community" = {
-        Context = {
-          sockets = [ "pulseaudio" "cups" ];
-          filesystems = [ "xdg-download/librewolf:create" ];
-        };
-        "USB Devices" = { # Passthrough Yubikey 
-          "enumerable-devices" = [ "vnd:1050+dev:0407" ];
-        };
+      "io.gitlab.librewolf-community".Context = {
+        sockets = [ "pulseaudio" "cups" ];
+        filesystems = [ "xdg-download/librewolf:create" ];
       };
       "io.freetubeapp.FreeTube".Context = {
         sockets = [ "pulseaudio" ];
@@ -125,8 +120,8 @@
         "Session Bus Policy" = {
           "org.kde.*" = "none";
         };
-        "USB Devices" = { # Passthrough USB webcams
-          "enumerable-devices" = [ "vnd:04ca+dev:7070" "vnd:2ca3+dev:0021" ];
+        "USB Devices" = { # Passthrough USB webcam
+          "enumerable-devices" = [ "vnd:0bda+dev:5634" ];
         };
       };
       "com.github.johnfactotum.Foliate".Environment = {
