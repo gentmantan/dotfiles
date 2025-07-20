@@ -35,6 +35,14 @@
                                 # Personally, I prefer using regular user accounts
   services.fprintd.enable = true;
 
+  services.displayManager.ly = {
+    enable = false;
+    settings = {
+      animation = "gameoflife";
+      vi_mode = true;
+    };
+  };
+
   # Printing
   # FIXME: You can declaratively add your printers here. Refer to the NixOS wiki
    services.printing.enable = true;
