@@ -37,6 +37,7 @@
       "org.bionus.Grabber"
       "com.usebottles.bottles"
       "com.github.IsmaelMartinez.teams_for_linux"
+      "org.signal.Signal"
     ];
     overrides = {
       global = { # Permissions are set to be quite restrictive by default. I prefer to customize them on a per app basis
@@ -174,6 +175,10 @@
       "io.github.ungoogled_software.ungoogled_chromium".Context = {
         sockets = [ "pulseaudio" ];
         filesystems = [ "xdg-download/chromium" ];
+      };
+      "org.signal.Signal".Context = {
+        sockets = [ "pulseaudio" ];
+        filesystems = [ "xdg-download/signal" ];
       };
     };
     uninstallUnmanaged = true;
