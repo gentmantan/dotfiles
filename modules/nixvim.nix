@@ -5,11 +5,14 @@
     viAlias = true;
     vimAlias = true;
     opts = {
+      expandtab = true;
       number = true;
       relativenumber = true;
       shiftwidth = 2;
       smartindent = true;
-      expandtab = true;
+      smarttab = true;
+      softtabstop= 0;
+      tabstop = 8;
     };
     plugins = {
       lualine.enable = true;
