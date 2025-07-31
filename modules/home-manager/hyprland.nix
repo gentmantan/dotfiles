@@ -1,4 +1,5 @@
 {
+  imports = [ ./hyprsunset.nix ];
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
@@ -212,5 +213,5 @@
       bind = $mainMod,Escape,submap,reset
       submap = reset
     '';
-  }; # Using extraConfig because submap is not able to be defined multiple times
+  }; # Using extraConfig for keys that need to be defined multiple times
 }
