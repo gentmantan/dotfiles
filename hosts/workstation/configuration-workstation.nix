@@ -63,6 +63,10 @@
   };
 
   services.flatpak.enable = true;
+  environment.pathsToLink = [ 
+    "/share/xdg-desktop-portal" 
+    "/share/applications" 
+  ]; # Fix xdg portal definitions
 
   services.pcscd.enable = true;
 
