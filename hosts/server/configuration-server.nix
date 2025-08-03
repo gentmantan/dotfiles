@@ -3,6 +3,7 @@
     ../../modules/basic-vim.nix
     ../../modules/containers/default-panamax.nix
     ../../modules/nix-maintenance.nix
+    ../../modules/restic.nix
     ../../modules/ssh-server.nix
     ../../modules/tmux.nix
     ./hardware-configuration.nix 
@@ -22,7 +23,7 @@
       };
     };
   };
-  boot.zfs.extraPools = [ "flock0" ];
+  boot.zfs.extraPools = [ "flock0" "flock1" ];
 
   services.zfs = {
     autoSnapshot.enable = true;
