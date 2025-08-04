@@ -179,6 +179,7 @@
     };
     uninstallUnmanaged = true;
     uninstallUnused = true;
+    update.onActivation = true;
     update.auto = {
       enable = true;
       onCalendar = "daily";
