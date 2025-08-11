@@ -117,9 +117,6 @@
         "Session Bus Policy" = {
           "org.kde.*" = "none";
         };
-        "USB Devices" = { # Passthrough USB webcam
-          "enumerable-devices" = [ "vnd:0bda+dev:5634" ];
-        };
       };
       "com.github.johnfactotum.Foliate".Environment = {
         GTK_THEME = "";
