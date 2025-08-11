@@ -10,7 +10,7 @@
       ./kitty.nix
       ./mako.nix
       ./waybar.nix
-      ./xdg-portal.nix
+      ./xdg.nix
       ./zsh.nix
     ];
 
@@ -32,10 +32,6 @@
     pkgs.wl-screenrec
   ];
 
-  xdg.userDirs = {
-    enable = true;
-    createDirectories = true;
-  };
 
   programs.home-manager.enable = true;
   programs.xplr.enable = true;
