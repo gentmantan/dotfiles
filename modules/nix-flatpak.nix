@@ -23,6 +23,7 @@
       "org.freecad.FreeCAD"
       "org.getmonero.Monero"
       "org.gimp.GIMP"
+      "org.inkscape.Inkscape"
       "org.kde.kdenlive"
       "org.keepassxc.KeePassXC"
       "org.localsend.localsend_app"
@@ -172,6 +173,9 @@
       "org.signal.Signal".Context = {
         sockets = [ "pulseaudio" ];
         filesystems = [ "xdg-download/signal" ];
+      };
+      "org.inkscape.Inkscape".Context = {
+        filesystems = [ "xdg-pictures" ];
       };
     };
     uninstallUnmanaged = true;
