@@ -11,13 +11,13 @@ in
         paths = backup-paths; 
         repository = "/nest1";
       };
-#      remote-backup = {
-#        initialize = true;
-#        environmentFile = "/config/restic/restic.env";
-#        passwordFile = keyfile;
-#        paths = backup-paths; 
-#        repository = "s3:s3.us-east-005.backblazeb2.com/nest0-backup";
-#      };
+      remote-backup = {
+        initialize = true;
+        environmentFile = "/config/restic/restic.env";
+        passwordFile = keyfile;
+        paths = backup-paths; 
+        repository = "s3:https://s3.us-east-005.backblazeb2.com/nest0-backup";
+      };
     };
   };
 }
