@@ -16,6 +16,7 @@
       "io.freetubeapp.FreeTube"
       "io.github.ungoogled_software.ungoogled_chromium"
       "io.gitlab.librewolf-community"
+      "io.gitlab.theevilskeleton.Upscaler"
       "net.ankiweb.Anki"
       "org.audacityteam.Audacity"
       "org.freecad.FreeCAD"
@@ -157,6 +158,9 @@
         filesystems = [ "xdg-download/signal" ];
       };
       "org.inkscape.Inkscape".Context = {
+        filesystems = [ "xdg-pictures" ];
+      };
+      "io.gitlab.theevilskeleton.Upscaler".Context = {
         filesystems = [ "xdg-pictures" ];
       };
       "com.stremio.Stremio".Context = {
