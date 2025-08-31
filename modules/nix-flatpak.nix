@@ -2,7 +2,6 @@
   services.flatpak = { # FIXME: Edit this list with your favorite apps!
                        # Note that the first installation may take long with too many apps  
     packages = [
-      "at.vintagestory.VintageStory"
       "com.github.IsmaelMartinez.teams_for_linux"
       "com.github.iwalton3.jellyfin-media-player"
       "com.github.johnfactotum.Foliate"
@@ -18,7 +17,6 @@
       "io.github.ungoogled_software.ungoogled_chromium"
       "io.gitlab.librewolf-community"
       "net.ankiweb.Anki"
-      "net.werwolv.ImHex"
       "org.audacityteam.Audacity"
       "org.freecad.FreeCAD"
       "org.getmonero.Monero"
@@ -31,10 +29,8 @@
       "org.mozilla.firefox"
       "org.onlyoffice.desktopeditors"
       "org.openscad.OpenSCAD"
-      "org.prismlauncher.PrismLauncher"
       "org.signal.Signal"
       "org.torproject.torbrowser-launcher"
-      "us.zoom.Zoom"
     ];
     overrides = {
       global = { # Permissions are set to be quite restrictive by default. I prefer to customize them on a per app basis
@@ -96,10 +92,10 @@
       };
       "com.prusa3d.PrusaSlicer".Context = {
         sockets = [ "x11" ];
-        filesystems = [ "~/Documents/3d" ];
+        filesystems = [ "xdg-documents/3d" ];
       };
       "org.freecad.FreeCAD".Context = {
-        filesystems = [ "~/Documents/3d" ];
+        filesystems = [ "xdg-documents/3d" ];
       };
       "com.github.iwalton3.jellyfin-media-player".Context = {
         sockets = [ "pulseaudio" ];
@@ -109,15 +105,7 @@
       };
       "org.audacityteam.Audacity".Context = {
         sockets = [ "pulseaudio" ];
-        filesystems = [ "~/Music" ];
-      };
-      "us.zoom.Zoom" = {
-        Context = {
-          sockets = [ "x11" "pulseaudio" ];
-        };
-        "Session Bus Policy" = {
-          "org.kde.*" = "none";
-        };
+        filesystems = [ "xdg-music" ];
       };
       "com.github.johnfactotum.Foliate".Environment = {
         GTK_THEME = "";
@@ -127,7 +115,7 @@
           sockets = [ "x11" ];
           persistent = [ "Android" ".android" ".gradle" ".java" ".dartServer" ".dart-tool" ".flutter" ".skiko" ".pub-cache" ];
           devices = [ "kvm" ];
-          filesystems = [ "~/Documents/android" ];
+          filesystems = [ "xdg-documents/android" ];
         };
         Environment = {
           QT_QPA_PLATFORM="xcb"; # The AVD requires running in X11 for now
@@ -145,12 +133,6 @@
       "org.kde.kdenlive".Context = {
         sockets = [ "pulseaudio" ];
         filesystems = [ "xdg-videos" ];
-      };
-      "org.prismlauncher.PrismLauncher".Context = {
-        sockets = [ "pulseaudio" ];
-      };
-      "at.vintagestory.VintageStory".Context = {
-        sockets = [ "pulseaudio" ];
       };
       "org.localsend.localsend_app".Context = {
         filesystems = [ "xdg-download/localsend:create" ];
@@ -176,6 +158,9 @@
       };
       "org.inkscape.Inkscape".Context = {
         filesystems = [ "xdg-pictures" ];
+      };
+      "com.stremio.Stremio".Context = {
+        sockets = [ "pulseaudio" ];
       };
     };
     uninstallUnmanaged = true;
