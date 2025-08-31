@@ -10,11 +10,16 @@
     microvm.url = "github:astro/microvm.nix";
     nix-flatpak.url = "github:gmodena/nix-flatpak";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixvim.inputs.nixpkgs.follows = "nixpkgs";
-    nixvim.url = "github:nix-community/nixvim";
+    nvf.url = "github:notashelf/nvf";
   };
 
-  outputs = { nix-flatpak, nixpkgs, home-manager, nixvim, microvm, lanzaboote, ... }: {
+  outputs = { self, nix-flatpak, nixpkgs, home-manager, nvf, microvm, lanzaboote, ... }: {
+    packages.x86_64-linux.neovim =
+      (nvf.lib.neovimConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        modules = [ ./modules/nvf.nix ];
+      }).neovim;
+
     nixosConfigurations = {
       my-iso = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -40,8 +45,9 @@
           }
           nix-flatpak.nixosModules.nix-flatpak
           ./modules/nix-flatpak.nix
-          nixvim.nixosModules.nixvim
-          ./modules/nixvim.nix
+          ({pkgs, ...}: {
+            environment.systemPackages = [self.packages.${pkgs.stdenv.system}.neovim];
+          })
         ];
       };
       server = nixpkgs.lib.nixosSystem {
