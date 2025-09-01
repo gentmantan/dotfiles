@@ -2,7 +2,7 @@
   programs.zsh = {
     enable = true;
     autosuggestion.enable = true;
-    defaultKeymap = "vicmd";
+    defaultKeymap = "viins";
     history = {
       ignoreSpace = true;
     };
