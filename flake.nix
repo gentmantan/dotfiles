@@ -13,18 +13,27 @@
     nvf.url = "github:notashelf/nvf";
   };
 
-  outputs = { self, nix-flatpak, nixpkgs, home-manager, nvf, microvm, lanzaboote, ... }: {
+  outputs = {
+    self,
+    nix-flatpak,
+    nixpkgs,
+    home-manager,
+    nvf,
+    microvm,
+    lanzaboote,
+    ...
+  }: {
     packages.x86_64-linux.neovim =
       (nvf.lib.neovimConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        modules = [ ./modules/nvf.nix ];
+        modules = [./modules/nvf.nix];
       }).neovim;
 
     nixosConfigurations = {
       my-iso = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-        ./hosts/livecd/configuration-livecd.nix
+          ./hosts/livecd/configuration-livecd.nix
         ];
       };
       gaming = nixpkgs.lib.nixosSystem {
@@ -48,6 +57,11 @@
           ({pkgs, ...}: {
             environment.systemPackages = [self.packages.${pkgs.stdenv.system}.neovim];
           })
+        ];
+      };
+      work-server = nixpkgs.lib.nixosSystem {
+        modules = [
+          ./hosts/work-server/configuration-work-server.nix
         ];
       };
       server = nixpkgs.lib.nixosSystem {
