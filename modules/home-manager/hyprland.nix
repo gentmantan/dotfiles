@@ -1,5 +1,5 @@
 {
-  imports = [ ./hyprsunset.nix ];
+  imports = [./hyprsunset.nix];
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
@@ -15,23 +15,24 @@
       monitor = [
         "eDP-1,preferred,auto,1.333"
         "desc:GIGA-BYTE TECHNOLOGY CO. LTD. Gigabyte M32U,3840x2160@144,auto,1"
+        "desc:Dell Inc. DELL S2723HC 92HG7P3,preferred,auto,1,transform,1"
       ];
 
       xwayland = {
         force_zero_scaling = true;
       };
 
-      exec-once="waybar";
+      exec-once = "waybar";
 
       general = {
-        allow_tearing=false;
-        border_size=2;
-        "col.active_border"="rgba(33ccffee) rgba(00ff99ee) 45deg";
-        "col.inactive_border"="rgba(595959aa)";
-        gaps_in=5;
-        gaps_out=20;
-        layout="dwindle";
-        resize_on_border=true;
+        allow_tearing = false;
+        border_size = 2;
+        "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
+        "col.inactive_border" = "rgba(595959aa)";
+        gaps_in = 5;
+        gaps_out = 20;
+        layout = "dwindle";
+        resize_on_border = true;
       };
       animations = {
         bezier = "myBezier, 0.05, 0.9, 0.1, 1.05";
@@ -47,34 +48,34 @@
       };
       decoration = {
         rounding = 10;
-        active_opacity=1.0;
-        inactive_opacity=1.0;
+        active_opacity = 1.0;
+        inactive_opacity = 1.0;
         shadow = {
-          range=4;
-          render_power=3;
+          range = 4;
+          render_power = 3;
         };
         blur = {
-          enabled="true";
-          passes="1";
-          size="3";
-          vibrancy="0.169600";
+          enabled = "true";
+          passes = "1";
+          size = "3";
+          vibrancy = "0.169600";
         };
       };
       dwindle = {
-        preserve_split=true;
-        pseudotile=true;
+        preserve_split = true;
+        pseudotile = true;
       };
       master = {
-        new_status="master";
+        new_status = "master";
       };
       input = {
         touchpad = {
-          disable_while_typing=false;
-          natural_scroll=true;
+          disable_while_typing = false;
+          natural_scroll = true;
         };
-        follow_mouse=1;
-        kb_options="ctrl:nocaps";
-        sensitivity=0;
+        follow_mouse = 1;
+        kb_options = "ctrl:nocaps";
+        sensitivity = 0;
       };
       gestures = {
         workspace_swipe = true;
@@ -88,7 +89,8 @@
         "BEMENU_BACKEND,wayland"
       ];
 
-      bindl = [ # Bindings work even when locked
+      bindl = [
+        # Bindings work even when locked
         ", XF86AudioPlay, exec, playerctl play-pause"
         ", XF86AudioNext, exec, playerctl next"
         ", XF86AudioPrev, exec, playerctl previous"
@@ -103,7 +105,7 @@
         ", XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_SOURCE@ toggle"
       ];
 
-      bind = [ 
+      bind = [
         "$mainMod, Return, exec, $terminal"
         "$mainMod, T, exec, $terminal"
         "$mainMod, W, exec, $privatebrowser"
@@ -182,7 +184,7 @@
         "$mainMod&Alt_L, down, exec, hyprctl keyword monitor eDP-1,preferred,auto,1.333,transform,2"
         "$mainMod&Alt_L, right, exec, hyprctl keyword monitor eDP-1,preferred,auto,1.333,transform,3"
       ];
-      bindm = [ 
+      bindm = [
         "$mainMod, mouse:272, movewindow"
         "$mainMod, mouse:273, resizewindow"
       ];
@@ -194,9 +196,9 @@
       binde=,h,resizeactive,-150 0
       binde=,k,resizeactive,0 -150
       binde=,j,resizeactive,0 150
-      bind=,escape,submap,reset 
+      bind=,escape,submap,reset
       submap=reset
-      
+
       $mode-system = (k) lock | (e) exit | (s) poweroff | (r) reboot
       bind = $mainMod, x, submap, $mode-system
       submap = $mode-system
