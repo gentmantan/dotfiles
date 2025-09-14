@@ -78,7 +78,7 @@
         sensitivity = 0;
       };
       gestures = {
-        workspace_swipe = true;
+        gesture = "3, horizontal, workspace";
         workspace_swipe_forever = true;
       };
       misc = {
