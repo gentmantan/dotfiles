@@ -59,8 +59,8 @@
         };
       };
       "io.gitlab.librewolf-community".Context = {
-        sockets = [ "pulseaudio" "cups" ];
-        filesystems = [ "xdg-download/librewolf:create" ];
+        sockets = ["pulseaudio"];
+        filesystems = ["xdg-download/librewolf:create"];
       };
       "io.freetubeapp.FreeTube".Context = {
         sockets = [ "pulseaudio" ];
@@ -123,10 +123,7 @@
         };
       };
       "com.github.xournalpp.xournalpp".Context = {
-        filesystems = [ "xdg-documents/xournal" ];
-      };
-      "org.mozilla.Thunderbird".Context = {
-        sockets = [ "cups" ];
+        filesystems = ["xdg-documents/xournal"];
       };
       "com.obsproject.Studio".Context = {
         sockets = [ "pulseaudio" ];

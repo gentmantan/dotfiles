@@ -1,17 +1,15 @@
-{ pkgs, ... }:
-
-{
-  imports = [ 
+{pkgs, ...}: {
+  imports = [
     ../../modules/fonts.nix
     ../../modules/nix-maintenance.nix
     ../../modules/tmux.nix
-    ./hardware-configuration.nix 
+    ./hardware-configuration.nix
   ];
 
   # Hardware and bootloader
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.supportedFilesystems = [ "bcachefs" ];
+  boot.supportedFilesystems = ["bcachefs"];
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   hardware.bluetooth.enable = true;
@@ -22,7 +20,7 @@
   services.fwupd.enable = true;
 
   # Enabling nix flakes
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = ["nix-command" "flakes"];
 
   networking.hostName = "clipper"; # FIXME: Choose your hostname
   networking.networkmanager.enable = true;
@@ -32,17 +30,8 @@
   security.rtkit.enable = true; # For pipewire
   security.pam.services.hyprlock = {};
   security.sudo.enable = false; # FIXME: Choose if you want to use sudo.
-                                # Personally, I prefer using regular user accounts
+  # Personally, I prefer using regular user accounts
   services.fprintd.enable = true;
-
-  # Printing
-  # FIXME: You can declaratively add your printers here. Refer to the NixOS wiki
-   services.printing.enable = true;
-   services.avahi = {
-     enable = true;
-     nssmdns4 = true;
-     openFirewall = true;
-   };
 
   services.udisks2.enable = true; # To allow regular users to mount storage devices
 
@@ -58,19 +47,20 @@
 
   services.auto-cpufreq.enable = true;
 
-  users.users.tangy = { # FIXME: Change the username. Choose wisely!
+  users.users.tangy = {
+    # FIXME: Change the username. Choose wisely!
     isNormalUser = true;
     createHome = true;
-    extraGroups = [ "networkmanager" ];
+    extraGroups = ["networkmanager"];
   };
 
-  environment.systemPackages = [ ];
+  environment.systemPackages = [];
 
   nixpkgs.config.allowUnfree = false; # FIXME: Choose whether or not to allow non-foss
-                                      # nixpkgs packages. Does not apply to flatpaks
+  # nixpkgs packages. Does not apply to flatpaks
 
   # Shell (configured in /modules/home-manager/zsh.nix)
-  users.defaultUserShell = pkgs.zsh; 
+  users.defaultUserShell = pkgs.zsh;
 
   # Programs
   # If available, programs should be enabled here as a module
@@ -95,5 +85,5 @@
     hostName = "workstation";
   };
 
-  system.stateVersion = "24.11"; 
+  system.stateVersion = "24.11";
 }
