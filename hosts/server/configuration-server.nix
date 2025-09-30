@@ -1,38 +1,42 @@
 {
-  imports = [ 
+  imports = [
     ../../modules/basic-vim.nix
     ../../modules/containers/default-panamax.nix
     ../../modules/nix-maintenance.nix
     ../../modules/restic.nix
     ../../modules/ssh-server.nix
     ../../modules/tmux.nix
-    ./hardware-configuration.nix 
+    ./hardware-configuration.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.initrd = {
-    availableKernelModules = [ "igc" "mlx5_core" ];
+    availableKernelModules = ["igc" "mlx5_core"];
     network = {
       enable = true;
       ssh = {
         enable = true;
         port = 26572;
-        hostKeys = [ "/config/ssh/remote_unlock_ssh_host_ed25519_key" ];
-        authorizedKeyFiles = [ ../../.ssh/clipper.pub ];
+        hostKeys = ["/config/ssh/remote_unlock_ssh_host_ed25519_key"];
+        authorizedKeyFiles = [../../.ssh/clipper.pub];
       };
     };
   };
-  boot.zfs.extraPools = [ "flock0" "flock1" ];
+  boot.zfs.extraPools = ["flock0" "flock1"];
 
   services.zfs = {
-    autoSnapshot.enable = true;
+    autoSnapshot = {
+      enable = true;
+      monthly = 1;
+      weekly = 2;
+    };
     autoScrub.enable = true;
   };
 
   zramSwap.enable = true;
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = ["nix-command" "flakes"];
 
   networking.hostName = "panamax";
   networking.hostId = "8afd8e00";
