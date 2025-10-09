@@ -1,18 +1,16 @@
-{ pkgs, ...}:
-
-{
-  imports = [ 
-      ./bemenu.nix
-      ./hyprcursor.nix
-      ./hypridle.nix
-      ./hyprland.nix 
-      ./hyprlock.nix
-      ./kitty.nix
-      ./mako.nix
-      ./waybar.nix
-      ./xdg.nix
-      ./zsh.nix
-    ];
+{pkgs, ...}: {
+  imports = [
+    ./bemenu.nix
+    ./hyprcursor.nix
+    ./hypridle.nix
+    ./hyprland.nix
+    ./hyprlock.nix
+    ./kitty.nix
+    ./mako.nix
+    ./waybar.nix
+    ./xdg.nix
+    ./zsh.nix
+  ];
 
   home.stateVersion = "25.05";
 
@@ -32,13 +30,19 @@
     pkgs.wl-screenrec
   ];
 
-
+  programs.carapace.enable = true;
   programs.home-manager.enable = true;
-  programs.xplr.enable = true;
   programs.imv.enable = true;
+  programs.yazi.enable = true;
+  programs.starship = {
+    enable = true;
+  };
+  programs.zoxide = {
+    enable = true;
+  };
   programs.mpv = {
     enable = true;
-    scripts = [ pkgs.mpvScripts.mpris pkgs.mpvScripts.vr-reversal ];
+    scripts = [pkgs.mpvScripts.mpris pkgs.mpvScripts.vr-reversal];
   };
   programs.yt-dlp.enable = true;
   programs.zathura = {
