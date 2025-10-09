@@ -52,6 +52,7 @@
     isNormalUser = true;
     createHome = true;
     extraGroups = ["networkmanager"];
+    shell = pkgs.nushell;
   };
 
   environment.systemPackages = [];
@@ -59,17 +60,9 @@
   nixpkgs.config.allowUnfree = false; # FIXME: Choose whether or not to allow non-foss
   # nixpkgs packages. Does not apply to flatpaks
 
-  # Shell (configured in /modules/home-manager/zsh.nix)
-  users.defaultUserShell = pkgs.zsh;
-
   # Programs
   # If available, programs should be enabled here as a module
   # as opposed to in environment.systemPackages
-  programs.zsh = {
-    enable = true;
-    autosuggestions.enable = true;
-    syntaxHighlighting.enable = true;
-  };
   programs.hyprland.enable = true;
 
   virtualisation = {

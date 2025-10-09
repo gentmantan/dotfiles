@@ -7,9 +7,9 @@
     ./hyprlock.nix
     ./kitty.nix
     ./mako.nix
+    ./nushell.nix
     ./waybar.nix
     ./xdg.nix
-    ./zsh.nix
   ];
 
   home.stateVersion = "25.05";
@@ -30,16 +30,8 @@
     pkgs.wl-screenrec
   ];
 
-  programs.carapace.enable = true;
   programs.home-manager.enable = true;
   programs.imv.enable = true;
-  programs.yazi.enable = true;
-  programs.starship = {
-    enable = true;
-  };
-  programs.zoxide = {
-    enable = true;
-  };
   programs.mpv = {
     enable = true;
     scripts = [pkgs.mpvScripts.mpris pkgs.mpvScripts.vr-reversal];
@@ -52,6 +44,24 @@
     '';
   };
   programs.ripgrep.enable = true;
+
+  # Shell utilities
+  programs.carapace = {
+    enable = true;
+    enableNushellIntegration = true;
+  };
+  programs.yazi = {
+    enable = true;
+    enableNushellIntegration = true;
+  };
+  programs.starship = {
+    enable = true;
+    enableNushellIntegration = true;
+  };
+  programs.zoxide = {
+    enable = true;
+    enableNushellIntegration = true;
+  };
 
   services.playerctld.enable = true;
   # services.hyprpaper = { # FIXME: Set your wallpaper here
