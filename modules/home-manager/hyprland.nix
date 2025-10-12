@@ -8,7 +8,7 @@
       "$torbrowser" = "flatpak run org.torproject.torbrowser-launcher";
       "$email" = "flatpak run org.mozilla.Thunderbird";
       "$mainMod" = "SUPER";
-      "$menu" = "bemenu-run --fn Fira Code";
+      "$menu" = "anyrun";
       "$terminal" = "kitty";
       "$pass" = "flatpak run org.keepassxc.KeePassXC";
 

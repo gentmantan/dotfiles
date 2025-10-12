@@ -5,7 +5,7 @@
   };
 in {
   imports = [
-    ./bemenu.nix
+    ./anyrun.nix
     ./hyprcursor.nix
     ./hypridle.nix
     ./hyprland.nix
