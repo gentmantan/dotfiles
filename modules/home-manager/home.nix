@@ -25,7 +25,7 @@
         After = "network.target";
       };
       Service = {
-        ExecStart = "${pkgs.rclone}/bin/rclone mount nest0:/nest0 /home/tangy/nest0 --vfs-cache-mode writes --dir-cache-time 5s --vfs-cache-max-size 50G --vfs-cache-max-age 5s --vfs-read-chunk-streams 12 --umask 227";
+        ExecStart = "${pkgs.rclone}/bin/rclone mount nest0:/nest0 /home/tangy/nest0 --vfs-cache-mode writes --dir-cache-time 5s --vfs-cache-max-size 50G --vfs-cache-max-age 5s --umask 227";
         ExecStop = "/run/wrappers/bin/umount /home/tangy/nest0";
         Restart = "on-failure";
         RestartSec = "5s";
