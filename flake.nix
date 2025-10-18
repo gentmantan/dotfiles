@@ -36,11 +36,6 @@
           ./hosts/livecd/configuration-livecd.nix
         ];
       };
-      gaming = nixpkgs.lib.nixosSystem {
-        modules = [
-          ./hosts/gaming/configuration-gaming.nix
-        ];
-      };
       workstation = nixpkgs.lib.nixosSystem {
         modules = [
           ./hosts/workstation/configuration-workstation.nix
