@@ -9,7 +9,10 @@
         lock_cmd = "hyprlock --immediate";
       };
       listener = [
-        { timeout = 7200; on-timeout = "hyprlock"; }
+        {
+          timeout = 900;
+          on-timeout = "hyprlock";
+        }
       ];
     };
   };

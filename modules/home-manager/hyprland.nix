@@ -81,6 +81,9 @@
         gesture = "3, horizontal, workspace";
         workspace_swipe_forever = true;
       };
+      windowrule = [
+        "idleinhibit fullscreen, fullscreen:1"
+      ];
       misc = {
         vrr = 1;
       };
