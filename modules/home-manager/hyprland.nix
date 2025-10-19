@@ -183,37 +183,38 @@
         "$mainMod&Alt_L, left, exec, hyprctl keyword monitor eDP-1,preferred,auto,1.333,transform,1"
         "$mainMod&Alt_L, down, exec, hyprctl keyword monitor eDP-1,preferred,auto,1.333,transform,2"
         "$mainMod&Alt_L, right, exec, hyprctl keyword monitor eDP-1,preferred,auto,1.333,transform,3"
+        "$mainMod,r,submap,resize"
+        "$mainMod, x, submap, power"
+        "$mainMod,Escape,submap,passthrough"
       ];
       bindm = [
         "$mainMod, mouse:272, movewindow"
         "$mainMod, mouse:273, resizewindow"
       ];
     }; # Settings block
-    extraConfig = ''
-      bind=$mainMod,R,submap,resize
-      submap=resize
-      binde=,l,resizeactive,150 0
-      binde=,h,resizeactive,-150 0
-      binde=,k,resizeactive,0 -150
-      binde=,j,resizeactive,0 150
-      bind=,escape,submap,reset
-      submap=reset
-
-      $mode-system = (k) lock | (e) exit | (s) poweroff | (r) reboot
-      bind = $mainMod, x, submap, $mode-system
-      submap = $mode-system
-      bind = , k, exec, hyprlock --immediate
-      bindl = , k, submap, reset
-      bind = , e, exit
-      bind = , r, exec, systemctl reboot
-      bind = , s, exec, systemctl poweroff
-      bind = , escape, submap, reset
-      submap = reset
-
-      bind = $mainMod,Escape,submap,passthru
-      submap = passthru
-      bind = $mainMod,Escape,submap,reset
-      submap = reset
-    '';
-  }; # Using extraConfig for keys that need to be defined multiple times
+    submaps = {
+      resize.settings = {
+        bind = [",escape,submap,reset"];
+        binde = [
+          ",l,resizeactive,150 0"
+          ",h,resizeactive,-150 0"
+          ",k,resizeactive,0 -150"
+          ",j,resizeactive,0 150"
+        ];
+      };
+      power.settings = {
+        bind = [
+          ", k, exec, hyprlock --immediate"
+          ", e, exit"
+          ", r, exec, systemctl reboot"
+          ", s, exec, systemctl poweroff"
+          ", escape, submap, reset"
+        ];
+        bindl = [", k, submap, reset"];
+      };
+      passthrough.settings = {
+        bind = ["$mainMod,Escape,submap,reset"];
+      };
+    };
+  };
 }
