@@ -19,27 +19,21 @@ flake references for several systems:
   configuration is interesting because it uses
   [flatpak sandboxing](./modules/nix-flatpak.nix) to isolate user applications,
   as well as [hyprland](https://github.com/hyprwm/Hyprland) for window
-  management and [nixvim](https://github.com/nix-community/nixvim) for text
-  editing.
+  management and [nvf](https://github.com/NotAShelf/nvf) for text editing.
 - ☁️ The [#server](./hosts/server/configuration-server.nix) configuration sets
-  up a host that serves a bunch of containers using
-  [podman](https://github.com/containers/podman) with support for remote
+  up a host that runs web services using
+  [podman](https://github.com/containers/podman) and
+  [microvm](https://github.com/microvm-nix/microvm.nix) with support for remote
   unlocking and automatic OS/container upgrades.
-- 🎮 The [#gaming](./hosts/gaming/configuration-gaming.nix) configuration has
-  both KDE and gamescope enabled as compositors, allowing you to choose either
-  in KDM (the login screen).
-  [With a few lines](https://search.nixos.org/options?channel=unstable&query=displayManager.autoLogin)
-  you can also reconfigure it to auto-login to gamescope, making it truly
-  deck-like.
-- 💿 The [#livecd](./hosts/server/configuration-server.nix) configuration is
-  able to create a custom ISO with some of my favorite recovery tools, as well
-  as an OpenSSH server. Build it by running
+- 💿 The [#livecd](./hosts/server/configuration-server.nix) configuration
+  creates a custom ISO with some of my favorite recovery tools, as well as an
+  OpenSSH server. Build it by running
   `nix build .#nixosConfigurations.my-iso.config.system.build.isoImage`.
 
-You can also try out my 📝 [neovim configuration](./modules/nvf.nix) which
-includes LSPs for several languages as well as helpful Git and navigation
-plugins, among other things. Just run the following line on your own system:
-`nix run github:gentmantan/dotfiles#neovim`
+You can also try out my 📝 [neovim configuration](./modules/nvf.nix)
+independently, which includes LSPs for several languages as well as helpful Git
+and navigation plugins, among other things. Simply run the following line on
+your own system: `nix run github:gentmantan/dotfiles#neovim`
 
 ## Structure
 
