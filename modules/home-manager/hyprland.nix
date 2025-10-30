@@ -15,7 +15,7 @@
       monitor = [
         "eDP-1,preferred,auto,1.333"
         "desc:GIGA-BYTE TECHNOLOGY CO. LTD. Gigabyte M32U,3840x2160@144,auto,1"
-        "desc:Dell Inc. DELL S2723HC 92HG7P3,preferred,auto,1,transform,1"
+        "desc:Dell Inc. DELL S2725QC 4RK8S84,highrr,auto,1"
       ];
 
       xwayland = {
