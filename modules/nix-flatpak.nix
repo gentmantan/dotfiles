@@ -36,20 +36,20 @@
         # Permissions are set to be quite restrictive by default. I prefer to customize them on a per app basis
         # Refer to `man flatpak-override` for options
         Context = {
-          sockets = ["wayland" "!x11" "!fallback-x11" "!pulseaudio" "!session-bus" "!system-bus" "!pcsc" "!cups" "!ssh-auth" "!gpg-agent"];
-          shared = ["!ipc"];
           devices = ["dri" "!shm" "!kvm" "!all" "!usb" "!input"];
           features = ["!devel" "!multiarch" "!bluetooth" "!canbus" "!per-app-dev-shm"];
           filesystems = ["!host:reset"];
+          shared = ["!ipc"];
+          sockets = ["wayland" "!x11" "!fallback-x11" "!pulseaudio" "!session-bus" "!system-bus" "!pcsc" "!cups" "!ssh-auth" "!gpg-agent"];
         };
         Environment = {
+          ELECTRON_OZONE_PLATFORM_HINT = "auto";
           GTK_THEME = "Adwaita:dark";
           QT_QPA_PLATFORM = "wayland";
-          ELECTRON_OZONE_PLATFORM_HINT = "auto";
         };
         "System Bus Policy" = {
-          "org.freedesktop.UPower" = "none";
           "org.freedesktop.UDisks2" = "none";
+          "org.freedesktop.UPower" = "none";
         };
         "Session Bus Policy" = {
           # Deny some known sandbox escape permissions
@@ -66,10 +66,10 @@
       };
       "com.google.AndroidStudio" = {
         Context = {
-          sockets = ["x11"];
-          persistent = ["Android" ".android" ".gradle" ".java" ".dartServer" ".dart-tool" ".flutter" ".skiko" ".pub-cache"];
           devices = ["kvm"];
           filesystems = ["xdg-documents/android"];
+          persistent = ["Android" ".android" ".gradle" ".java" ".dartServer" ".dart-tool" ".flutter" ".skiko" ".pub-cache"];
+          sockets = ["x11"];
         };
         Environment = {
           QT_QPA_PLATFORM = "xcb"; # The AVD requires running in X11 for now
@@ -80,13 +80,14 @@
         filesystems = ["xdg-documents/3d"];
       };
       "com.usebottles.bottles".Context = {
-        sockets = ["x11" "pulseaudio"];
         features = ["multiarch"];
+        filesystems = ["~/games"];
+        sockets = ["x11" "pulseaudio"];
       };
       "com.valvesoftware.Steam".Context = {
-        sockets = ["x11" "pulseaudio"];
-        filesystems = ["~/games"];
         features = ["multiarch" "per-app-dev-shm"];
+        filesystems = ["~/games"];
+        sockets = ["x11" "pulseaudio"];
       };
       "dev.vencord.Vesktop".Context = {
         sockets = ["pulseaudio"];
@@ -95,16 +96,16 @@
         sockets = ["pulseaudio"];
       };
       "io.github.ungoogled_software.ungoogled_chromium".Context = {
-        sockets = ["pulseaudio"];
         filesystems = ["xdg-download/chromium"];
+        sockets = ["pulseaudio"];
       };
       "io.gitlab.librewolf-community".Context = {
-        sockets = ["pulseaudio"];
         filesystems = ["xdg-download/librewolf:create"];
+        sockets = ["pulseaudio"];
       };
       "org.audacityteam.Audacity".Context = {
-        sockets = ["pulseaudio"];
         filesystems = ["xdg-music"];
+        sockets = ["pulseaudio"];
       };
       "org.freecad.FreeCAD".Context = {
         filesystems = ["xdg-documents/3d"];
@@ -119,23 +120,23 @@
         filesystems = ["xdg-pictures"];
       };
       "org.kde.kdenlive".Context = {
-        sockets = ["pulseaudio"];
         filesystems = ["xdg-videos"];
+        sockets = ["pulseaudio"];
       };
       "org.keepassxc.KeePassXC".Context = {
-        shared = ["!network"];
         filesystems = ["~/KPass"];
+        shared = ["!network"];
       };
       "org.localsend.localsend_app".Context = {
         filesystems = ["xdg-download/localsend:create"];
       };
       "org.mozilla.firefox".Context = {
-        sockets = ["pulseaudio"];
         filesystems = ["xdg-download/firefox:create"];
+        sockets = ["pulseaudio"];
       };
       "org.signal.Signal".Context = {
-        sockets = ["pulseaudio"];
         filesystems = ["xdg-download/signal"];
+        sockets = ["pulseaudio"];
       };
       "org.torproject.torbrowser-launcher".Context = {
         filesystems = ["xdg-download/torbrowser:create"];
