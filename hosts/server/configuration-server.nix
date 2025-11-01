@@ -21,6 +21,7 @@
         hostKeys = ["/config/ssh/remote_unlock_ssh_host_ed25519_key"];
         authorizedKeyFiles = [../../.ssh/clipper.pub];
       };
+      udhcpc.extraArgs = ["--retries=25"];
     };
   };
   boot.zfs.extraPools = ["flock0" "flock1"];
