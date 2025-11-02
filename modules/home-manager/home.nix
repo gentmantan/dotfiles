@@ -5,8 +5,10 @@
     # FIXME: Use your own git credentials!
     enable = true;
     lfs.enable = true;
-    userName = "Gentman Tan";
-    userEmail = "gentmantan@gmail.com";
+    settings.user = {
+      email = "gentmantan@gmail.com";
+      name = "Gentman Tan";
+    };
   };
   programs.gh = {
     enable = true;
