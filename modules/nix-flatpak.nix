@@ -3,6 +3,7 @@
     # FIXME: Edit this list with your favorite apps!
     # Note that the first installation may take long with too many apps
     packages = [
+      "com.bambulab.BambuStudio"
       "com.bitwarden.desktop"
       "com.github.IsmaelMartinez.teams_for_linux"
       "com.github.iwalton3.jellyfin-media-player"
@@ -23,10 +24,10 @@
       "org.inkscape.Inkscape"
       "org.kde.kdenlive"
       "org.keepassxc.KeePassXC"
+      "org.libreoffice.LibreOffice"
       "org.localsend.localsend_app"
       "org.mozilla.Thunderbird"
       "org.mozilla.firefox"
-      "org.libreoffice.LibreOffice"
       "org.openscad.OpenSCAD"
       "org.signal.Signal"
       "org.torproject.torbrowser-launcher"
@@ -57,6 +58,10 @@
           "org.freedesktop.impl.portal.PermissionStore" = "none";
           "org.freedesktop.secrets" = "none";
         };
+      };
+      "com.bambulab.BambuStudio".Context = {
+        sockets = ["x11"];
+        filesystems = ["xdg-documents/3d"];
       };
       "com.github.IsmaelMartinez.teams_for_linux".Context = {
         sockets = ["pulseaudio"];
