@@ -1,9 +1,12 @@
-{ pkgs, ... }:
-let browser = "io.gitlab.librewolf-community.desktop"; in 
-{
+{pkgs, ...}: let
+  browser = "io.gitlab.librewolf-community.desktop";
+  image = "imv-dir.desktop";
+  video = "mpv.desktop";
+  document = "org.pwmt.zathura.desktop";
+in {
   xdg.portal = {
     enable = true;
-    extraPortals = with pkgs; [ xdg-desktop-portal-hyprland xdg-desktop-portal-gtk ];
+    extraPortals = with pkgs; [xdg-desktop-portal-hyprland xdg-desktop-portal-gtk];
     xdgOpenUsePortal = true;
   };
   xdg.userDirs = {
@@ -13,11 +16,16 @@ let browser = "io.gitlab.librewolf-community.desktop"; in
   xdg.mimeApps = {
     enable = true;
     defaultApplications = {
-      "text/html" = [ "${browser}" ];
-      "x-scheme-handler/http" = [ "${browser}" ];
-      "x-scheme-handler/https" = [ "${browser}" ];
-      "x-scheme-handler/about" = [ "${browser}" ];
-      "x-scheme-handler/unknown" = [ "${browser}" ];
+      "application/pdf" = ["${document}"];
+      "application/epub+zip" = ["${document}"];
+      "image/gif" = ["${image}"];
+      "image/jpeg" = ["${image}"];
+      "image/png" = ["${image}"];
+      "image/webp" = ["${image}"];
+      "text/html" = ["${browser}"];
+      "text/xml" = ["${browser}"];
+      "x-scheme-handler/http" = ["${browser}"];
+      "x-scheme-handler/https" = ["${browser}"];
     };
   };
 }
