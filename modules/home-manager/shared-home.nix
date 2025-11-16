@@ -53,7 +53,22 @@ in {
 
     # Shell utilities
     carapace = enableWithNushell;
-    yazi = enableWithNushell;
+    yazi =
+      enableWithNushell
+      // {
+        plugins = {
+          "mount" = pkgs.yaziPlugins.mount;
+        };
+        keymap = {
+          mgr.prepend_keymap = [
+            {
+              run = "plugin mount";
+              on = ["M"];
+              desc = "Open disk mount manager";
+            }
+          ];
+        };
+      };
     starship = enableWithNushell;
     zoxide = enableWithNushell;
   };
