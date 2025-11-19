@@ -1,6 +1,7 @@
 {
   imports = [
     ../../modules/basic-vim.nix
+    ../../modules/containers/podman.nix
     ../../modules/nix-maintenance.nix
     ../../modules/ssh-server.nix
     ../../modules/tmux.nix
