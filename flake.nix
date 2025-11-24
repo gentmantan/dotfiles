@@ -2,6 +2,8 @@
   description = "My NixOS configurations";
 
   inputs = {
+    disko.url = "github:nix-community/disko/latest";
+    disko.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:nix-community/home-manager";
     lanzaboote.inputs.nixpkgs.follows = "nixpkgs";
@@ -14,13 +16,14 @@
   };
 
   outputs = {
-    self,
+    disko,
+    home-manager,
+    lanzaboote,
+    microvm,
     nix-flatpak,
     nixpkgs,
-    home-manager,
     nvf,
-    microvm,
-    lanzaboote,
+    self,
     ...
   }: {
     packages.x86_64-linux.neovim =
@@ -39,6 +42,8 @@
       workstation = nixpkgs.lib.nixosSystem {
         modules = [
           ./hosts/workstation/configuration-workstation.nix
+          disko.nixosModules.disko
+          ./hosts/workstation/disk-config.nix
           lanzaboote.nixosModules.lanzaboote
           ./modules/lanzaboote.nix
           home-manager.nixosModules.home-manager
