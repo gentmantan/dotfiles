@@ -7,10 +7,13 @@
   ];
 
   # Hardware and bootloader
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader = {
+    systemd-boot.enable = true;
+    efi.canTouchEfiVariables = true;
+  };
   boot.supportedFilesystems = ["bcachefs"];
   boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.initrd.systemd.enable = true;
 
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = false;
