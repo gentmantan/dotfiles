@@ -87,6 +87,10 @@
       misc = {
         vrr = 1;
       };
+      ecosystem = {
+        no_update_news = true;
+        no_donation_nag = true;
+      };
       env = [
         "HYPRCURSOR_SIZE=32"
         "BEMENU_BACKEND,wayland"
