@@ -29,7 +29,6 @@ in {
     playerctl
     qrencode
     quickemu
-    rclone
     slurp
     wl-clipboard
     wl-screenrec
