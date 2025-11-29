@@ -13,7 +13,6 @@
     systemd-boot.enable = true;
     efi.canTouchEfiVariables = true;
   };
-  boot.supportedFilesystems = ["bcachefs"];
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.initrd.systemd.enable = true;
 
