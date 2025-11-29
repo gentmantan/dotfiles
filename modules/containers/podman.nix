@@ -7,5 +7,5 @@
     };
     oci-containers.backend = "podman";
   };
-  systemd.timers."podman-auto-update".wantedBy = [ "timers.target" ];
+  systemd.timers."podman-auto-update".wantedBy = ["timers.target"];
 }

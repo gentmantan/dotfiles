@@ -3,6 +3,8 @@
     ../../modules/fonts.nix
     ../../modules/nix-maintenance.nix
     ../../modules/tmux.nix
+    ../../modules/containers/podman.nix
+    ../../modules/pipewire.nix
     ./hardware-configuration.nix
   ];
 
@@ -30,22 +32,12 @@
 
   time.timeZone = "America/New_York";
 
-  security.rtkit.enable = true; # For pipewire
   security.pam.services.hyprlock = {};
   security.sudo.enable = false; # FIXME: Choose if you want to use sudo.
   # Personally, I prefer using regular user accounts
   services.fprintd.enable = true;
 
   services.udisks2.enable = true; # To allow regular users to mount storage devices
-
-  # Audio
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-  };
-
   services.flatpak.enable = true;
 
   services.auto-cpufreq.enable = true;
@@ -68,11 +60,7 @@
   # as opposed to in environment.systemPackages
   programs.hyprland.enable = true;
 
-  virtualisation = {
-    containers.enable = true;
-    podman.enable = true;
-    spiceUSBRedirection.enable = true;
-  };
+  virtualisation.spiceUSBRedirection.enable = true;
 
   networking.firewall.enable = false; # FIXME: Choose if you want a firewall
 
