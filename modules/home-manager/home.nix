@@ -1,5 +1,5 @@
 {
-  imports = [./shared-home.nix ./sftp-client.nix];
+  imports = [./shared-home.nix ./sftp-client.nix ./ssh-client.nix];
   home.username = "tangy";
   programs.git = {
     # FIXME: Use your own git credentials!
