@@ -5,21 +5,18 @@
     matchBlocks = {
       "p" = {
         hostname = "technophile.zone";
-        user = "root";
         port = 48316;
-        setEnv = {term = "xterm-256color";};
+        user = "root";
       };
       "unlockp" = {
         hostname = "technophile.zone";
-        user = "root";
         port = 26572;
-        setEnv = {term = "xterm-256color";};
+        user = "root";
       };
       "b" = {
         hostname = "localhost";
         port = 21349;
         proxyJump = "p";
-        setEnv = {term = "xterm-256color";};
         user = "root";
         userKnownHostsFile = "/dev/null";
       };
@@ -27,9 +24,16 @@
         hostname = "localhost";
         port = 21350;
         proxyJump = "p";
-        setEnv = {term = "xterm-256color";};
         user = "root";
         userKnownHostsFile = "/dev/null";
+      };
+      "ws" = {
+        hostname = "10.101.20.33";
+        port = 48316;
+        user = "root";
+      };
+      "*" = {
+        setEnv = {TERM = "xterm-256color";};
       };
     };
   };
