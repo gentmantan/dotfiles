@@ -101,7 +101,7 @@
         sockets = ["pulseaudio"];
       };
       "io.github.ungoogled_software.ungoogled_chromium".Context = {
-        filesystems = ["xdg-download/chromium"];
+        filesystems = ["xdg-download/chromium:create"];
         sockets = ["pulseaudio"];
       };
       "io.gitlab.librewolf-community".Context = {
@@ -129,18 +129,24 @@
         sockets = ["pulseaudio"];
       };
       "org.keepassxc.KeePassXC".Context = {
-        filesystems = ["~/KPass"];
+        filesystems = ["~/KPass" "~/.keyfiles:ro"];
         shared = ["!network"];
       };
       "org.localsend.localsend_app".Context = {
         filesystems = ["xdg-download/localsend:create"];
       };
+      "org.mozilla.Thunderbird".Context = {
+        filesystems = ["xdg-download/thunderbird:create"];
+      };
       "org.mozilla.firefox".Context = {
         filesystems = ["xdg-download/firefox:create"];
         sockets = ["pulseaudio"];
       };
+      "org.openscad.OpenSCAD".Context = {
+        filesystems = ["xdg-documents/3d"];
+      };
       "org.signal.Signal".Context = {
-        filesystems = ["xdg-download/signal"];
+        filesystems = ["xdg-download/signal:create"];
         sockets = ["pulseaudio"];
       };
       "org.torproject.torbrowser-launcher".Context = {
