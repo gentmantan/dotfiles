@@ -12,9 +12,6 @@
     ./lanraragi.nix
     ./podman.nix
     ./pyload.nix
-    ./samba.nix
     ./syncthing.nix
-    ./vaultwarden.nix
-    ./wordpress.nix
   ];
 }
