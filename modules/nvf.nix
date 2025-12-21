@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{
   config.vim = {
     viAlias = true;
     vimAlias = true;
@@ -30,11 +30,14 @@
       enableFormat = true;
       enableTreesitter = true;
       html.enable = true;
+      json.enable = true;
       markdown.enable = true;
       nix.enable = true;
       python.enable = true;
       sql.enable = true;
+      tailwind.enable = true;
       ts.enable = true;
+      yaml.enable = true;
     };
 
     visuals = {
