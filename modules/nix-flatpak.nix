@@ -23,6 +23,7 @@
       "org.gimp.GIMP"
       "org.inkscape.Inkscape"
       "org.kde.kdenlive"
+      "org.kde.krita"
       "org.keepassxc.KeePassXC"
       "org.libreoffice.LibreOffice"
       "org.localsend.localsend_app"
@@ -127,6 +128,9 @@
       "org.kde.kdenlive".Context = {
         filesystems = ["xdg-videos"];
         sockets = ["pulseaudio"];
+      };
+      "org.kde.krita".Context = {
+        filesystems = ["xdg-pictures"];
       };
       "org.keepassxc.KeePassXC".Context = {
         filesystems = ["~/KPass" "~/.keyfiles:ro"];
