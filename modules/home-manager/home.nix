@@ -1,17 +1,10 @@
 {
-  imports = [./shared-home.nix ./sftp-client.nix ./ssh-client.nix];
+  imports = [./shared-home.nix ./sftp-client.nix ./ssh-client.nix ./git.nix];
   home.username = "tangy";
-  programs.git = {
-    # FIXME: Use your own git credentials!
+  customGit = {
     enable = true;
-    lfs.enable = true;
-    settings.user = {
-      email = "gentmantan@gmail.com";
-      name = "Gentman Tan";
-    };
-  };
-  programs.gh = {
-    enable = true;
+    email = "gentmantan@gmail.com";
+    name = "Gentman Tan";
   };
   services.syncthing = {
     enable = true;
