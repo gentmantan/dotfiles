@@ -12,10 +12,31 @@
       "$terminal" = "kitty";
       "$pass" = "flatpak run org.keepassxc.KeePassXC";
 
-      monitor = [
-        "eDP-1,preferred,auto,1.333"
-        "desc:GIGA-BYTE TECHNOLOGY CO. LTD. Gigabyte M32U,3840x2160@144,auto,1"
-        "desc:Dell Inc. DELL S2725QC 4RK8S84,highrr,auto,1"
+      monitorv2 = [
+        {
+          output = "eDP-1";
+          mode = "preferred";
+          position = "auto";
+          scale = 1.333;
+          supports_hdr = -1;
+          supports_wide_color = -1;
+        }
+        {
+          output = "desc:GIGA-BYTE TECHNOLOGY CO. LTD. Gigabyte M32U";
+          mode = "3840x2160@144";
+          position = "auto";
+          scale = 1;
+          supports_hdr = -1;
+          supports_wide_color = -1;
+        }
+        {
+          output = "desc:Dell Inc. DELL S2725QC 4RK8S84";
+          mode = "highrr";
+          position = "auto";
+          scale = 1;
+          supports_hdr = -1;
+          supports_wide_color = -1;
+        }
       ];
 
       xwayland = {
@@ -82,7 +103,7 @@
         workspace_swipe_forever = true;
       };
       windowrule = [
-        "idleinhibit fullscreen, fullscreen:1"
+        "match:fullscreen true, idle_inhibit fullscreen"
       ];
       misc = {
         vrr = 1;
