@@ -1,6 +1,5 @@
 {
   pkgs,
-  lib,
   modulesPath,
   ...
 }:
@@ -11,7 +10,6 @@ with pkgs; {
     ../../modules/basic-vim.nix
     ../../modules/ssh-server.nix
   ];
-  networking.wireless.enable = false;
   networking.networkmanager.enable = true;
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
