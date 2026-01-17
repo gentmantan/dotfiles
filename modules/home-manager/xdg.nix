@@ -1,8 +1,9 @@
 {pkgs, ...}: let
+  audio = "mpv.desktop";
   browser = "io.gitlab.librewolf-community.desktop";
+  document = "org.pwmt.zathura.desktop";
   image = "imv-dir.desktop";
   video = "mpv.desktop";
-  document = "org.pwmt.zathura.desktop";
 in {
   xdg.portal = {
     enable = true;
@@ -16,14 +17,22 @@ in {
   xdg.mimeApps = {
     enable = true;
     defaultApplications = {
-      "application/pdf" = ["${document}"];
       "application/epub+zip" = ["${document}"];
+      "application/pdf" = ["${document}"];
+      "audio/aac" = ["${audio}"];
+      "audio/flac" = ["${audio}"];
+      "audio/mpeg" = ["${audio}"];
+      "audio/ogg" = ["${audio}"];
       "image/gif" = ["${image}"];
       "image/jpeg" = ["${image}"];
       "image/png" = ["${image}"];
       "image/webp" = ["${image}"];
       "text/html" = ["${browser}"];
       "text/xml" = ["${browser}"];
+      "video/matroska" = ["${video}"];
+      "video/mp4" = ["${video}"];
+      "video/mpeg" = ["${video}"];
+      "video/webm" = ["${video}"];
       "x-scheme-handler/http" = ["${browser}"];
       "x-scheme-handler/https" = ["${browser}"];
     };
