@@ -1,10 +1,11 @@
 {pkgs, ...}: {
   imports = [
+    ../../modules/containers/podman.nix
+    ../../modules/dms-shell.nix
     ../../modules/fonts.nix
     ../../modules/nix-maintenance.nix
-    ../../modules/tmux.nix
-    ../../modules/containers/podman.nix
     ../../modules/pipewire.nix
+    ../../modules/tmux.nix
     ./hardware-configuration.nix
   ];
 
@@ -32,7 +33,6 @@
 
   time.timeZone = "America/New_York";
 
-  security.pam.services.hyprlock = {};
   security.sudo.enable = false; # FIXME: Choose if you want to use sudo.
   # Personally, I prefer using regular user accounts
   services.fprintd.enable = true;
@@ -40,7 +40,8 @@
   services.udisks2.enable = true; # To allow regular users to mount storage devices
   services.flatpak.enable = true;
 
-  services.auto-cpufreq.enable = true;
+  services.upower.enable = true;
+  services.power-profiles-daemon.enable = true;
 
   users.users.tangy = {
     # FIXME: Change the username. Choose wisely!
@@ -58,7 +59,7 @@
   # Programs
   # If available, programs should be enabled here as a module
   # as opposed to in environment.systemPackages
-  programs.hyprland.enable = true;
+  programs.niri.enable = true;
 
   virtualisation.spiceUSBRedirection.enable = true;
 

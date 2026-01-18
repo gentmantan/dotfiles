@@ -1,7 +1,6 @@
 # ❄️ My NixOS Dotfiles ❄️
 
-_'Without me, my neovim config is useless. Without my neovim config, I am
-useless. 📝' edition_
+_'A desktop of beauty is a joy forever 🔥' edition_
 
 [![Flake check](https://github.com/gentmantan/dotfiles/actions/workflows/test.yml/badge.svg)](https://github.com/gentmantan/dotfiles/actions/workflows/test.yml)
 [![Flake update](https://github.com/gentmantan/dotfiles/actions/workflows/update.yml/badge.svg)](https://github.com/gentmantan/dotfiles/actions/workflows/update.yml)
@@ -18,8 +17,8 @@ flake references for several systems:
 - 💻 The [#workstation](./hosts/workstation/configuration-workstation.nix)
   configuration is interesting because it uses
   [flatpak sandboxing](./modules/nix-flatpak.nix) to isolate user applications,
-  as well as [hyprland](https://github.com/hyprwm/Hyprland) for window
-  management and [nvf](https://github.com/NotAShelf/nvf) for text editing.
+  as well as [niri](https://github.com/YaLTeR/niri) for window management and
+  [nvf](https://github.com/NotAShelf/nvf) for text editing.
 - ☁️ The [#server](./hosts/server/configuration-server.nix) configuration sets
   up a host that runs web services using
   [podman](https://github.com/containers/podman) and

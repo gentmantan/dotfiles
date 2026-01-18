@@ -5,33 +5,23 @@
   };
 in {
   imports = [
-    ./anyrun.nix
-    ./hyprcursor.nix
-    ./hypridle.nix
-    ./hyprland.nix
-    ./hyprlock.nix
     ./kitty.nix
-    ./mako.nix
     ./nushell.nix
-    ./waybar.nix
     ./xdg.nix
+    ./cursor.nix
   ];
+
+  xdg.configFile."niri/config.kdl".source = ./niri-config.kdl;
 
   home.stateVersion = "25.05";
 
   home.packages = with pkgs; [
-    brightnessctl
-    grim
-    hyprsunset
     nmap
     p7zip
-    plantuml-c4
-    playerctl
     qrencode
     quickemu
-    slurp
-    wl-clipboard
     wl-screenrec
+    xwayland-satellite
   ];
 
   programs = {
@@ -49,6 +39,8 @@ in {
       '';
     };
     ripgrep.enable = true;
+
+    neovim.defaultEditor = true;
 
     # Shell utilities
     carapace = enableWithNushell;

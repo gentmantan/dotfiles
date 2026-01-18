@@ -7,8 +7,9 @@
 in {
   xdg.portal = {
     enable = true;
-    extraPortals = with pkgs; [xdg-desktop-portal-hyprland xdg-desktop-portal-gtk];
+    extraPortals = with pkgs; [xdg-desktop-portal-gtk xdg-desktop-portal-gnome];
     xdgOpenUsePortal = true;
+    config.common.default = "*";
   };
   xdg.userDirs = {
     enable = true;
