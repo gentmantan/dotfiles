@@ -70,7 +70,7 @@
       configFile = "/config/wireguard/wg0.conf";
     };
     networking.nameservers = ["10.128.0.1"];
-    services.resolved.fallbackDns = [];
+    services.resolved.settings.Resolve.fallbackDns = [];
     networking.firewall.interfaces."enp0s7".allowedTCPPorts = [16190];
 
     time.timeZone = "America/New_York";
