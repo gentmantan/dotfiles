@@ -35,6 +35,7 @@
       nix.enable = true;
       python.enable = true;
       sql.enable = true;
+      svelte.enable = true;
       tailwind.enable = true;
       ts.enable = true;
       yaml.enable = true;
