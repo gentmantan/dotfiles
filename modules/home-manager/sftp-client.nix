@@ -14,11 +14,12 @@
           enable = true;
           mountPoint = "/home/tangy/nest0";
           options = {
-            vfs-cache-mode = "writes";
             dir-cache-time = "5s";
-            vfs-cache-max-size = "50G";
-            vfs-cache-max-age = "5s";
+            read-only = true;
             umask = "007";
+            vfs-cache-max-age = "5s";
+            vfs-cache-max-size = "50G";
+            vfs-cache-mode = "writes";
           };
         };
       };
