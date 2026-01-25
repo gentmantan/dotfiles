@@ -34,35 +34,31 @@ independently, which includes LSPs for several languages as well as helpful Git
 and navigation plugins, among other things. Simply run the following line on
 your own system: `nix run github:gentmantan/dotfiles#neovim`
 
-## Structure
-
-I go into more detail in an upcoming blog post as to how I came about planning
-and structuring these systems. Stay tuned!
-
 ## Installation
+
+> [!WARNING]
+> My dotfiles are highly personalized, and therefore should realistically only
+> be used as a reference as to how to define your own configuration.
 
 1. [Follow the steps to install NixOS normally.](https://nixos.org/download/)
    - It does not matter whether you use the graphical or minimal ISO image, your
      system will be completely rebuilt all the same!
-2. Fork and clone this repo somewhere, for example `/etc/nixos`
-3. Review the repo and modify to your heart's content, especially where lines
-   are commented with `FIXME`.
-   - 💡 Pro tip: You can search for these by running
-     `grep --color=auto -rni "FIXME" <repo path>`
-4. Replace the `hardware-configuration.nix` in `./hosts/<name of host>/` with
-   that of which pertains to your own computer's.
+2. Fork and clone this repo somewhere, for example `/etc/nixos/`
+3. Replace the `hardware-configuration.nix` in `./hosts/<name of host>/` with
+   that which pertains to your own computer's.
    - 💡 Pro tip: The `hardware-configuration.nix` file should be located in
      `/etc/nixos`. If you don't see it, you can run
      `nixos-generate-config --dir <empty dir>` to generate it.
-5. Run `nixos-rebuild switch --flake <path to your flake root>#<attribute>`,
-   where `<attribute>` is either 'workstation', 'server' or 'gaming'.
-   - If you have pushed changes to your own repo you can also build your system
-     straight off of GitHub using
+4. Run `nixos-rebuild switch --flake <path to your flake root>#<attribute>`,
+   where `<attribute>` is one of the NixOS configurations defined in the flake
+   (i.e. 'workstation').
+   - If you made your own repo you can also build your system straight off of
+     GitHub using
      `nixos-rebuild switch github:<github username>/<reponame>#<attribute>`
-6. Enjoy reproducible Linux!
+5. Enjoy reproducible Linux!
 
 ## To-do
 
+- [ ] Refactor definitions to create true nix modules
 - [ ] Set up disko/nixos-anywhere for unattended deployment
 - [ ] Create a devShell with useful recovery tools
-- [ ] Automate livecd build and upload as Github artifacts
