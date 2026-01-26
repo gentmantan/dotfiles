@@ -19,7 +19,6 @@
   boot.initrd.systemd.enable = true;
 
   hardware.bluetooth.enable = true;
-  hardware.bluetooth.powerOnBoot = false;
 
   zramSwap.enable = true;
 
