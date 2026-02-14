@@ -4,7 +4,6 @@
     ./ai.nix
     ./bookstack.nix
     ./caddy.nix
-    ./fireshare.nix
     ./homeassistant.nix
     ./immich.nix
     ./jellyfin.nix
