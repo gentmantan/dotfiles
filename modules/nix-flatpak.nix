@@ -18,6 +18,7 @@
       "io.gitlab.librewolf-community"
       "net.ankiweb.Anki"
       "org.audacityteam.Audacity"
+      "org.blender.Blender"
       "org.freecad.FreeCAD"
       "org.getmonero.Monero"
       "org.gimp.GIMP"
@@ -111,6 +112,10 @@
       };
       "org.audacityteam.Audacity".Context = {
         filesystems = ["xdg-music"];
+        sockets = ["pulseaudio"];
+      };
+      "org.blender.Blender".Context = {
+        filesystems = ["xdg-documents/3d"];
         sockets = ["pulseaudio"];
       };
       "org.freecad.FreeCAD".Context = {
