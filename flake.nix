@@ -59,11 +59,6 @@
           })
         ];
       };
-      work-server = nixpkgs.lib.nixosSystem {
-        modules = [
-          ./hosts/work-server/configuration-work-server.nix
-        ];
-      };
       aws = nixpkgs.lib.nixosSystem {
         system = "aarch64-linux";
         modules = [
