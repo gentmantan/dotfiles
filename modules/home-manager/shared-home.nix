@@ -13,7 +13,7 @@ in {
 
   xdg.configFile."niri/config.kdl".source = ./niri-config.kdl;
 
-  home.stateVersion = "25.05";
+  home.stateVersion = "26.05";
 
   home.packages = with pkgs; [
     nmap
