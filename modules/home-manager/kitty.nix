@@ -8,9 +8,5 @@
       font_family = "Noto Sans";
       hide_window_decorations = "yes";
     };
-    extraConfig = ''
-      include dank-tabs.conf
-      include dank-theme.conf
-    '';
   };
 }
