@@ -5,11 +5,8 @@
     packages = [
       "com.bambulab.BambuStudio"
       "com.bitwarden.desktop"
-      "com.github.IsmaelMartinez.teams_for_linux"
-      "com.github.iwalton3.jellyfin-media-player"
       "com.google.AndroidStudio"
       "com.prusa3d.PrusaSlicer"
-      "com.rustdesk.RustDesk"
       "com.usebottles.bottles"
       "com.valvesoftware.Steam"
       "dev.vencord.Vesktop"
@@ -24,7 +21,6 @@
       "org.gimp.GIMP"
       "org.inkscape.Inkscape"
       "org.kde.kdenlive"
-      "org.kde.krita"
       "org.keepassxc.KeePassXC"
       "org.libreoffice.LibreOffice"
       "org.localsend.localsend_app"
@@ -65,12 +61,6 @@
         sockets = ["x11"];
         filesystems = ["xdg-documents/3d"];
       };
-      "com.github.IsmaelMartinez.teams_for_linux".Context = {
-        sockets = ["pulseaudio"];
-      };
-      "com.github.iwalton3.jellyfin-media-player".Context = {
-        sockets = ["pulseaudio"];
-      };
       "com.google.AndroidStudio" = {
         Context = {
           devices = ["kvm"];
@@ -107,7 +97,7 @@
         sockets = ["pulseaudio"];
       };
       "io.gitlab.librewolf-community".Context = {
-        filesystems = ["xdg-download/librewolf:create"];
+        filesystems = ["xdg-download/thunderbird:create"];
         sockets = ["pulseaudio"];
       };
       "org.audacityteam.Audacity".Context = {
