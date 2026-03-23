@@ -61,6 +61,9 @@
         sockets = ["x11"];
         filesystems = ["xdg-documents/3d"];
       };
+      "com.bitwarden.desktop".Context = {
+        sockets = ["x11"];
+      };
       "com.google.AndroidStudio" = {
         Context = {
           devices = ["kvm"];
