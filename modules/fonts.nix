@@ -1,9 +1,9 @@
 {pkgs, ...}: {
   fonts.packages = with pkgs; [
-    fira-code
-    fira-code-symbols
     liberation_ttf
     nerd-fonts.symbols-only
+    maple-mono.truetype
+    maple-mono.NF-unhinted
     noto-fonts
     noto-fonts-cjk-sans
     noto-fonts-color-emoji
