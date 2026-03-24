@@ -40,7 +40,10 @@ in {
     };
     ripgrep.enable = true;
 
-    neovim.defaultEditor = true;
+    neovim = {
+      enable = true;
+      defaultEditor = true;
+    };
 
     # Shell utilities
     carapace = enableWithNushell;
