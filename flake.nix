@@ -2,8 +2,8 @@
   description = "My NixOS configurations";
 
   inputs = {
-    disko.url = "github:nix-community/disko/latest";
     disko.inputs.nixpkgs.follows = "nixpkgs";
+    disko.url = "github:nix-community/disko/latest";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:nix-community/home-manager";
     lanzaboote.inputs.nixpkgs.follows = "nixpkgs";
@@ -13,6 +13,7 @@
     nix-flatpak.url = "github:gmodena/nix-flatpak";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nvf.url = "github:notashelf/nvf";
+    quadlet-nix.url = "github:SEIAROTg/quadlet-nix";
   };
 
   outputs = {
@@ -23,6 +24,7 @@
     nix-flatpak,
     nixpkgs,
     nvf,
+    quadlet-nix,
     self,
     ...
   }: {
@@ -69,6 +71,7 @@
         modules = [
           microvm.nixosModules.host
           ./modules/microvm/barge.nix
+          quadlet-nix.nixosModules.quadlet
           ./hosts/server/configuration-server.nix
         ];
       };
