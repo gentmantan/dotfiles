@@ -27,15 +27,6 @@
   };
   boot.zfs.extraPools = ["flock0" "flock1"];
 
-  services.zfs = {
-    autoSnapshot = {
-      enable = true;
-      monthly = 1;
-      weekly = 2;
-    };
-    autoScrub.enable = true;
-  };
-
   zramSwap.enable = true;
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
