@@ -70,7 +70,7 @@
       server = nixpkgs.lib.nixosSystem {
         modules = [
           microvm.nixosModules.host
-          ./modules/microvm/barge.nix
+          # ./modules/microvm/barge.nix
           quadlet-nix.nixosModules.quadlet
           ./hosts/server/configuration-server.nix
         ];
