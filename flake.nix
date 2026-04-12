@@ -69,6 +69,8 @@
       };
       server = nixpkgs.lib.nixosSystem {
         modules = [
+          disko.nixosModules.disko
+          ./hosts/workstation/disk-config.nix
           microvm.nixosModules.host
           # ./modules/microvm/barge.nix
           quadlet-nix.nixosModules.quadlet
