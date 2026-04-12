@@ -71,6 +71,8 @@
         modules = [
           disko.nixosModules.disko
           ./hosts/workstation/disk-config.nix
+          lanzaboote.nixosModules.lanzaboote
+          ./modules/lanzaboote.nix
           microvm.nixosModules.host
           # ./modules/microvm/barge.nix
           quadlet-nix.nixosModules.quadlet
