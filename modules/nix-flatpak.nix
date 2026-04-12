@@ -131,7 +131,7 @@
         filesystems = ["xdg-pictures"];
       };
       "org.keepassxc.KeePassXC".Context = {
-        filesystems = ["~/KPass" "~/.keyfiles:ro"];
+        filesystems = ["~/.keepass" "~/.keyfiles:ro"];
         shared = ["!network"];
       };
       "org.localsend.localsend_app".Context = {
