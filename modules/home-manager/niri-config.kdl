@@ -71,6 +71,11 @@ binds {
   Mod+grave repeat=false { spawn-sh "dms ipc call notepad toggle"; }
   Mod+Q repeat=false { close-window; }
 
+  Mod+Alt+H repeat=false { spawn-sh "niri msg output eDP-1 transform 90"; }
+  Mod+Alt+J repeat=false { spawn-sh "niri msg output eDP-1 transform 180"; }
+  Mod+Alt+K repeat=false { spawn-sh "niri msg output eDP-1 transform normal"; }
+  Mod+Alt+L repeat=false { spawn-sh "niri msg output eDP-1 transform 270"; }
+
   Mod+Left  { focus-column-left; }
   Mod+Down  { focus-window-down; }
   Mod+Up    { focus-window-up; }
