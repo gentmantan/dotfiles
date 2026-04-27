@@ -28,8 +28,16 @@
         userKnownHostsFile = "/dev/null";
       };
       "ws" = {
-        hostname = "10.101.20.33";
+        hostname = "pat4e0e.ad.fiu.edu";
         port = 48316;
+        user = "root";
+      };
+      "an" = {
+        hostname = "pat-analytics.ad.fiu.edu";
+        user = "root";
+      };
+      "ap" = {
+        hostname = "pat-apps.ad.fiu.edu";
         user = "root";
       };
       "*" = {
