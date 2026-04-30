@@ -12,18 +12,6 @@
   boot.crashDump.enable = true;
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.initrd = {
-    availableKernelModules = ["igb" "mlx5_core"];
-    network = {
-      enable = true;
-      ssh = {
-        enable = true;
-        port = 26572;
-        hostKeys = ["/config/ssh/remote_unlock_ssh_host_ed25519_key"];
-        authorizedKeyFiles = [../../.ssh/clipper.pub];
-      };
-    };
-  };
   boot.zfs.extraPools = ["flock0" "flock1"];
 
   zramSwap.enable = true;
