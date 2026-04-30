@@ -12,6 +12,7 @@
   boot.crashDump.enable = true;
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.supportedFilesystems = ["zfs"];
   boot.zfs.extraPools = ["flock0" "flock1"];
 
   zramSwap.enable = true;
