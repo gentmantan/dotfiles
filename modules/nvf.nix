@@ -36,8 +36,7 @@
       python.enable = true;
       sql.enable = true;
       svelte.enable = true;
-      tailwind.enable = true;
-      ts.enable = true;
+      typescript.enable = true;
       yaml.enable = true;
     };
 
