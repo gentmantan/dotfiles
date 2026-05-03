@@ -9,11 +9,16 @@
     ./hardware-configuration.nix
   ];
 
-  boot.crashDump.enable = true;
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.supportedFilesystems = ["zfs"];
-  boot.zfs.extraPools = ["flock0" "flock1"];
+  boot = {
+    crashDump.enable = true;
+    loader = {
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+    };
+    supportedFilesystems = ["zfs"];
+    zfs.extraPools = ["flock0" "flock1"];
+    zfs.forceImportRoot = false;
+  };
 
   services.zfs = {
     autoSnapshot = {
