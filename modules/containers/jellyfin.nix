@@ -3,19 +3,16 @@
     jellyfin = {
       image = "ghcr.io/jellyfin/jellyfin:latest";
       autoStart = true;
-      ports = [ "127.0.0.1:34061:8096" ];
-      volumes = [ 
+      ports = ["127.0.0.1:34061:8096"];
+      volumes = [
         "/config/jellyfin/config:/config"
-        "/config/jellyfin/cache:/cache"
+        "jellyfin-cache:/cache"
         "/nest0/jellyfin:/media:ro"
       ];
       labels = {
         "io.containers.autoupdate" = "registry";
       };
       pull = "newer";
-      #extraOptions = [ 
-      #  "--device=/dev/dri/renderD128:/dev/dri/renderD128:rwm"
-      #];
     };
   };
 }
