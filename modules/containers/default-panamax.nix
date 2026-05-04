@@ -11,6 +11,6 @@
     ./lanraragi.nix
     ./podman.nix
     ./pyload.nix
-    # ./syncthing.nix
+    ./syncthing.nix
   ];
 }
