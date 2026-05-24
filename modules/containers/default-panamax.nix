@@ -12,5 +12,6 @@
     ./podman.nix
     ./pyload.nix
     ./syncthing.nix
+    ./trilium.nix
   ];
 }
