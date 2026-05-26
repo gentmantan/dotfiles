@@ -1,5 +1,5 @@
 let
-  backup-paths = ["/nest0/immich" "/nest0/syncthing" "/config/bookstack" "/config/env/bookstack.env" "/config/immich" "/config/games"];
+  backup-paths = ["/nest0/immich" "/nest0/syncthing" "/nest0/trilium" "/config/immich"];
   keyfile = "/config/restic/backup.key";
 in {
   services.restic = {
