@@ -22,6 +22,7 @@
       "org.inkscape.Inkscape"
       "org.kde.kdenlive"
       "org.keepassxc.KeePassXC"
+      "org.kicad.KiCad"
       "org.libreoffice.LibreOffice"
       "org.localsend.localsend_app"
       "org.mozilla.Thunderbird"
@@ -133,6 +134,9 @@
       "org.keepassxc.KeePassXC".Context = {
         filesystems = ["~/.keepass" "~/.keyfiles:ro"];
         shared = ["!network"];
+      };
+      "org.kicad.KiCad".Context = {
+        filesystems = ["xdg-documents/3d"];
       };
       "org.localsend.localsend_app".Context = {
         filesystems = ["xdg-download/localsend:create"];
