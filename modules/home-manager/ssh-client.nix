@@ -2,46 +2,46 @@
   programs.ssh = {
     enable = true;
     enableDefaultConfig = false;
-    matchBlocks = {
+    settings = {
       "p" = {
-        hostname = "technophile.zone";
-        port = 48316;
-        user = "root";
+        HostName = "technophile.zone";
+        Port = 48316;
+        User = "root";
       };
       "unlockp" = {
-        hostname = "technophile.zone";
-        port = 26572;
-        user = "root";
+        HostName = "technophile.zone";
+        Port = 26572;
+        User = "root";
       };
       "b" = {
-        hostname = "localhost";
-        port = 21349;
-        proxyJump = "p";
-        user = "root";
-        userKnownHostsFile = "/dev/null";
+        HostName = "localhost";
+        Port = 21349;
+        ProxyJump = "p";
+        User = "root";
+        UserKnownHostsFile = "/dev/null";
       };
       "f" = {
-        hostname = "localhost";
-        port = 21350;
-        proxyJump = "p";
-        user = "root";
-        userKnownHostsFile = "/dev/null";
+        HostName = "localhost";
+        Port = 21350;
+        ProxyJump = "p";
+        User = "root";
+        UserKnownHostsFile = "/dev/null";
       };
       "ws" = {
-        hostname = "pat4e0e.ad.fiu.edu";
-        port = 48316;
-        user = "root";
+        HostName = "pat4e0e.ad.fiu.edu";
+        Port = 48316;
+        User = "root";
       };
       "an" = {
-        hostname = "pat-analytics.ad.fiu.edu";
-        user = "root";
+        HostName = "pat-analytics.ad.fiu.edu";
+        User = "root";
       };
       "ap" = {
-        hostname = "pat-apps.ad.fiu.edu";
-        user = "root";
+        HostName = "pat-apps.ad.fiu.edu";
+        User = "root";
       };
       "*" = {
-        setEnv = {TERM = "xterm-256color";};
+        SetEnv = {TERM = "xterm-256color";};
       };
     };
   };
