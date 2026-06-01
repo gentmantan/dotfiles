@@ -52,7 +52,7 @@ binds {
   Mod+Shift+W hotkey-overlay-title="Open Firefox" { spawn-sh "flatpak run org.mozilla.firefox"; }
   Mod+Shift+P hotkey-overlay-title="Open KeePassXC" { spawn-sh "flatpak run org.keepassxc.KeePassXC"; }
   Mod+Ctrl+W hotkey-overlay-title="Open Tor Browser" { spawn-sh "flatpak run org.torproject.torbrowser-launcher"; }
-  Mod+Shift+T hotkey-overlay-title="Open Thunderbird" { spawn-sh "flatpak run org.mozilla.Thunderbird"; }
+  Mod+Shift+T hotkey-overlay-title="Open Thunderbird" { spawn-sh "flatpak run org.mozilla.thunderbird"; }
 
   XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "dms ipc call audio increment 5"; }
   XF86AudioLowerVolume allow-when-locked=true { spawn-sh "dms ipc call audio decrement 5"; }

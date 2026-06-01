@@ -25,7 +25,7 @@
       "org.kicad.KiCad"
       "org.libreoffice.LibreOffice"
       "org.localsend.localsend_app"
-      "org.mozilla.Thunderbird"
+      "org.mozilla.thunderbird"
       "org.mozilla.firefox"
       "org.openscad.OpenSCAD"
       "org.signal.Signal"
@@ -101,7 +101,7 @@
         sockets = ["pulseaudio"];
       };
       "io.gitlab.librewolf-community".Context = {
-        filesystems = ["xdg-download/thunderbird:create"];
+        filesystems = ["xdg-download/librewolf:create"];
         sockets = ["pulseaudio"];
       };
       "org.audacityteam.Audacity".Context = {
@@ -141,7 +141,7 @@
       "org.localsend.localsend_app".Context = {
         filesystems = ["xdg-download/localsend:create"];
       };
-      "org.mozilla.Thunderbird".Context = {
+      "org.mozilla.thunderbird".Context = {
         filesystems = ["xdg-download/thunderbird:create"];
       };
       "org.mozilla.firefox".Context = {
