@@ -7,6 +7,7 @@
       volumes = [
         "/nest0/frigate/storage:/media/frigate"
         "/nest0/frigate/config:/config"
+        "/nest0/models:/models:ro"
         "/etc/localtime:/etc/localtime:ro"
       ];
       devices = ["/dev/dri" "/dev/kfd"];
