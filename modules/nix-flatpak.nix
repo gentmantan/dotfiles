@@ -6,6 +6,7 @@
       "com.bambulab.BambuStudio"
       "com.bitwarden.desktop"
       "com.google.AndroidStudio"
+      "com.orcaslicer.OrcaSlicer"
       "com.prusa3d.PrusaSlicer"
       "com.usebottles.bottles"
       "com.valvesoftware.Steam"
@@ -25,8 +26,8 @@
       "org.kicad.KiCad"
       "org.libreoffice.LibreOffice"
       "org.localsend.localsend_app"
-      "org.mozilla.thunderbird"
       "org.mozilla.firefox"
+      "org.mozilla.thunderbird"
       "org.openscad.OpenSCAD"
       "org.signal.Signal"
       "org.torproject.torbrowser-launcher"
@@ -75,6 +76,9 @@
         Environment = {
           QT_QPA_PLATFORM = "xcb"; # The AVD requires running in X11 for now
         };
+      };
+      "com.orcaslicer.OrcaSlicer".Context = {
+        filesystems = ["xdg-documents/3d"];
       };
       "com.prusa3d.PrusaSlicer".Context = {
         sockets = ["x11"];
