@@ -14,6 +14,12 @@ in
         example = "workstation";
         description = "Name of NixOS configuration to be maintained";
       };
+      allowReboot = mkOption {
+        type = types.bool;
+        default = false;
+        example = true;
+        description = "Reboot the system into the new generation instead of a switch";
+      };
     };
 
     config = mkIf cfg.enable {
@@ -28,7 +34,7 @@ in
         enable = true;
         flags = ["-L"];
         flake = "github:gentmantan/dotfiles#${cfg.hostName}";
-        operation = "boot";
+        inherit (cfg) allowReboot;
         dates = "02:00";
         randomizedDelaySec = "45min";
       };

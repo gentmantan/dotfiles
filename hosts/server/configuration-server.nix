@@ -49,6 +49,7 @@
   customNixMaintenance = {
     enable = true;
     hostName = "server";
+    allowReboot = true;
   };
 
   system.stateVersion = "25.05";
