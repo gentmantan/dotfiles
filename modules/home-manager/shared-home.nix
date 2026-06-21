@@ -67,4 +67,5 @@ in {
     zoxide = enableWithNushell;
   };
   services.playerctld.enable = true;
+  programs.gpg.enable = true;
 }
