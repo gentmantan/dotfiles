@@ -78,6 +78,7 @@
         };
       };
       "com.orcaslicer.OrcaSlicer".Context = {
+        sockets = ["x11"];
         filesystems = ["xdg-documents/3d"];
       };
       "com.prusa3d.PrusaSlicer".Context = {
