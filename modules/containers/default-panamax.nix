@@ -10,6 +10,7 @@
     ./jellyfin.nix
     ./komga.nix
     ./lanraragi.nix
+    ./paperless.nix
     ./podman.nix
     ./pyload.nix
     ./syncthing.nix
