@@ -12,6 +12,7 @@
     microvm.url = "github:astro/microvm.nix";
     nix-flatpak.url = "github:gmodena/nix-flatpak";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-flatpak.url = "github:nixos/nixpkgs/nixos-26.05";
     nvf.url = "github:notashelf/nvf";
     quadlet-nix.url = "github:SEIAROTg/quadlet-nix";
   };
@@ -22,6 +23,7 @@
     lanzaboote,
     microvm,
     nix-flatpak,
+    nixpkgs-flatpak,
     nixpkgs,
     nvf,
     quadlet-nix,
@@ -42,6 +44,9 @@
         ];
       };
       workstation = nixpkgs.lib.nixosSystem {
+        specialArgs = {
+          inherit nixpkgs-flatpak;
+        };
         modules = [
           ./hosts/workstation/configuration-workstation.nix
           disko.nixosModules.disko

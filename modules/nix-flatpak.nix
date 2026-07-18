@@ -1,5 +1,11 @@
 {
+  nixpkgs-flatpak,
+  pkgs,
+  ...
+}: {
   services.flatpak = {
+    enable = true;
+    package = nixpkgs-flatpak.legacyPackages.${pkgs.system}.flatpak;
     # FIXME: Edit this list with your favorite apps!
     # Note that the first installation may take long with too many apps
     packages = [
