@@ -62,7 +62,7 @@ binds {
   XF86AudioPlay        allow-when-locked=true { spawn-sh "dms ipc call mpris playPause"; }
   XF86AudioStop        allow-when-locked=true { spawn-sh "dms ipc call mpris stop"; }
   XF86AudioPrev        allow-when-locked=true { spawn-sh "dms ipc call mpris previous"; }
-  XF86AudioNext        allow-when-locked=true { spawn-sh "dms ipc call mrpis next"; }
+  XF86AudioNext        allow-when-locked=true { spawn-sh "dms ipc call mpris next"; }
 
   XF86MonBrightnessUp allow-when-locked=true { spawn-sh "dms ipc call brightness increment 10 \"\""; }
   XF86MonBrightnessDown allow-when-locked=true { spawn-sh "dms ipc call brightness decrement 10 \"\""; }
