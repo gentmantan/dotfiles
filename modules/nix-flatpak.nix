@@ -20,6 +20,7 @@
       "io.freetubeapp.FreeTube"
       "io.github.ungoogled_software.ungoogled_chromium"
       "io.gitlab.librewolf-community"
+      "jp.nonbili.noutube"
       "net.ankiweb.Anki"
       "org.audacityteam.Audacity"
       "org.blender.Blender"
@@ -113,6 +114,9 @@
       };
       "io.gitlab.librewolf-community".Context = {
         filesystems = ["xdg-download/librewolf:create"];
+        sockets = ["pulseaudio"];
+      };
+      "jp.nonbili.noutube".Context = {
         sockets = ["pulseaudio"];
       };
       "org.audacityteam.Audacity".Context = {
