@@ -5,7 +5,7 @@
     containers = {
       paperless_broker = {
         containerConfig = {
-          image = "docker.io/library/redis:8";
+          image = "docker.io/valkey/valkey:9-alpine";
           pull = "newer";
           autoUpdate = "registry";
           volumes = ["paperless-redis-data:/data"];
@@ -18,6 +18,7 @@
           pull = "newer";
           autoUpdate = "registry";
           environmentFiles = ["/config/env/paperless.env"];
+          volumes = ["/nest0/paperless/db:/var/lib/postgresql"];
           pod = pods.paperless.ref;
         };
       };
