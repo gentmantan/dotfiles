@@ -16,10 +16,12 @@ in {
   home.stateVersion = "26.05";
 
   home.packages = with pkgs; [
+    ffmpeg
     nmap
     p7zip
     qrencode
     quickemu
+    slurp
     wl-screenrec
     xwayland-satellite
   ];
