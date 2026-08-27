@@ -63,6 +63,7 @@
           ./modules/nix-flatpak.nix
           ({pkgs, ...}: {
             environment.systemPackages = [self.packages.${pkgs.stdenv.system}.neovim];
+            programs.neovim.defaultEditor = true;
           })
         ];
       };
