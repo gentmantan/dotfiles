@@ -52,7 +52,8 @@
     statusline = {
       lualine = {
         enable = true;
-        theme = "gruvbox";
+        setupOpts.options.theme = "gruvbox";
+        integrations.breadcrumbs.nvim-navic.enable = true;
       };
     };
 
@@ -97,7 +98,6 @@
 
     ui = {
       borders.enable = true;
-      breadcrumbs.enable = true;
       colorizer = {
         enable = true;
         setupOpts.filetypes."*" = {};
