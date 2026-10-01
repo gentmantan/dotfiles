@@ -5,13 +5,12 @@
   };
 in {
   imports = [
+    ./cursor.nix
     ./kitty.nix
+    ./niri-config.nix
     ./nushell.nix
     ./xdg.nix
-    ./cursor.nix
   ];
-
-  xdg.configFile."niri/config.kdl".source = ./niri-config.kdl;
 
   home.stateVersion = "26.05";
 
@@ -23,7 +22,6 @@ in {
     quickemu
     slurp
     wl-screenrec
-    xwayland-satellite
   ];
 
   programs = {
