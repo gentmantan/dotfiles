@@ -3,7 +3,7 @@
   home.username = "tangy";
   customGit = {
     enable = true;
-    email = "gentmantan@gmail.com";
+    email = "git@gtan.me";
     name = "Gentman Tan";
   };
 }
