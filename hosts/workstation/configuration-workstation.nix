@@ -16,7 +16,6 @@
   };
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.kernelParams = ["amdgpu.dcdebugmask=0x10"];
-  boot.initrd.systemd.enable = true;
 
   hardware.bluetooth.enable = true;
 
