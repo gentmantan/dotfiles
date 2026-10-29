@@ -16,6 +16,7 @@ in {
 
   home.packages = with pkgs; [
     ffmpeg
+    libarchive
     nmap
     p7zip
     qrencode
