@@ -71,7 +71,7 @@
       "com.google.AndroidStudio" = {
         Context = {
           devices = ["kvm"];
-          filesystems = ["xdg-documents/android"];
+          filesystems = ["xdg-documents/Projects/android"];
           persistent = ["Android" ".android" ".gradle" ".java" ".dartServer" ".dart-tool" ".flutter" ".skiko" ".pub-cache"];
           sockets = ["x11"];
         };
