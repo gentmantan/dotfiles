@@ -67,6 +67,7 @@
       ../ssh-server.nix
     ];
     networking.wg-quick.interfaces.wg0 = {
+      autostart = true;
       configFile = "/config/wireguard/wg0.conf";
     };
     networking.nameservers = ["10.128.0.1"];
