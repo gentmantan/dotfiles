@@ -35,8 +35,8 @@
                         "noatime"
                       ];
                     };
-                    "/config" = {
-                      mountpoint = "/config";
+                    "/home" = {
+                      mountpoint = "/home";
                       mountOptions = [
                         "compress=zstd"
                         "noatime"

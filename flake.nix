@@ -71,7 +71,7 @@
       server = nixpkgs.lib.nixosSystem {
         modules = [
           disko.nixosModules.disko
-          ./hosts/workstation/disk-config.nix
+          ./hosts/server/disk-config.nix
           lanzaboote.nixosModules.lanzaboote
           ./modules/lanzaboote.nix
           microvm.nixosModules.host
