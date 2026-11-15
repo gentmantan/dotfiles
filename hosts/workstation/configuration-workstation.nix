@@ -1,5 +1,6 @@
 {pkgs, ...}: {
   imports = [
+    ../../modules/btrbk.nix
     ../../modules/containers/podman.nix
     ../../modules/dms-shell.nix
     ../../modules/fonts.nix
